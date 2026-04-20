@@ -1,617 +1,285 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>삼육대 졸특 ONE_PASS 라운지</title>
-  <style>
-    :root {
-      --bg: #eef4f6;
-      --surface: #ffffff;
-      --text: #203243;
-      --muted: #7a8a97;
-      --line: #dfe8ee;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>삼육대 졸특 ONE_PASS 라운지</title>
 
-      --green: #19b15a;
-      --green-soft: #edf9f1;
-      --green-line: #bfe9cc;
+<style>
+:root {
+  --bg:#eef4f6;
+  --text:#203243;
+  --muted:#7a8a97;
 
-      --purple: #8d63d8;
-      --purple-soft: #f6f1ff;
-      --purple-line: #dcccf8;
+  --green:#19b15a;
+  --purple:#8d63d8;
+  --blue:#3c86f4;
 
-      --blue: #3c86f4;
-      --blue-soft: #eef5ff;
-      --blue-line: #cfe0ff;
+  --shadow:0 8px 20px rgba(28,56,80,.06);
+}
 
-      --shadow: 0 8px 20px rgba(28, 56, 80, 0.06);
-      --radius-xl: 24px;
-      --radius-lg: 18px;
-      --radius-md: 14px;
-    }
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:"맑은 고딕";
+  background:var(--bg);
+}
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+.page{
+  max-width:430px;
+  margin:0 auto;
+}
 
-    body {
-      margin: 0;
-      font-family: "Malgun Gothic", "맑은 고딕", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
+.hero img{
+  width:100%;
+  border-radius:0 0 24px 24px;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+/* 공통 카드 */
+.section{padding:10px;}
+.block{
+  background:#fff;
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
 
-    .page {
-      max-width: 430px;
-      margin: 0 auto;
-      min-height: 100vh;
-      background: var(--bg);
-      padding-bottom: 28px;
-    }
+.block-header{
+  display:flex;
+  gap:10px;
+  padding:14px;
+  border-bottom:1px solid #eee;
+}
 
-    .hero img,
-    .section-banner img {
-      width: 100%;
-      display: block;
-    }
+.header-icon{
+  width:32px;height:32px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  color:#fff;font-weight:bold;
+}
 
-    .hero img {
-      border-radius: 0 0 24px 24px;
-    }
+.theme-green .header-icon{background:var(--green);}
+.theme-purple .header-icon{background:var(--purple);}
+.theme-blue .header-icon{background:var(--blue);}
 
-    .section-banner {
-      margin: 0;
-      display: none;
-    }
+.header-title{
+  margin:0;
+  font-size:18px;
+  font-weight:900;
+}
 
-    .section {
-      padding: 10px 12px 0;
-    }
+.header-sub{
+  font-size:11px;
+  color:var(--muted);
+}
 
-    .block {
-      background: #fff;
-      border: 1px solid #dde7ed;
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
+/* 프로그램 카드 */
+.program-list{padding:10px;display:grid;gap:10px;}
 
-    .block + .block {
-      margin-top: 12px;
-    }
+.program-item{
+  display:grid;
+  grid-template-columns:44px 1fr;
+  gap:12px;
+  padding:12px;
+  border:1px solid #eee;
+  border-radius:14px;
+}
 
-    .block-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 14px 14px 10px;
-      border-bottom: 1px solid #edf2f5;
-    }
+.item-icon{
+  width:44px;height:44px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  color:#fff;
+}
 
-    .header-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      font-size: 16px;
-      font-weight: 900;
-      flex-shrink: 0;
-    }
+.theme-green .item-icon{background:var(--green);}
+.theme-purple .item-icon{background:var(--purple);}
 
-    .header-text {
-      min-width: 0;
-    }
+.item-body{display:flex;flex-direction:column;}
 
-    .header-title {
-      margin: 0;
-      font-size: 18px;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      line-height: 1.25;
-    }
+.item-title{
+  font-size:18px;
+  font-weight:900;
+  margin:0 0 4px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
 
-    .header-sub {
-      margin-top: 2px;
-      font-size: 11px;
-      color: var(--muted);
-      font-weight: 700;
-      line-height: 1.45;
-    }
+.item-desc{
+  font-size:12px;
+  color:#666;
+  margin-bottom:8px;
+}
 
-    .theme-green .header-icon { background: var(--green); }
-    .theme-green .header-title { color: var(--green); }
+.item-meta{font-size:12px;}
 
-    .theme-purple .header-icon { background: var(--purple); }
-    .theme-purple .header-title { color: var(--purple); }
+.item-action{margin-top:10px;}
 
-    .theme-blue .header-icon { background: var(--blue); }
-    .theme-blue .header-title { color: var(--blue); }
+.btn{
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:10px;
+  color:#fff;
+  font-size:13px;
+  font-weight:900;
+}
 
-    .program-list {
-      padding: 0 10px 10px;
-      display: grid;
-      gap: 8px;
-    }
+.btn.green{background:var(--green);}
+.btn.purple{background:var(--purple);}
+.btn.blue{background:var(--blue);}
 
-    .program-item {
-      display: grid;
-      grid-template-columns: 44px 1fr;
-      gap: 12px;
-      align-items: start;
-      border-radius: 16px;
-      padding: 12px;
-      border: 1px solid #e5edf2;
-      background: #fff;
-    }
+/* 프로젝트 */
+.project-card{padding:14px;}
+.project-title{font-size:20px;font-weight:900;}
+.project-bottom{margin-top:10px;display:flex;justify-content:space-between;}
 
-    .theme-green .program-item {
-      border-left: 4px solid var(--green);
-    }
+/* 상담 */
+.consulting-wrap{padding:10px;}
+.consulting-card{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.consulting-btn{
+  padding:14px;
+  text-align:center;
+  border-radius:12px;
+  color:#fff;
+  font-weight:900;
+}
 
-    .theme-purple .program-item {
-      border-left: 4px solid var(--purple);
-    }
+.consulting-btn.green{background:var(--green);}
+.consulting-btn.purple{background:var(--purple);}
+.consulting-btn.blue{background:var(--blue);}
 
-    .item-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-size: 20px;
-      color: #fff;
-      font-weight: 900;
-      flex-shrink: 0;
-    }
-
-    .theme-green .item-icon { background: var(--green); }
-    .theme-purple .item-icon { background: var(--purple); }
-
-    .item-body {
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .item-title {
-      margin: 0 0 4px;
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      line-height: 1.2;
-      color: #24384a;
-      word-break: keep-all;
-    }
-
-    .item-title.one-line {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .item-desc {
-      margin: 0 0 8px;
-      font-size: 12px;
-      color: #687988;
-      line-height: 1.45;
-      font-weight: 700;
-      word-break: keep-all;
-    }
-
-    .item-meta {
-      display: grid;
-      gap: 4px;
-      font-size: 12px;
-      color: #5e6d7c;
-      font-weight: 800;
-      line-height: 1.45;
-    }
-
-    .item-action {
-      margin-top: 12px;
-    }
-
-    .btn {
-      min-width: 94px;
-      height: 42px;
-      padding: 0 14px;
-      border-radius: 12px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      white-space: nowrap;
-    }
-
-    .btn.green { background: var(--green); }
-    .btn.purple { background: var(--purple); }
-    .btn.blue { background: var(--blue); }
-
-    .project-card {
-      margin: 0 10px 10px;
-      border-radius: 16px;
-      padding: 14px;
-      background: #fff;
-      border: 1px solid #e8e0f8;
-      box-shadow: 0 6px 14px rgba(54, 30, 98, 0.04);
-    }
-
-    .project-badge {
-      display: inline-block;
-      margin-bottom: 8px;
-      font-size: 12px;
-      font-weight: 900;
-      color: var(--purple);
-      background: var(--purple-soft);
-      border: 1px solid var(--purple-line);
-      padding: 6px 10px;
-      border-radius: 999px;
-      letter-spacing: -0.02em;
-    }
-
-    .project-title {
-      margin: 0 0 8px;
-      font-size: 28px;
-      line-height: 1.18;
-      letter-spacing: -0.04em;
-      font-weight: 900;
-      color: #314055;
-    }
-
-    .project-list {
-      margin: 0;
-      padding-left: 18px;
-      font-size: 13px;
-      line-height: 1.55;
-      color: #5e6d7c;
-      font-weight: 700;
-    }
-
-    .project-list li + li {
-      margin-top: 4px;
-    }
-
-    .project-bottom {
-      margin-top: 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .project-date {
-      font-size: 12px;
-      line-height: 1.5;
-      color: #617182;
-      font-weight: 800;
-    }
-
-    .program-grid {
-      padding: 0 10px 10px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .program-box {
-      min-height: 118px;
-      border-radius: 16px;
-      border: 1px solid #dfe8f5;
-      background: #fff;
-      padding: 14px 12px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      text-align: left;
-      box-shadow: 0 6px 14px rgba(31, 62, 88, 0.04);
-    }
-
-    .program-top {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    .program-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-size: 17px;
-      background: var(--blue-soft);
-      color: var(--blue);
-      flex-shrink: 0;
-    }
-
-    .program-name {
-      margin: 0;
-      font-size: 14px;
-      line-height: 1.35;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      color: #26384a;
-      word-break: keep-all;
-    }
-
-    .program-desc {
-      margin: 0;
-      font-size: 11px;
-      line-height: 1.5;
-      color: #687988;
-      font-weight: 700;
-      word-break: keep-all;
-    }
-
-    .consulting-wrap {
-      padding: 0 10px 10px;
-    }
-
-    .consulting-card {
-      border-radius: 16px;
-      padding: 14px;
-      background: #fff;
-      border: 1px solid #dfe8ee;
-      box-shadow: 0 6px 14px rgba(31, 62, 88, 0.04);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .consulting-desc {
-      margin: 0 0 4px;
-      font-size: 12px;
-      color: #6b7b89;
-      line-height: 1.5;
-      font-weight: 700;
-    }
-
-    .consulting-btn {
-      width: 100%;
-      height: 46px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      text-align: center;
-      padding: 0 12px;
-    }
-
-    .consulting-btn.green { background: var(--green); }
-    .consulting-btn.purple { background: var(--purple); }
-    .consulting-btn.blue { background: var(--blue); }
-
-    .footer-space {
-      height: 18px;
-    }
-
-    @media (max-width: 390px) {
-      .item-title {
-        font-size: 21px;
-      }
-
-      .project-title {
-        font-size: 24px;
-      }
-
-      .program-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+</style>
 </head>
+
 <body>
-  <div class="page">
-    <section class="hero">
-      <img src="banner.jpg" alt="삼육대학교 졸업예정자 및 지역 청년을 위한 취업 진로 통합 프로그램 라운지 배너" />
-    </section>
+<div class="page">
 
-    <!-- 서울고용센터 프로그램 -->
-    <section class="section">
-      <div class="block theme-green">
-        <div class="block-header">
-          <div class="header-icon">🏢</div>
-          <div class="header-text">
-            <h2 class="header-title">서울고용센터 프로그램</h2>
-            <div class="header-sub">3-in-1 협력모델 · 청년특화프로그램 4월</div>
-          </div>
-        </div>
+<!-- 배너 -->
+<section class="hero">
+<img src="banner.jpg">
+</section>
 
-        <div class="program-list">
-          <div class="program-item">
-            <div class="item-icon">📋</div>
-            <div class="item-body">
-              <h3 class="item-title one-line">프레디저 진로설계</h3>
-              <p class="item-desc">프레디저 검사를 활용한 진로설계 프로그램</p>
-              <div class="item-meta">
-                <div>📅 일정: 2026. 4. 24. (금) 16:00~18:00</div>
-                <div>📍 장소: 서울고용센터 1층 청프로그램실</div>
-              </div>
-              <div class="item-action">
-                <a class="btn green"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://form.naver.com/response/fZXN8phfitk-O2DRr9eMkg">
-                  신청 바로가기
-                </a>
-              </div>
-            </div>
-          </div>
+<!-- 서울고용센터 -->
+<section class="section">
+<div class="block theme-green">
 
-          <div class="program-item">
-            <div class="item-icon">📊</div>
-            <div class="item-body">
-              <h3 class="item-title">맞춤형 직무역량 및 스킬향상</h3>
-              <p class="item-desc">AI디지털 역량강화(경영정보시각화) 맞춤형 프로그램</p>
-              <div class="item-meta">
-                <div>📅 일정: 2026. 4. 24. (금) 14:00~18:00</div>
-                <div>📍 장소: 서울고용센터 1층 다목적홀</div>
-              </div>
-              <div class="item-action">
-                <a class="btn green"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://form.naver.com/response/fZXN8phfitk-O2DRr9eMkg">
-                  신청 바로가기
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="block-header">
+<div class="header-icon">🏢</div>
+<div>
+<h2 class="header-title">서울고용센터 프로그램</h2>
+<div class="header-sub">청년특화프로그램</div>
+</div>
+</div>
 
-    <!-- 메인비즈협회 -->
-    <section class="section">
-      <div class="block theme-purple">
-        <div class="block-header">
-          <div class="header-icon">🤝</div>
-          <div class="header-text">
-            <h2 class="header-title">[메인비즈협회] 프로그램 라인업</h2>
-            <div class="header-sub">기업 연계 실무 프로젝트</div>
-          </div>
-        </div>
+<div class="program-list">
 
-        <div class="project-card">
-          <div class="project-badge">기업 연계 실무 프로젝트</div>
-          <h3 class="project-title">빅트론텍 연계 실전 프로젝트</h3>
-          <ul class="project-list">
-            <li>갤럭시 워치 퍼팅 도우미 앱 개발</li>
-            <li>AIClear PPT 앱 제작 (앱 + 관리서버 + 음성/세션 제어 구조)</li>
-          </ul>
+<div class="program-item">
+<div class="item-icon">📋</div>
+<div class="item-body">
+<h3 class="item-title">프레디저 진로설계</h3>
+<p class="item-desc">진로설계 프로그램</p>
+<div class="item-meta">
+📅 4.24 / 📍 서울고용센터
+</div>
+<div class="item-action">
+<a href="#" class="btn green">신청 바로가기</a>
+</div>
+</div>
+</div>
 
-          <div class="project-bottom">
-            <div class="project-date">📅 신청기한: 2026. 04. 29. (수) ~ 2026. 05. 03. (일)</div>
-            <a class="btn purple"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://sugary-lathe-e35.notion.site/342cad4e5bb7805c8ab6eecbd20fde1a">
-              신청 바로가기
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="program-item">
+<div class="item-icon">📊</div>
+<div class="item-body">
+<h3 class="item-title">맞춤형 직무역량 및 스킬향상</h3>
+<p class="item-desc">AI디지털 역량강화</p>
+<div class="item-meta">
+📅 4.24 / 📍 서울고용센터
+</div>
+<div class="item-action">
+<a href="#" class="btn green">신청 바로가기</a>
+</div>
+</div>
+</div>
 
-    <!-- 대표 프로그램 -->
-    <section class="section">
-      <div class="block theme-blue">
-        <div class="block-header">
-          <div class="header-icon">⭐</div>
-          <div class="header-text">
-            <h2 class="header-title">2026 삼육대 졸특 대표 프로그램</h2>
-          </div>
-        </div>
+</div>
+</div>
+</section>
 
-        <div class="program-grid">
-          <div class="program-box">
-            <div class="program-top">
-              <div class="program-mark">💼</div>
-              <h3 class="program-name">추천채용 / 일반채용</h3>
-            </div>
-            <p class="program-desc">채용 연계 기회를 통해 실제 취업까지 이어지는 프로그램</p>
-          </div>
+<!-- 메인비즈 -->
+<section class="section">
+<div class="block theme-purple">
 
-          <div class="program-box">
-            <div class="program-top">
-              <div class="program-mark">🚀</div>
-              <h3 class="program-name">SYU 역량강화 프로그램</h3>
-            </div>
-            <p class="program-desc">취업 경쟁력을 높이는 단계별 역량 개발 프로그램</p>
-          </div>
+<div class="block-header">
+<div class="header-icon">🤝</div>
+<h2 class="header-title">메인비즈 프로그램</h2>
+</div>
 
-          <div class="program-box">
-            <div class="program-top">
-              <div class="program-mark">🧩</div>
-              <h3 class="program-name">깜빡쓰 NRG 컨설팅</h3>
-            </div>
-            <p class="program-desc">성격검사, 진로검사, 워크넷 등 기초를 정리하는 맞춤형 컨설팅</p>
-          </div>
+<div class="project-card">
+<div class="project-title">실전 프로젝트</div>
+<div class="project-bottom">
+<a class="btn purple">신청 바로가기</a>
+</div>
+</div>
 
-          <div class="program-box">
-            <div class="program-top">
-              <div class="program-mark">📝</div>
-              <h3 class="program-name">직무별 직전형 컨설팅</h3>
-            </div>
-            <p class="program-desc">직무별 맞춤 자기소개서와 지원서 작성 전략 안내</p>
-          </div>
+</div>
+</section>
 
-          <div class="program-box">
-            <div class="program-top">
-              <div class="program-mark">🎤</div>
-              <h3 class="program-name">깜빡쓰 면접특강</h3>
-            </div>
-            <p class="program-desc">실전 면접에서 바로 써먹는 답변 구성과 표현 훈련</p>
-          </div>
+<!-- 대표 프로그램 -->
+<section class="section">
+<div class="block theme-blue">
 
-          <div class="program-box">
-            <div class="program-top">
-              <div class="program-mark">🤝</div>
-              <h3 class="program-name">커리어매칭 LIVE</h3>
-            </div>
-            <p class="program-desc">현장면접과 기업 매칭으로 이어지는 실전 취업 연결 프로그램</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="block-header">
+<div class="header-icon">⭐</div>
+<h2 class="header-title">대표 프로그램</h2>
+</div>
 
-    <!-- 상담 & 컨설팅 예약 -->
-    <section class="section">
-      <div class="block theme-blue">
-        <div class="block-header">
-          <div class="header-icon">📝</div>
-          <div class="header-text">
-            <h2 class="header-title">상담 &amp; 컨설팅 예약</h2>
-            <div class="header-sub">신청서 작성 및 예약 바로가기</div>
-          </div>
-        </div>
+<div class="program-list">
+<div class="program-item">
+<div class="item-icon">💼</div>
+<div class="item-body">
+<h3 class="item-title">추천채용</h3>
+</div>
+</div>
+</div>
 
-        <div class="consulting-wrap">
-          <div class="consulting-card">
-            <p class="consulting-desc">원하는 신청서와 예약 페이지로 바로 이동할 수 있어요.</p>
+</div>
+</section>
 
-            <a href="https://buly.kr/YgHS2J"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="consulting-btn green">
-              졸업생 특화 신청서 작성 (필수작성)
-            </a>
+<!-- 상담 -->
+<section class="section">
+<div class="block theme-blue">
 
-            <a href="https://forms.gle/fCz3WaVfGpvRxiGe6"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="consulting-btn purple">
-              ALL_PASS 신청서 (진로, 직무, 채용, 지원서, 면접 컨설팅 등)
-            </a>
+<div class="block-header">
+<div class="header-icon">📝</div>
+<h2 class="header-title">상담 & 컨설팅 예약</h2>
+</div>
 
-            <a href="https://su-plus.syu.ac.kr/"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="consulting-btn blue">
-              SU-PLUS 예약 바로가기
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="consulting-wrap">
+<div class="consulting-card">
 
-    <div class="footer-space"></div>
-  </div>
+<a href="https://buly.kr/YgHS2J" target="_blank" class="consulting-btn green">
+졸업생 특화 신청서
+</a>
+
+<a href="https://forms.gle/fCz3WaVfGpvRxiGe6" target="_blank" class="consulting-btn purple">
+ALL PASS 신청서
+</a>
+
+<a href="https://su-plus.syu.ac.kr/" target="_blank" class="consulting-btn blue">
+SU-PLUS 예약
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+</div>
 </body>
 </html>
