@@ -3,835 +3,690 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>삼육대 졸특 ONE-PASS LOUNGE</title>
+  <title>삼육대 졸특 ONE-PASS 라운지</title>
   <style>
     :root{
-      --bg:#eef4f7;
-      --surface:#ffffff;
-      --text:#173b6b;
-      --muted:#6f8195;
-      --line:#d8e4ec;
+      --bg:#eef3f8;
+      --card:#ffffff;
+      --line:#dfe7f1;
+      --text:#1f3552;
+      --muted:#6f8299;
 
-      --blue:#7caef3;
+      --blue:#4f8ff7;
       --blue-soft:#edf4ff;
-      --blue-line:#c8daf8;
 
-      --green:#7fc9a0;
-      --green-soft:#eef8f2;
-      --green-line:#cce8d7;
+      --green:#55b96d;
+      --green-soft:#eef9f0;
 
-      --purple:#b6a0ea;
-      --purple-soft:#f5f1ff;
-      --purple-line:#ddd2fb;
+      --purple:#8e6bf2;
+      --purple-soft:#f4efff;
 
-      --orange:#efc27a;
-      --orange-soft:#fff7ea;
-      --orange-line:#f3deba;
+      --orange:#f5a63b;
+      --orange-soft:#fff6e7;
 
-      --pink:#ef9eb0;
-      --pink-soft:#fff1f4;
-      --pink-line:#f7d0d8;
+      --pink:#f46b98;
+      --pink-soft:#fff0f5;
 
-      --shadow:0 10px 28px rgba(34, 69, 105, 0.08);
-      --radius-xl:26px;
-      --radius-lg:20px;
-      --radius-md:16px;
-      --radius-sm:12px;
+      --shadow:0 10px 24px rgba(40, 77, 120, 0.08);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
     }
 
     *{box-sizing:border-box;}
     html,body{
       margin:0;
       padding:0;
-      font-family:"Malgun Gothic","맑은 고딕",sans-serif;
       background:var(--bg);
+      font-family:"맑은 고딕", "Malgun Gothic", sans-serif;
       color:var(--text);
     }
 
     body{
       display:flex;
       justify-content:center;
+      padding:20px 12px 40px;
     }
 
     .page{
       width:100%;
       max-width:430px;
-      padding:16px 14px 32px;
     }
 
     .hero{
       position:relative;
+      background:linear-gradient(180deg, #f7fbff 0%, #edf4fb 100%);
+      border:1px solid #e4edf7;
+      border-radius:28px;
+      padding:18px 18px 16px;
       overflow:hidden;
-      background:linear-gradient(180deg,#edf5fb 0%, #eaf3f8 100%);
-      border-radius:0 0 28px 28px;
-      min-height:380px;
-      padding:18px 18px 22px;
       box-shadow:var(--shadow);
+      margin-bottom:14px;
     }
 
     .hero::before{
       content:"";
       position:absolute;
-      right:-38px;
-      top:28px;
-      width:170px;
-      height:220px;
-      background:rgba(163, 194, 233, 0.18);
-      border-radius:90px 0 0 90px;
+      right:-35px;
+      top:-20px;
+      width:140px;
+      height:140px;
+      background:rgba(114, 169, 255, 0.12);
+      border-radius:50%;
     }
 
     .hero::after{
       content:"";
       position:absolute;
-      left:-18px;
-      bottom:-18px;
-      width:145px;
-      height:72px;
-      background:rgba(163, 194, 233, 0.16);
-      border-radius:70px 70px 0 0;
+      left:-30px;
+      bottom:-45px;
+      width:120px;
+      height:120px;
+      background:rgba(114, 169, 255, 0.06);
+      border-radius:50%;
     }
 
     .hero-top{
-      position:relative;
-      z-index:2;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 14px;
-      background:#e7f0fb;
-      border-radius:999px;
-      font-size:13px;
-      font-weight:700;
-      color:var(--text);
-      margin-bottom:18px;
-    }
-
-    .hero-top .dot{
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      background:#5f97e8;
-      flex-shrink:0;
-    }
-
-    .logo{
-      position:relative;
-      z-index:2;
-      width:90px;
-      margin-bottom:12px;
-      display:block;
-    }
-
-    .hero h1{
-      position:relative;
-      z-index:2;
-      margin:0;
-      line-height:0.95;
-      font-size:42px;
-      font-weight:900;
-      letter-spacing:-1.4px;
-    }
-
-    .hero h1 span{
-      color:#3684ea;
-      display:block;
-    }
-
-    .hero-desc{
-      position:relative;
-      z-index:2;
-      margin-top:16px;
-      font-size:17px;
-      line-height:1.55;
-      font-weight:700;
-      color:#27466d;
-      word-break:keep-all;
-    }
-
-    .hero-desc .accent{
-      color:#3177df;
-    }
-
-    .characters{
-      position:relative;
-      z-index:2;
-      margin-top:18px;
-      display:flex;
-      justify-content:center;
-      align-items:flex-end;
-      gap:18px;
-    }
-
-    .characters img{
-      width:88px;
-      height:auto;
-      display:block;
-      object-fit:contain;
-      filter:drop-shadow(0 6px 10px rgba(50,80,120,0.10));
-    }
-
-    .section-card{
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:18px 16px;
-      margin-top:16px;
-      box-shadow:var(--shadow);
-    }
-
-    .section-title{
-      margin:0 0 6px;
-      font-size:23px;
-      font-weight:900;
-      line-height:1.2;
-      letter-spacing:-0.6px;
-      color:var(--text);
-      word-break:keep-all;
-    }
-
-    .section-sub{
-      margin:0 0 14px;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.5;
-      word-break:keep-all;
-    }
-
-    .required-wrap{
-      background:#f8fbff;
-      border:1px solid #dce8f4;
-      border-radius:18px;
-      padding:14px;
-    }
-
-    .required-head{
       display:flex;
       align-items:flex-start;
+      justify-content:space-between;
       gap:12px;
+      position:relative;
+      z-index:2;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      font-size:12px;
+      font-weight:700;
+      color:#1d4d8f;
+      margin-bottom:10px;
+    }
+
+    .brand-dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#2f78dc;
+      flex:0 0 auto;
+    }
+
+    .hero-title{
+      margin:0;
+      line-height:0.95;
+      font-weight:900;
+      letter-spacing:-0.5px;
+      color:#1a3f75;
+      font-size:19px;
+    }
+
+    .hero-title .big{
+      display:block;
+      font-size:28px;
+      color:#0f4fae;
+      margin-top:2px;
+    }
+
+    .hero-sub{
+      margin:10px 0 0;
+      font-size:12px;
+      line-height:1.55;
+      color:#57708b;
+      font-weight:600;
+    }
+
+    .hero-sub .accent{
+      color:#2f78dc;
+      font-weight:800;
+    }
+
+    .hero-image{
+      width:138px;
+      max-width:42%;
+      object-fit:contain;
+      display:block;
+      position:relative;
+      z-index:2;
+    }
+
+    .section{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      padding:14px;
       margin-bottom:14px;
     }
 
-    .icon-box{
-      width:52px;
-      height:52px;
-      border-radius:16px;
-      background:#e8f0ff;
-      border:1px solid #cadcf8;
+    .section-title{
+      display:flex;
+      align-items:flex-start;
+      gap:8px;
+      margin-bottom:12px;
+    }
+
+    .section-title .num{
+      width:22px;
+      height:22px;
+      border-radius:7px;
+      background:#eff4fb;
+      color:#4e6f97;
       display:flex;
       align-items:center;
       justify-content:center;
-      flex-shrink:0;
+      font-size:12px;
+      font-weight:800;
+      flex:0 0 auto;
+      margin-top:1px;
     }
 
-    .icon-box svg{
-      width:24px;
-      height:24px;
-      stroke:#497fde;
-      stroke-width:2;
-      fill:none;
-    }
-
-    .required-head h3{
-      margin:0 0 4px;
-      font-size:18px;
-      font-weight:900;
-      line-height:1.3;
-      color:var(--text);
-    }
-
-    .required-head p{
+    .section-title h2{
       margin:0;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.5;
+      font-size:15px;
+      line-height:1.35;
+      font-weight:800;
+      color:#2a4365;
     }
 
-    .doc-grid{
+    .section-title p{
+      margin:3px 0 0;
+      font-size:11px;
+      color:var(--muted);
+      line-height:1.45;
+    }
+
+    .apply-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:12px;
+      gap:10px;
     }
 
-    .doc-btn{
+    .apply-card{
+      border:1px solid #e5edf6;
+      background:#fbfdff;
+      border-radius:14px;
+      padding:12px 12px;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:10px;
-      min-height:76px;
-      border-radius:18px;
-      padding:14px 14px;
       text-decoration:none;
-      color:var(--text);
-      background:#fff;
-      border:1px solid #d8e6f0;
-      box-shadow:0 4px 10px rgba(50,80,120,0.04);
+      color:inherit;
+      transition:.18s ease;
+      min-height:64px;
     }
 
-    .doc-left{
+    .apply-card:hover{
+      transform:translateY(-1px);
+      box-shadow:0 8px 18px rgba(66, 105, 150, 0.08);
+    }
+
+    .apply-left{
       display:flex;
       align-items:center;
       gap:10px;
       min-width:0;
     }
 
-    .doc-ico{
-      width:40px;
-      height:40px;
-      border-radius:14px;
+    .apply-icon{
+      width:34px;
+      height:34px;
+      border-radius:10px;
       display:flex;
       align-items:center;
       justify-content:center;
-      flex-shrink:0;
+      font-size:17px;
+      font-weight:700;
+      flex:0 0 auto;
     }
 
-    .doc-ico svg{
-      width:20px;
-      height:20px;
-      stroke-width:2;
-      fill:none;
+    .apply-icon.green{
+      background:var(--green-soft);
+      color:var(--green);
     }
 
-    .doc-btn.green .doc-ico{
-      background:#ecf8f0;
-      border:1px solid #cde6d5;
-    }
-    .doc-btn.green .doc-ico svg{
-      stroke:#4aa26f;
+    .apply-icon.purple{
+      background:var(--purple-soft);
+      color:var(--purple);
     }
 
-    .doc-btn.purple .doc-ico{
-      background:#f4efff;
-      border:1px solid #ddd1fb;
-    }
-    .doc-btn.purple .doc-ico svg{
-      stroke:#8a67da;
+    .apply-text{
+      min-width:0;
     }
 
-    .doc-text{
-      font-size:14px;
-      font-weight:800;
-      line-height:1.4;
+    .apply-text strong{
+      display:block;
+      font-size:12px;
+      line-height:1.35;
+      color:#24415f;
       word-break:keep-all;
     }
 
     .arrow{
-      color:#7f90a5;
-      font-size:18px;
+      color:#9eb0c2;
+      font-size:16px;
       font-weight:700;
-      flex-shrink:0;
+      flex:0 0 auto;
     }
 
     .program-list{
       display:flex;
       flex-direction:column;
-      gap:14px;
+      gap:10px;
     }
 
-    .program-card{
-      border-radius:24px;
-      padding:16px;
-      border:1px solid;
+    .program-item{
+      border:1px solid #e6edf5;
+      border-radius:14px;
+      padding:12px;
+      display:grid;
+      grid-template-columns:44px 1fr auto;
+      gap:12px;
+      align-items:center;
+      background:#fff;
     }
 
-    .program-card.blue{
-      background:var(--blue-soft);
-      border-color:var(--blue-line);
-    }
-
-    .program-card.green{
-      background:var(--green-soft);
-      border-color:var(--green-line);
-    }
-
-    .program-card.purple{
-      background:var(--purple-soft);
-      border-color:var(--purple-line);
-    }
-
-    .program-card.orange{
-      background:var(--orange-soft);
-      border-color:var(--orange-line);
-    }
-
-    .badge{
-      display:inline-flex;
+    .p-icon{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      display:flex;
       align-items:center;
       justify-content:center;
-      padding:6px 12px;
-      border-radius:999px;
-      font-size:12px;
-      font-weight:800;
-      margin-bottom:12px;
-    }
-
-    .blue .badge{
-      background:#dceaff;
-      color:#2e72db;
-    }
-
-    .green .badge{
-      background:#dff2e7;
-      color:#338d5c;
-    }
-
-    .purple .badge{
-      background:#e8defd;
-      color:#7656d6;
-    }
-
-    .orange .badge{
-      background:#ffebcc;
-      color:#ce7b00;
-    }
-
-    .program-card h3{
-      margin:0 0 8px;
       font-size:20px;
-      font-weight:900;
-      line-height:1.25;
-      color:var(--text);
-      word-break:keep-all;
+      font-weight:700;
     }
 
-    .program-card .desc{
-      margin:0 0 10px;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.5;
-      word-break:keep-all;
+    .p-icon.blue{background:var(--blue-soft); color:var(--blue);}
+    .p-icon.green{background:var(--green-soft); color:var(--green);}
+    .p-icon.purple{background:var(--purple-soft); color:var(--purple);}
+    .p-icon.orange{background:var(--orange-soft); color:var(--orange);}
+    .p-icon.pink{background:var(--pink-soft); color:var(--pink);}
+
+    .program-text{
+      min-width:0;
     }
 
-    .program-card .highlight{
-      margin:0 0 10px;
-      color:#2f76df;
-      font-size:15px;
-      font-weight:800;
-      line-height:1.6;
-      word-break:keep-all;
-    }
-
-    .program-card .note{
-      margin:0 0 14px;
-      color:#6b7f92;
-      font-size:13px;
-      line-height:1.6;
-      word-break:keep-all;
-    }
-
-    .cta{
+    .program-text strong{
       display:block;
-      width:100%;
-      text-align:center;
-      text-decoration:none;
-      color:#fff;
-      font-size:16px;
-      font-weight:900;
-      padding:14px 14px;
-      border-radius:18px;
-      box-shadow:0 6px 16px rgba(0,0,0,0.08);
-    }
-
-    .blue .cta{ background:linear-gradient(90deg,#2892e1,#2380d6); }
-    .green .cta{ background:linear-gradient(90deg,#24b26e,#1ea25f); }
-    .purple .cta{ background:linear-gradient(90deg,#7e67ec,#6b55da); }
-    .orange .cta{ background:linear-gradient(90deg,#f2a120,#ec9710); }
-
-    .guide-note{
-      margin-top:10px;
       font-size:13px;
-      color:#788899;
-      line-height:1.5;
-      text-align:center;
+      color:#27415f;
+      margin-bottom:3px;
       word-break:keep-all;
     }
 
-    .steps-grid{
+    .program-text span{
+      display:block;
+      font-size:11px;
+      color:var(--muted);
+      line-height:1.45;
+      word-break:keep-all;
+    }
+
+    .mini-btn{
+      border:none;
+      color:#fff;
+      border-radius:999px;
+      padding:9px 14px;
+      font-size:11px;
+      font-weight:800;
+      cursor:pointer;
+      min-width:72px;
+      white-space:nowrap;
+    }
+
+    .mini-btn.blue{background:var(--blue);}
+    .mini-btn.green{background:var(--green);}
+    .mini-btn.purple{background:var(--purple);}
+    .mini-btn.orange{background:var(--orange);}
+    .mini-btn.pink{background:var(--pink);}
+
+    .step-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
-
-    .step-box{
-      border-radius:22px;
-      padding:16px 14px;
-      border:1px solid;
-      min-height:232px;
-    }
-
-    .step-box.green{
-      background:#f0f8f3;
-      border-color:#cfe5d7;
-    }
-
-    .step-box.purple{
-      background:#f7f4ff;
-      border-color:#ddd2fb;
-    }
-
-    .step-box.blue{
-      background:#eff5ff;
-      border-color:#cfe0fb;
-    }
-
-    .step-box.pink{
-      background:#fff3f6;
-      border-color:#f4d6dd;
-    }
-
-    .step-label{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      font-size:14px;
-      font-weight:900;
-      margin-bottom:10px;
-      color:#2e6fd6;
-    }
-
-    .step-label::before{
-      content:"";
-      width:4px;
-      height:22px;
-      border-radius:999px;
-      background:currentColor;
-      display:block;
-    }
-
-    .step-box.green .step-label{ color:#33985f; }
-    .step-box.purple .step-label{ color:#7656d6; }
-    .step-box.blue .step-label{ color:#2f76df; }
-    .step-box.pink .step-label{ color:#df5f82; }
-
-    .step-title{
-      margin:0 0 12px;
-      font-size:18px;
-      font-weight:900;
-      line-height:1.25;
-      color:var(--text);
-      word-break:keep-all;
-    }
-
-    .step-list{
-      margin:0;
-      padding-left:18px;
-      color:#1d2f45;
-    }
-
-    .step-list li{
-      margin-bottom:8px;
-      font-size:14px;
-      line-height:1.45;
-      word-break:keep-all;
-    }
-
-    .apply-box{
-      background:#f8fbff;
-      border:1px solid #d8e6f2;
-      border-radius:22px;
-      padding:16px;
-    }
-
-    .apply-head{
-      display:flex;
-      align-items:flex-start;
-      gap:12px;
-      margin-bottom:14px;
-    }
-
-    .apply-title{
-      margin:0 0 6px;
-      font-size:18px;
-      font-weight:900;
-      line-height:1.3;
-      color:var(--text);
-    }
-
-    .apply-link{
-      color:#2f76df;
-      font-size:14px;
-      font-weight:700;
-      word-break:break-all;
-      text-decoration:underline;
-    }
-
-    .flow{
-      display:grid;
-      grid-template-columns:repeat(5,1fr);
       gap:10px;
-      margin:14px 0 16px;
     }
 
-    .flow-step{
-      text-align:center;
-      font-size:12px;
-      line-height:1.45;
-      color:#28415d;
-      word-break:keep-all;
+    .step-card{
+      border-radius:16px;
+      padding:12px;
+      border:1px solid #e6edf6;
+      background:#fcfdff;
+      min-height:128px;
     }
 
-    .flow-num{
-      width:28px;
-      height:28px;
-      border-radius:50%;
-      margin:0 auto 8px;
+    .step-card .step{
+      font-size:11px;
+      font-weight:900;
+      margin-bottom:8px;
+      letter-spacing:.2px;
+    }
+
+    .step-card h3{
+      margin:0 0 8px;
+      font-size:13px;
+      line-height:1.35;
+      color:#294361;
+      font-weight:800;
+    }
+
+    .step-card ul{
+      margin:0;
+      padding-left:16px;
+    }
+
+    .step-card li{
+      font-size:10.5px;
+      line-height:1.55;
+      color:#6b8098;
+      margin-bottom:2px;
+    }
+
+    .step-card.green{background:#f4fbf6;}
+    .step-card.purple{background:#f7f4ff;}
+    .step-card.blue{background:#f2f7ff;}
+    .step-card.pink{background:#fff4f8;}
+
+    .step-card.green .step{color:var(--green);}
+    .step-card.purple .step{color:var(--purple);}
+    .step-card.blue .step{color:var(--blue);}
+    .step-card.pink .step{color:var(--pink);}
+
+    .notice-box{
+      border:1px solid #e6edf5;
+      background:#fbfdff;
+      border-radius:16px;
+      padding:12px;
+      display:grid;
+      grid-template-columns:44px 1fr auto;
+      gap:12px;
+      align-items:center;
+    }
+
+    .notice-icon{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      background:var(--blue-soft);
+      color:var(--blue);
       display:flex;
       align-items:center;
       justify-content:center;
-      background:#dfeafe;
-      color:#2f76df;
-      font-weight:900;
+      font-size:20px;
+      font-weight:700;
+    }
+
+    .notice-text strong{
+      display:block;
       font-size:13px;
+      margin-bottom:3px;
+      color:#27415f;
     }
 
-    .apply-btn{
-      display:inline-block;
-      min-width:114px;
-      text-align:center;
+    .notice-text span,
+    .notice-text a{
+      font-size:11px;
+      line-height:1.45;
+      color:var(--muted);
       text-decoration:none;
-      color:#fff;
-      background:linear-gradient(90deg,#2d8be2,#287ad6);
-      font-size:16px;
-      font-weight:900;
-      padding:14px 22px;
-      border-radius:18px;
-      box-shadow:0 8px 16px rgba(42,122,214,0.18);
+      word-break:break-all;
     }
 
-    @media (max-width:390px){
-      .hero h1{font-size:36px;}
-      .doc-grid{grid-template-columns:1fr;}
-      .steps-grid{grid-template-columns:1fr;}
-      .flow{grid-template-columns:1fr 1fr 1fr; row-gap:12px;}
+    .notice-btn{
+      background:var(--blue);
+      color:#fff;
+      text-decoration:none;
+      border-radius:999px;
+      padding:9px 14px;
+      font-size:11px;
+      font-weight:800;
+      white-space:nowrap;
+    }
+
+    .caption{
+      margin-top:8px;
+      text-align:center;
+      font-size:10px;
+      color:#8798aa;
+      line-height:1.5;
+    }
+
+    @media (max-width:380px){
+      .apply-grid,
+      .step-grid{
+        grid-template-columns:1fr;
+      }
+
+      .program-item,
+      .notice-box{
+        grid-template-columns:44px 1fr;
+      }
+
+      .mini-btn,
+      .notice-btn{
+        grid-column:1 / -1;
+        width:100%;
+        text-align:center;
+      }
+
+      .hero-title{
+        font-size:17px;
+      }
+
+      .hero-title .big{
+        font-size:24px;
+      }
     }
   </style>
 </head>
 <body>
-  <main class="page">
+  <div class="page">
 
+    <!-- 상단 배너 -->
     <section class="hero">
       <div class="hero-top">
-        <span class="dot"></span>
-        <span>삼육대학교</span>
-      </div>
+        <div class="hero-copy">
+          <div class="brand">
+            <span class="brand-dot"></span>
+            <span>삼육대학교</span>
+          </div>
+          <h1 class="hero-title">
+            ONE-PASS
+            <span class="big">LOUNGE</span>
+          </h1>
+          <p class="hero-sub">
+            졸업생(예정)자 및 지역 청년을 위한<br />
+            <span class="accent">취업, 진로, 통합 프로그램</span>
+          </p>
+        </div>
 
-      <img class="logo" src="syu-logo.png" alt="삼육대학교 로고" />
-
-      <h1>ONE-PASS <span>LOUNGE</span></h1>
-
-      <div class="hero-desc">
-        졸업(예정)자 및 지역 청년을 위한<br />
-        <span class="accent">취업, 진로, 통합 프로그램</span>
-      </div>
-
-      <div class="characters">
-        <img src="suya.png" alt="수아 캐릭터" />
-        <img src="suho.png" alt="수호 캐릭터" />
+        <!-- 캐릭터/배너 이미지 파일명 맞춰서 사용 -->
+        <img src="suya.png" alt="ONE-PASS 라운지 캐릭터" class="hero-image" />
       </div>
     </section>
 
-    <section class="section-card">
-      <h2 class="section-title">1. 필수 서류 작성</h2>
-      <p class="section-sub">프로그램 참여를 위해 아래 서류 2가지를 먼저 작성해주세요.</p>
-
-      <div class="required-wrap">
-        <div class="required-head">
-          <div class="icon-box">
-            <svg viewBox="0 0 24 24">
-              <rect x="5" y="4" width="14" height="16" rx="2"></rect>
-              <path d="M9 2v4"></path>
-              <path d="M15 2v4"></path>
-              <path d="M5 9h14"></path>
-              <path d="M9 13h6"></path>
-            </svg>
-          </div>
-          <div>
-            <h3>필수 신청서 먼저 작성</h3>
-            <p>두 신청서 작성 완료 후 컨설팅 및 프로그램 참여가 가능합니다.</p>
-          </div>
+    <!-- 1. 필수 신청서 -->
+    <section class="section">
+      <div class="section-title">
+        <div class="num">1</div>
+        <div>
+          <h2>필수 서류 작성</h2>
+          <p>프로그램 참여를 위해 아래 신청서를 먼저 작성해 주세요.</p>
         </div>
+      </div>
 
-        <div class="doc-grid">
-          <a class="doc-btn green" href="#" target="_blank">
-            <div class="doc-left">
-              <div class="doc-ico">
-                <svg viewBox="0 0 24 24">
-                  <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path>
-                  <path d="M14 3v5h5"></path>
-                </svg>
-              </div>
-              <div class="doc-text">졸업생특화프로그램 신청서</div>
+      <div class="apply-grid">
+        <a href="https://buly.kr/YgHS2J" class="apply-card" target="_blank">
+          <div class="apply-left">
+            <div class="apply-icon green">📝</div>
+            <div class="apply-text">
+              <strong>졸업생특화프로그램 신청서</strong>
             </div>
-            <div class="arrow">›</div>
-          </a>
+          </div>
+          <span class="arrow">›</span>
+        </a>
 
-          <a class="doc-btn purple" href="#" target="_blank">
-            <div class="doc-left">
-              <div class="doc-ico">
-                <svg viewBox="0 0 24 24">
-                  <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path>
-                  <path d="M14 3v5h5"></path>
-                </svg>
-              </div>
-              <div class="doc-text">삼육ONE_PASS 신청서</div>
+        <a href="#" class="apply-card" target="_blank">
+          <div class="apply-left">
+            <div class="apply-icon purple">📄</div>
+            <div class="apply-text">
+              <strong>취업ONE_PASS 신청서</strong>
             </div>
-            <div class="arrow">›</div>
-          </a>
-        </div>
+          </div>
+          <span class="arrow">›</span>
+        </a>
       </div>
     </section>
 
-    <section class="section-card">
-      <h2 class="section-title">2. 현재 진행중인 참여 가능한 프로그램 안내</h2>
-      <p class="section-sub">지금 참여할 수 있는 프로그램을 확인하고 바로 신청해보세요.</p>
+    <!-- 2. 진행중 프로그램 -->
+    <section class="section">
+      <div class="section-title">
+        <div class="num">2</div>
+        <div>
+          <h2>현재 진행중인 참여 가능 프로그램 안내</h2>
+          <p>지금 신청할 수 있는 프로그램을 확인해보세요.</p>
+        </div>
+      </div>
 
       <div class="program-list">
-        <article class="program-card blue">
-          <div class="badge">진행중</div>
-          <h3>연계 프로그램</h3>
-          <p class="desc">다양한 기관과 연계된 프로그램</p>
-          <p class="highlight">미래내일일경험 · 종로여인력센터 · 메인비즈 · 인턴 · 구글코리아 등</p>
-          <p class="note">연계 프로그램 모집 일정에 따라 수시 안내<br />세부 참여 링크는 프로그램별 순차 오픈 예정</p>
-          <a class="cta" href="#" target="_blank">신청 바로가기</a>
-        </article>
 
-        <article class="program-card green">
-          <div class="badge">진행중</div>
-          <h3>면접 프로그램</h3>
-          <p class="desc">면접 역량 강화를 위한 특강 및 실전 프로그램</p>
-          <p class="highlight">면접 특강 · 모의면접 · 실전 대비 프로그램</p>
-          <p class="note">운영 일정은 프로그램별 상이<br />특강 오픈 시 신청 페이지 연결</p>
-          <a class="cta" href="#" target="_blank">신청 바로가기</a>
-        </article>
+        <div class="program-item">
+          <div class="p-icon blue">👥</div>
+          <div class="program-text">
+            <strong>현직 채용연계 프로그램</strong>
+            <span>기업·직무 기반 프로그램과 현장형 연계 지원</span>
+          </div>
+          <button class="mini-btn blue">신청하기</button>
+        </div>
 
-        <article class="program-card purple">
-          <div class="badge">진행중</div>
-          <h3>지원서 작성 특강</h3>
-          <p class="desc">합격하는 자기소개서 및 입사지원서 작성 노하우</p>
-          <p class="highlight">입사서류 클리닉 · 지원서 작성 특강</p>
-          <p class="note">프로그램 오픈 시 신청 페이지 연결 예정<br />실전형 첨삭 및 작성법 중심 운영</p>
-          <a class="cta" href="#" target="_blank">신청 바로가기</a>
-        </article>
+        <div class="program-item">
+          <div class="p-icon green">🎤</div>
+          <div class="program-text">
+            <strong>면접</strong>
+            <span>실전 면접 대비를 위한 맞춤형 면접 프로그램</span>
+          </div>
+          <button class="mini-btn green">신청하기</button>
+        </div>
 
-        <article class="program-card orange">
-          <div class="badge">오픈예정</div>
-          <h3>자격증 과정</h3>
-          <p class="desc">취업 경쟁력 강화를 위한 자격증 취득 과정</p>
-          <p class="highlight">자격증 취득 과정 · 취업 역량 강화 프로그램</p>
-          <p class="note">과정별 일정 및 모집 시기 별도 공지<br />접수 링크 오픈 후 바로 신청 가능</p>
-          <a class="cta" href="#" target="_blank">신청 바로가기</a>
-        </article>
+        <div class="program-item">
+          <div class="p-icon purple">✍️</div>
+          <div class="program-text">
+            <strong>진로설계 직무 특강</strong>
+            <span>직무이해부터 자기소개서 작성까지 핵심 특강</span>
+          </div>
+          <button class="mini-btn purple">신청하기</button>
+        </div>
+
+        <div class="program-item">
+          <div class="p-icon orange">💼</div>
+          <div class="program-text">
+            <strong>자격증 과정</strong>
+            <span>취업 역량 강화를 위한 자격증 취득 과정</span>
+          </div>
+          <button class="mini-btn orange">신청하기</button>
+        </div>
+
+        <div class="program-item">
+          <div class="p-icon pink">🌐</div>
+          <div class="program-text">
+            <strong>AI 및 다양한 프로그램</strong>
+            <span>진로·취업·역량 강화를 돕는 다양한 프로그램 참여 기회</span>
+          </div>
+          <button class="mini-btn pink">신청하기</button>
+        </div>
+
       </div>
-
-      <div class="guide-note">※ 프로그램 일정 및 내용은 상황에 따라 변경될 수 있습니다.</div>
     </section>
 
-    <section class="section-card">
-      <h2 class="section-title">3. 2026 졸특 프로그램</h2>
-      <p class="section-sub">삼육대학교 졸업(예정)자 및 지역 청년을 위한 체계적인 취업 준비 4단계 프로그램입니다.</p>
+    <!-- 3. 프로그램 단계 -->
+    <section class="section">
+      <div class="section-title">
+        <div class="num">3</div>
+        <div>
+          <h2>2026 졸업 프로그램</h2>
+          <p>희망하는 방향에 맞춰 단계별로 참여할 수 있도록 구성했습니다.</p>
+        </div>
+      </div>
 
-      <div class="steps-grid">
-        <article class="step-box green">
-          <div class="step-label">STEP 1</div>
-          <h3 class="step-title">BUILD | 역량</h3>
-          <ul class="step-list">
-            <li>자격증 취득 과정</li>
-            <li>자기분석</li>
-            <li>직무분석 특강</li>
-            <li>지원서 특강</li>
-            <li>면접 특강</li>
-            <li>채용 트렌드 분석</li>
+      <div class="step-grid">
+        <div class="step-card green">
+          <div class="step">STEP 1 | BUILD</div>
+          <h3>기초 준비</h3>
+          <ul>
+            <li>자기이해</li>
+            <li>직무탐색</li>
+            <li>서류초안 작성</li>
+            <li>취업정보 점검</li>
           </ul>
-        </article>
+        </div>
 
-        <article class="step-box purple">
-          <div class="step-label">STEP 2</div>
-          <h3 class="step-title">UPGRADE | 클리닉</h3>
-          <ul class="step-list">
-            <li>진로/취업상담</li>
+        <div class="step-card purple">
+          <div class="step">STEP 2 | UPGRADE</div>
+          <h3>역량 강화</h3>
+          <ul>
             <li>Career Planning</li>
-            <li>입사서류 클리닉</li>
-            <li>면접 클리닉</li>
+            <li>직무역량 특강</li>
+            <li>입사서류 보완</li>
+            <li>면접 준비</li>
           </ul>
-        </article>
+        </div>
 
-        <article class="step-box blue">
-          <div class="step-label">STEP 3</div>
-          <h3 class="step-title">CONNECT | 연계</h3>
-          <ul class="step-list">
-            <li>추천채용</li>
-            <li>일반채용</li>
-            <li>정부/지자체 인턴(일경험)</li>
-            <li>직무교육</li>
-            <li>프로젝트</li>
-            <li>기업설명회</li>
-            <li>채용설명회</li>
+        <div class="step-card blue">
+          <div class="step">STEP 3 | CONNECT</div>
+          <h3>취업 연계</h3>
+          <ul>
+            <li>채용정보</li>
+            <li>현장실무 연계</li>
+            <li>직무 매칭</li>
+            <li>프로그램 추천</li>
           </ul>
-        </article>
+        </div>
 
-        <article class="step-box pink">
-          <div class="step-label">STEP 4</div>
-          <h3 class="step-title">FINAL | 준비</h3>
-          <ul class="step-list">
-            <li>AI 실전면접</li>
-            <li>AI Skilling</li>
-            <li>모의면접</li>
-            <li>AI 인적성(잡플렉스)</li>
-            <li>대기업/온라인 인적성</li>
-            <li>잡플래닛</li>
+        <div class="step-card pink">
+          <div class="step">STEP 4 | FINAL</div>
+          <h3>최종 지원</h3>
+          <ul>
+            <li>AI 모의면접</li>
+            <li>최종 피드백</li>
+            <li>취업 연계</li>
+            <li>사후관리</li>
           </ul>
-        </article>
+        </div>
       </div>
 
-      <div class="guide-note">※ 세부 내용은 상황에 따라 변경될 수 있습니다.</div>
-    </section>
-
-    <section class="section-card">
-      <h2 class="section-title">4. 참여 방법 안내</h2>
-      <p class="section-sub">컨설팅 신청 방법을 아래 순서대로 확인해주세요.</p>
-
-      <div class="apply-box">
-        <div class="apply-head">
-          <div class="icon-box">
-            <svg viewBox="0 0 24 24">
-              <circle cx="9" cy="8" r="3"></circle>
-              <path d="M4 19c0-2.8 2.2-5 5-5"></path>
-              <circle cx="17" cy="10" r="3"></circle>
-              <path d="M13 19c.3-2.3 2.3-4 4.7-4 1 0 2 .3 2.8.8"></path>
-            </svg>
-          </div>
-          <div>
-            <h3 class="apply-title">컨설팅 신청</h3>
-            <a class="apply-link" href="https://su-plus.syu.ac.kr/" target="_blank">https://su-plus.syu.ac.kr/</a>
-          </div>
-        </div>
-
-        <div class="flow">
-          <div class="flow-step">
-            <div class="flow-num">1</div>
-            SU-Plus<br />접속 및 로그인
-          </div>
-          <div class="flow-step">
-            <div class="flow-num">2</div>
-            대학일자리<br />플러스센터
-          </div>
-          <div class="flow-step">
-            <div class="flow-num">3</div>
-            진로 및 취·창업<br />상담
-          </div>
-          <div class="flow-step">
-            <div class="flow-num">4</div>
-            컨설턴트<br />선택
-          </div>
-          <div class="flow-step">
-            <div class="flow-num">5</div>
-            날짜 및 시간<br />선택
-          </div>
-        </div>
-
-        <a class="apply-btn" href="https://su-plus.syu.ac.kr/" target="_blank">바로가기</a>
+      <div class="caption">
+        ※ 세부 내용은 운영 상황에 따라 일부 변동될 수 있습니다.
       </div>
     </section>
 
-  </main>
+    <!-- 4. 참여 방법 -->
+    <section class="section">
+      <div class="section-title">
+        <div class="num">4</div>
+        <div>
+          <h2>참여 방법 안내</h2>
+          <p>프로그램 신청 및 진행은 아래 링크를 통해 확인해주세요.</p>
+        </div>
+      </div>
+
+      <div class="notice-box">
+        <div class="notice-icon">🔗</div>
+        <div class="notice-text">
+          <strong>취업ONE_PASS 바로가기</strong>
+          <a href="https://syu.jobsy.co.kr/" target="_blank">https://syu.jobsy.co.kr/</a>
+          <br />
+          <span>회원가입 후 프로그램 신청 및 이력 확인 가능</span>
+        </div>
+        <a class="notice-btn" href="https://syu.jobsy.co.kr/" target="_blank">바로가기</a>
+      </div>
+
+      <div class="caption">
+        ※ 프로그램별 세부 공지사항과 신청 링크는 운영 상황에 따라 추가 안내됩니다.
+      </div>
+    </section>
+
+  </div>
 </body>
 </html>
