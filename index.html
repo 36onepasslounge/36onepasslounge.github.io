@@ -9,11 +9,11 @@
   <meta property="og:title" content="삼육대학교 ONE-PASS LOUNGE" />
   <meta property="og:description" content="졸업(예정)자 및 지역 청년을 위한 취업, 진로, 통합 프로그램" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://36onepasslounge.github.io/onepass-banner.png" />
+  <meta property="og:image" content="https://36onepasslounge.github.io/banner-final.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://36onepasslounge.github.io/onepass-banner.png" />
+  <meta name="twitter:image" content="https://36onepasslounge.github.io/banner-final.png" />
 
   <style>
     :root{
@@ -66,206 +66,34 @@
       max-width:430px;
     }
 
-    /* 배너 */
-    .hero{
-      position:relative;
-      overflow:hidden;
-      background:linear-gradient(180deg,#f8fbff 0%,#edf4fb 100%);
-      border:1px solid #e3ecf6;
-      border-radius:28px;
-      padding:16px 16px 14px;
-      box-shadow:var(--shadow);
+    /* 상단 배너 이미지 */
+    .hero-banner{
       margin-bottom:14px;
     }
 
-    .hero::before{
-      content:"";
-      position:absolute;
-      right:-22px;
-      top:-10px;
-      width:140px;
-      height:140px;
-      border-radius:50%;
-      background:rgba(92,157,255,.10);
-    }
-
-    .hero::after{
-      content:"";
-      position:absolute;
-      left:-35px;
-      bottom:-50px;
-      width:118px;
-      height:118px;
-      border-radius:50%;
-      background:rgba(92,157,255,.06);
-    }
-
-    .hero-top{
-      position:relative;
-      z-index:2;
-      display:flex;
-      justify-content:flex-start;
-      align-items:flex-start;
-      gap:0;
-    }
-
-    .hero-copy{
-      flex:1;
-      min-width:0;
-      padding-top:2px;
-      margin-right:-10px;
-      position:relative;
-      z-index:2;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:6px;
-      margin-bottom:10px;
-    }
-
-    .brand-logo{
-      width:18px;
-      height:18px;
-      object-fit:contain;
+    .hero-banner img{
+      width:100%;
       display:block;
-      border-radius:50%;
-      flex:0 0 auto;
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      border:1px solid #e3ecf6;
+      background:#fff;
     }
 
-    .brand-text{
-      font-size:12px;
-      font-weight:800;
-      color:#284f84;
-      letter-spacing:-0.2px;
+    /* 대표 이미지 */
+    .feature-image{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      padding:10px;
+      margin-bottom:14px;
     }
 
-    .hero-title{
-      margin:0;
-      line-height:.9;
-      font-size:24px;
-      font-weight:900;
-      letter-spacing:-1px;
-      color:var(--navy);
-    }
-
-    .hero-title .blue{
+    .feature-image img{
+      width:100%;
       display:block;
-      color:var(--blue);
-      margin-top:2px;
-    }
-
-    .hero-sub{
-      margin:12px 0 0;
-      font-size:11px;
-      line-height:1.55;
-      color:#5e748e;
-      font-weight:700;
-      word-break:keep-all;
-    }
-
-    .hero-sub .accent{
-      color:#2c7fe3;
-      font-weight:800;
-    }
-
-    .hero-art{
-      position:relative;
-      flex:0 0 auto;
-      width:145px;
-      height:120px;
-      margin-left:-8px;
-    }
-
-    .hero-circle{
-      position:absolute;
-      right:-18px;
-      top:-4px;
-      width:118px;
-      height:118px;
-      border-radius:50%;
-      background:rgba(185,208,247,.35);
-    }
-
-    .hero-icon{
-      position:absolute;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:50%;
-      font-size:14px;
-      box-shadow:0 4px 10px rgba(70,105,150,.08);
-      z-index:1;
-    }
-
-    .icon-blue{
-      width:28px;
-      height:28px;
-      right:72px;
-      top:2px;
-      background:#f1f6ff;
-      color:#7c95b6;
-    }
-
-    .icon-green{
-      width:28px;
-      height:28px;
-      right:18px;
-      top:22px;
-      background:#eef9f4;
-      color:#6bb48c;
-    }
-
-    .icon-yellow{
-      width:28px;
-      height:28px;
-      left:10px;
-      bottom:20px;
-      background:#fff8e7;
-      color:#d4aa4e;
-    }
-
-    .icon-purple{
-      width:24px;
-      height:24px;
-      left:52px;
-      bottom:2px;
-      background:#f6f1ff;
-      color:#8c72dc;
-      font-size:12px;
-    }
-
-    .hero-logo-mark{
-      position:absolute;
-      right:8px;
-      bottom:12px;
-      width:46px;
-      height:46px;
-      opacity:.16;
-      object-fit:contain;
-      z-index:0;
-    }
-
-    .char1,
-    .char2{
-      position:absolute;
-      display:block;
-      object-fit:contain;
-      z-index:2;
-      filter:drop-shadow(0 4px 10px rgba(70,105,150,.08));
-    }
-
-    .char1{
-      width:78px;
-      right:56px;
-      bottom:8px;
-    }
-
-    .char2{
-      width:72px;
-      right:6px;
-      bottom:4px;
+      border-radius:16px;
     }
 
     /* 공통 섹션 */
@@ -700,32 +528,9 @@
       }
 
       .program-actions .mini-btn,
-      .consult-actions .consult-btn{
-        width:100%;
-      }
-
+      .consult-actions .consult-btn,
       .openchat-btn-wrap .consult-btn{
         width:100%;
-      }
-
-      .hero-art{
-        width:128px;
-        height:112px;
-        margin-left:-10px;
-      }
-
-      .char1{
-        width:66px;
-        right:50px;
-      }
-
-      .char2{
-        width:62px;
-        right:4px;
-      }
-
-      .hero-title{
-        font-size:21px;
       }
     }
   </style>
@@ -734,36 +539,13 @@
   <div class="page">
 
     <!-- 상단 배너 -->
-    <section class="hero">
-      <div class="hero-top">
-        <div class="hero-copy">
-          <div class="brand">
-            <img src="syu-logo.png" alt="삼육대학교 로고" class="brand-logo">
-            <div class="brand-text">삼육대학교</div>
-          </div>
+    <section class="hero-banner">
+      <img src="banner-final.png" alt="삼육대학교 ONE-PASS LOUNGE 배너">
+    </section>
 
-          <h1 class="hero-title">
-            ONE-PASS
-            <span class="blue">LOUNGE</span>
-          </h1>
-
-          <p class="hero-sub">
-            졸업(예정)자 및 지역 청년을 위한<br>
-            <span class="accent">취업, 진로, 통합 프로그램</span>
-          </p>
-        </div>
-
-        <div class="hero-art">
-          <div class="hero-circle"></div>
-          <div class="hero-icon icon-blue">💼</div>
-          <div class="hero-icon icon-green">🔍</div>
-          <div class="hero-icon icon-yellow">📄</div>
-          <div class="hero-icon icon-purple">👥</div>
-          <img src="syu-logo.png" alt="" class="hero-logo-mark">
-          <img src="suya.png" alt="삼육대 캐릭터 수야" class="char1">
-          <img src="suho.png" alt="삼육대 캐릭터 수호" class="char2">
-        </div>
-      </div>
+    <!-- 대표 이미지 -->
+    <section class="feature-image">
+      <img src="banner-final.png" alt="삼육대학교 ONE-PASS LOUNGE 대표 이미지">
     </section>
 
     <!-- 1. 필수 작성 / 필수 입장 -->
@@ -857,7 +639,7 @@
           <div class="p-icon orange">💼</div>
           <div class="program-text">
             <strong>자격취득 프로그램</strong>
-            <span>IT자격증 취득을 위한 온라인 교육(컴활1·2급,ADsP)</span>
+            <span>IT자격증 취득을 위한 온라인 교육(컴활1·2급, ADsP)</span>
             <span class="program-note">※ 2가지 신청서를 작성해야 참여가 가능합니다.</span>
           </div>
           <div class="program-actions">
@@ -957,7 +739,7 @@
         <div class="consult-icon">📋</div>
         <div class="consult-text">
           <strong>진로,직무,취업 ONE_PASS컨설팅</strong>
-          <span>※ ON_PASS 신청서 작성, 상담신청 까지 완료시 참여 가능</span><br>
+          <span>※ ONE_PASS 신청서 작성, 상담신청까지 완료 시 참여 가능</span><br>
         </div>
         <div class="consult-actions">
           <a href="https://forms.gle/U93qBqVVxydpt8NZ7" target="_blank" rel="noopener noreferrer" class="consult-btn purple">ONE_PASS 신청서</a>
