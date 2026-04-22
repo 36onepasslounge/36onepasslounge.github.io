@@ -104,16 +104,16 @@
       position:relative;
       z-index:2;
       display:flex;
-      justify-content:flex-start; /* 수정 */
+      justify-content:flex-start;
       align-items:flex-start;
-      gap:0; /* 수정: 글씨와 캐릭터 사이 간격 축소 */
+      gap:0;
     }
 
     .hero-copy{
       flex:1;
       min-width:0;
       padding-top:2px;
-      margin-right:-10px; /* 수정: 캐릭터 영역을 조금 더 가깝게 */
+      margin-right:-10px;
       position:relative;
       z-index:2;
     }
@@ -173,9 +173,9 @@
     .hero-art{
       position:relative;
       flex:0 0 auto;
-      width:145px; /* 수정: 약간 줄여서 더 붙어 보이게 */
+      width:145px;
       height:120px;
-      margin-left:-8px; /* 수정: 글씨 영역 쪽으로 당김 */
+      margin-left:-8px;
     }
 
     .hero-circle{
@@ -258,13 +258,13 @@
 
     .char1{
       width:78px;
-      right:56px; /* 수정 */
+      right:56px;
       bottom:8px;
     }
 
     .char2{
       width:72px;
-      right:6px; /* 수정 */
+      right:6px;
       bottom:4px;
     }
 
@@ -378,6 +378,15 @@
       word-break:keep-all;
     }
 
+    .apply-note{
+      margin-top:10px;
+      font-size:10.5px;
+      line-height:1.55;
+      color:#7b8ea4;
+      text-align:center;
+      word-break:keep-all;
+    }
+
     .arrow{
       color:#9eb0c2;
       font-size:16px;
@@ -436,6 +445,21 @@
       word-break:keep-all;
     }
 
+    .program-note{
+      margin-top:4px;
+      font-size:10px !important;
+      color:#8ea0b4 !important;
+      line-height:1.45 !important;
+      font-weight:700;
+    }
+
+    .program-actions{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      align-items:flex-end;
+    }
+
     .mini-btn{
       display:inline-block;
       border:none;
@@ -444,7 +468,7 @@
       padding:9px 14px;
       font-size:11px;
       font-weight:800;
-      min-width:72px;
+      min-width:86px;
       white-space:nowrap;
       text-decoration:none;
       text-align:center;
@@ -548,8 +572,14 @@
       word-break:break-all;
     }
 
+    .consult-actions{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      align-items:flex-end;
+    }
+
     .consult-btn{
-      background:var(--blue);
       color:#fff;
       text-decoration:none;
       border-radius:999px;
@@ -557,7 +587,12 @@
       font-size:11px;
       font-weight:800;
       white-space:nowrap;
+      text-align:center;
+      min-width:92px;
     }
+
+    .consult-btn.blue{background:var(--blue);}
+    .consult-btn.purple{background:var(--purple);}
 
     .method-box{
       border:1px solid #e6edf5;
@@ -596,6 +631,48 @@
       flex:0 0 auto;
     }
 
+    /* 5번 */
+    .openchat-box{
+      border:1px solid #e6edf5;
+      background:#fbfdff;
+      border-radius:16px;
+      padding:14px;
+    }
+
+    .openchat-title{
+      margin:0 0 6px;
+      font-size:13px;
+      line-height:1.45;
+      color:#27415f;
+      font-weight:800;
+      word-break:keep-all;
+    }
+
+    .openchat-text{
+      margin:0 0 4px;
+      font-size:11px;
+      color:var(--muted);
+      line-height:1.55;
+      word-break:keep-all;
+    }
+
+    .openchat-code{
+      display:inline-block;
+      margin-top:6px;
+      padding:5px 10px;
+      border-radius:999px;
+      background:var(--purple-soft);
+      color:var(--purple);
+      font-size:11px;
+      font-weight:800;
+    }
+
+    .openchat-btn-wrap{
+      margin-top:12px;
+      display:flex;
+      justify-content:flex-end;
+    }
+
     .caption{
       margin-top:8px;
       text-align:center;
@@ -615,11 +692,20 @@
         grid-template-columns:44px 1fr;
       }
 
-      .mini-btn,
-      .consult-btn{
+      .program-actions,
+      .consult-actions,
+      .openchat-btn-wrap{
         grid-column:1 / -1;
         width:100%;
-        text-align:center;
+      }
+
+      .program-actions .mini-btn,
+      .consult-actions .consult-btn{
+        width:100%;
+      }
+
+      .openchat-btn-wrap .consult-btn{
+        width:100%;
       }
 
       .hero-art{
@@ -680,36 +766,43 @@
       </div>
     </section>
 
-    <!-- 1. 필수 신청서 -->
+    <!-- 1. 필수 작성 / 필수 입장 -->
     <section class="section">
       <div class="section-title">
         <div class="num">1</div>
         <div>
-          <h2>필수 서류 작성</h2>
-          <p>프로그램 참여를 위해 아래 신청서를 먼저 작성해 주세요.</p>
+          <h2>필수 작성 / 필수 입장</h2>
+          <p>프로그램 참여 전 아래 두 가지를 먼저 완료해 주세요.</p>
         </div>
       </div>
 
       <div class="apply-grid">
-        <a href="https://buly.kr/YgHS2J" class="apply-card" target="_blank" rel="noopener noreferrer">
+        <a href="https://forms.gle/fCz3WaVfGpvRxiGe6" class="apply-card" target="_blank" rel="noopener noreferrer">
           <div class="apply-left">
             <div class="apply-icon green">📝</div>
             <div class="apply-text">
-              <strong>졸업생특화프로그램 신청서</strong>
+              <strong>필수 작성</strong>
             </div>
           </div>
           <span class="arrow">›</span>
         </a>
 
-        <a href="https://forms.gle/fCz3WaVfGpvRxiGe6" class="apply-card" target="_blank" rel="noopener noreferrer">
+        <a href="http://pf.kakao.com/_UjgbG" class="apply-card" target="_blank" rel="noopener noreferrer">
           <div class="apply-left">
-            <div class="apply-icon purple">📄</div>
+            <div class="apply-icon purple">💬</div>
             <div class="apply-text">
-              <strong>삼육ONE_PASS 신청서</strong>
+              <strong>필수 입장</strong>
             </div>
           </div>
           <span class="arrow">›</span>
         </a>
+      </div>
+
+      <div class="apply-note">
+        ※ 채널톡 입장 후 1:1 대화하기 → 학번 / 이름 남기기
+      </div>
+      <div class="apply-note" style="margin-top:4px;">
+        ※ 위 두 가지를 완료해야 프로그램 참여가 가능합니다.
       </div>
     </section>
 
@@ -718,19 +811,24 @@
       <div class="section-title">
         <div class="num">2</div>
         <div>
-          <h2> 참여 가능 프로그램 안내</h2>
+          <h2>참여 가능 프로그램 안내</h2>
           <p>마지막 1%가 채워지는 프로그램을 준비합니다.</p>
         </div>
       </div>
 
       <div class="program-list">
+
         <div class="program-item">
           <div class="p-icon blue">👥</div>
           <div class="program-text">
             <strong>연계 프로그램</strong>
             <span>기업·직무 기반 프로그램과 현장형 연계 지원</span>
+            <span class="program-note">※ 모든 신청서를 작성해야 참여가 가능합니다.</span>
           </div>
-          <a href="https://forms.gle/xhrRdSfFf9hPsGqi8" class="mini-btn blue" target="_blank" rel="noopener noreferrer">신청하기</a>
+          <div class="program-actions">
+            <a href="https://forms.gle/xhrRdSfFf9hPsGqi8" class="mini-btn blue" target="_blank" rel="noopener noreferrer">필수 신청</a>
+            <a href="연계프로그램_직접신청링크" class="mini-btn blue" target="_blank" rel="noopener noreferrer">프로그램 신청</a>
+          </div>
         </div>
 
         <div class="program-item">
@@ -739,25 +837,33 @@
             <strong>깔맞춤 면접 컨설팅</strong>
             <span>실전 면접 대비를 위한 맞춤형 면접 프로그램</span>
           </div>
-          <a href="https://forms.gle/xhrRdSfFf9hPsGqi8" class="mini-btn green" target="_blank" rel="noopener noreferrer">신청하기</a>
+          <div class="program-actions">
+            <a href="https://forms.gle/xhrRdSfFf9hPsGqi8" class="mini-btn green" target="_blank" rel="noopener noreferrer">신청하기</a>
+          </div>
         </div>
 
         <div class="program-item">
           <div class="p-icon purple">✍️</div>
           <div class="program-text">
             <strong>진로설계 직무 특강</strong>
-            <span> 마케팅,영업,경영 관리,회계,총무,반도체,바이오 등 직무이해를 통한 설계 프로그램</span>
+            <span>마케팅,영업,경영 관리,회계,총무,반도체,바이오 등 직무이해를 통한 설계 프로그램</span>
           </div>
-          <a href="https://forms.gle/xhrRdSfFf9hPsGqi8" class="mini-btn purple" target="_blank" rel="noopener noreferrer">신청하기</a>
+          <div class="program-actions">
+            <a href="https://forms.gle/xhrRdSfFf9hPsGqi8" class="mini-btn purple" target="_blank" rel="noopener noreferrer">신청하기</a>
+          </div>
         </div>
 
         <div class="program-item">
           <div class="p-icon orange">💼</div>
           <div class="program-text">
             <strong>자격취득 프로그램</strong>
-            <span>컴활1·2급,ADsP 신청하기</span>
+            <span>취업 역량 강화를 위한 필수 프로그램</span>
+            <span class="program-note">※ 모든 신청서를 작성해야 참여가 가능합니다.</span>
           </div>
-          <a href="https://forms.gle/xhrRdSfFf9hPsGqi8" class="mini-btn orange" target="_blank" rel="noopener noreferrer">신청하기</a>
+          <div class="program-actions">
+            <a href="https://forms.gle/xhrRdSfFf9hPsGqi8" class="mini-btn orange" target="_blank" rel="noopener noreferrer">필수 신청</a>
+            <a href="자격취득프로그램_직접신청링크" class="mini-btn orange" target="_blank" rel="noopener noreferrer">프로그램 신청</a>
+          </div>
         </div>
 
         <div class="program-item">
@@ -765,9 +871,14 @@
           <div class="program-text">
             <strong>구글 코세라 AI 역량강화 프로그램</strong>
             <span>이젠 필수! 진로·취업·직무 선택의 시작!</span>
+            <span class="program-note">※ 모든 신청서를 작성해야 참여가 가능합니다.</span>
           </div>
-          <a href="https://forms.gle/xhrRdSfFf9hPsGqi8" class="mini-btn pink" target="_blank" rel="noopener noreferrer">신청하기</a>
+          <div class="program-actions">
+            <a href="https://forms.gle/xhrRdSfFf9hPsGqi8" class="mini-btn pink" target="_blank" rel="noopener noreferrer">필수 신청</a>
+            <a href="구글코세라_직접신청링크" class="mini-btn pink" target="_blank" rel="noopener noreferrer">프로그램 신청</a>
+          </div>
         </div>
+
       </div>
     </section>
 
@@ -845,35 +956,66 @@
       <div class="consult-box">
         <div class="consult-icon">📋</div>
         <div class="consult-text">
-          <strong>컨설팅 신청 링크</strong>
+          <strong>컨설팅 신청 안내</strong>
+          <span>※ 모든 신청서를 작성해야 참여가 가능합니다.</span><br>
           <a href="https://su-plus.syu.ac.kr/" target="_blank" rel="noopener noreferrer">https://su-plus.syu.ac.kr/</a>
-          <br>
-          <span>링크 클릭 후 SU-Plus에서 신청해 주세요.</span>
         </div>
-        <a href="https://su-plus.syu.ac.kr/" target="_blank" rel="noopener noreferrer" class="consult-btn">바로가기</a>
+        <div class="consult-actions">
+          <a href="https://forms.gle/xhrRdSfFf9hPsGqi8" target="_blank" rel="noopener noreferrer" class="consult-btn purple">필수 신청</a>
+          <a href="https://su-plus.syu.ac.kr/" target="_blank" rel="noopener noreferrer" class="consult-btn blue">상담 신청</a>
+        </div>
       </div>
 
       <div class="method-box">
         <p class="method-title">신청 순서 안내</p>
 
-        <div class="method-step">
-          <span class="bullet">➡️</span>
-          <span>대학일자리플러스센터</span>
-        </div>
+        <div class="method-steps">
+          <div class="method-step">
+            <span class="bullet">➡️</span>
+            <span>https://su-plus.syu.ac.kr/ 접속 후 SU-Plus 로그인</span>
+          </div>
 
-        <div class="method-step">
-          <span class="bullet">➡️</span>
-          <span>진로 및 취·창업 상담</span>
-        </div>
+          <div class="method-step">
+            <span class="bullet">➡️</span>
+            <span>대학일자리플러스센터</span>
+          </div>
 
-        <div class="method-step">
-          <span class="bullet">➡️</span>
-          <span>컨설턴트 선택</span>
-        </div>
+          <div class="method-step">
+            <span class="bullet">➡️</span>
+            <span>진로 및 취·창업 상담</span>
+          </div>
 
-        <div class="method-step">
-          <span class="bullet">➡️</span>
-          <span>날짜 및 시간 선택</span>
+          <div class="method-step">
+            <span class="bullet">➡️</span>
+            <span>컨설턴트 선택</span>
+          </div>
+
+          <div class="method-step">
+            <span class="bullet">➡️</span>
+            <span>날짜 및 시간 선택</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 오픈채팅방 안내 -->
+    <section class="section">
+      <div class="section-title">
+        <div class="num">5</div>
+        <div>
+          <h2>채용정보 / 졸특 프로그램 정보 받기</h2>
+          <p>채용공고와 졸특 프로그램 정보를 오픈채팅방에서 받아보세요.</p>
+        </div>
+      </div>
+
+      <div class="openchat-box">
+        <p class="openchat-title">채용공고, 졸특프로그램 공유방 입장</p>
+        <p class="openchat-text">대학일자리본부 오픈 단톡방 안내</p>
+        <p class="openchat-text">입장 후 공지사항을 꼭 확인해 주세요.</p>
+        <div class="openchat-code">코드 : syu3247</div>
+
+        <div class="openchat-btn-wrap">
+          <a href="https://open.kakao.com/o/gutBwiJf" target="_blank" rel="noopener noreferrer" class="consult-btn blue">오픈채팅 입장</a>
         </div>
       </div>
     </section>
