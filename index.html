@@ -42,6 +42,9 @@
       --yellow:#e6a930;
       --yellow-soft:#fff8e8;
 
+      --red:#f06b7a;
+      --red-soft:#fff1f3;
+
       --shadow:0 10px 24px rgba(42, 76, 117, 0.08);
       --radius-xl:24px;
       --radius-lg:18px;
@@ -69,7 +72,6 @@
       max-width:430px;
     }
 
-    /* 상단 배너 이미지 */
     .hero-banner{
       margin-bottom:14px;
     }
@@ -83,23 +85,6 @@
       background:#fff;
     }
 
-    /* 대표 이미지 */
-    .feature-image{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:22px;
-      box-shadow:var(--shadow);
-      padding:10px;
-      margin-bottom:14px;
-    }
-
-    .feature-image img{
-      width:100%;
-      display:block;
-      border-radius:16px;
-    }
-
-    /* 공통 섹션 */
     .section{
       background:var(--card);
       border:1px solid var(--line);
@@ -225,7 +210,7 @@
       flex:0 0 auto;
     }
 
-    /* 2번 프로그램 공통 */
+    /* 프로그램 공통 */
     .program-list{
       display:flex;
       flex-direction:column;
@@ -260,12 +245,14 @@
     .p-icon.orange{background:var(--orange-soft); color:var(--orange);}
     .p-icon.pink{background:var(--pink-soft); color:var(--pink);}
     .p-icon.yellow{background:var(--yellow-soft); color:var(--yellow);}
+    .p-icon.red{background:var(--red-soft); color:var(--red);}
 
     .program-text strong{
       display:block;
       font-size:13px;
       color:#27415f;
       margin-bottom:3px;
+      line-height:1.4;
       word-break:keep-all;
     }
 
@@ -277,6 +264,43 @@
       word-break:keep-all;
     }
 
+    /* 채용 정보 카드 전용 */
+    .job-card{
+      background:#fcfdff;
+    }
+
+    .job-actions{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      align-items:flex-end;
+    }
+
+    .job-btn{
+      display:inline-block;
+      min-width:86px;
+      padding:9px 14px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:800;
+      text-decoration:none;
+      text-align:center;
+      white-space:nowrap;
+    }
+
+    .job-btn.view{
+      background:#fff;
+      border:1px solid #9fc5f6;
+      color:var(--blue);
+    }
+
+    .job-btn.apply{
+      background:var(--red);
+      border:1px solid var(--red);
+      color:#fff;
+    }
+
+    /* 일반 버튼 */
     .program-actions{
       display:flex;
       flex-direction:column;
@@ -304,6 +328,7 @@
     .mini-btn.orange{background:var(--orange);}
     .mini-btn.pink{background:var(--pink);}
     .mini-btn.yellow{background:var(--yellow);}
+    .mini-btn.red{background:var(--red);}
 
     /* 연계 프로그램 아코디언 */
     .linked-accordion{
@@ -497,15 +522,6 @@
       display:block;
       border-radius:8px;
       border:1px solid #dde8f2;
-    }
-
-    .company-image-note{
-      margin-top:8px;
-      font-size:10px;
-      line-height:1.5;
-      color:#8092a5;
-      text-align:left;
-      word-break:keep-all;
     }
 
     .linked-btn-row{
@@ -743,6 +759,7 @@
       }
 
       .program-actions,
+      .job-actions,
       .consult-actions,
       .openchat-btn-wrap{
         grid-column:1 / -1;
@@ -750,6 +767,7 @@
       }
 
       .program-actions .mini-btn,
+      .job-actions .job-btn,
       .consult-actions .consult-btn,
       .openchat-btn-wrap .consult-btn,
       .linked-btn{
@@ -812,7 +830,7 @@
       </div>
     </section>
 
-    <!-- 2. 현재 진행중 프로그램 -->
+    <!-- 2. 참여 가능 프로그램 -->
     <section class="section">
       <div class="section-title">
         <div class="num">2</div>
@@ -824,30 +842,32 @@
 
       <div class="program-list">
 
-         <div class="program-item">
+        <!-- 추천채용 -->
+        <div class="program-item job-card">
           <div class="p-icon red">📢</div>
           <div class="program-text">
             <strong>[SYU]추천채용</strong>
-            <span>서류PASS/가산점/적극검토 혜택을 제공합니다.</span>
+            <span>서류PASS / 가산점 / 적극검토 혜택을 제공합니다.</span>
           </div>
-          <div class="program-actions">
-            <a href="https://www.syu.ac.kr/university-square/notice/job-offer/" class="linked-btn view" target="_blank" rel="noopener noreferrer">채용정보</a>
-            <a href="https://forms.gle/fCz3WaVfGpvRxiGe6" class="mini-btn red" target="_blank" rel="noopener noreferrer">신청하기</a>
+          <div class="job-actions">
+            <a href="https://www.syu.ac.kr/university-square/notice/job-offer/" class="job-btn view" target="_blank" rel="noopener noreferrer">채용정보</a>
+            <a href="https://forms.gle/fCz3WaVfGpvRxiGe6" class="job-btn apply" target="_blank" rel="noopener noreferrer">신청하기</a>
           </div>
         </div>
-            
-        <div class="program-item">
+
+        <!-- 일반채용 -->
+        <div class="program-item job-card">
           <div class="p-icon red">📢</div>
           <div class="program-text">
             <strong>[SYU]일반채용</strong>
-            <span>수시/공채 채용정보 제공, 취업 상담/컨설팅 지원</span>
+            <span>수시 / 공채 채용정보 제공, 취업 상담/컨설팅 지원</span>
           </div>
-          <div class="program-actions">
-           <a href="http://pf.kakao.com/_UjgbG/113129269" class="linked-btn view" target="_blank" rel="noopener noreferrer">채용정보</a>
-            <a href="https://forms.gle/fCz3WaVfGpvRxiGe6" class="mini-btn red" target="_blank" rel="noopener noreferrer">신청하기</a>
+          <div class="job-actions">
+            <a href="http://pf.kakao.com/_UjgbG/113129269" class="job-btn view" target="_blank" rel="noopener noreferrer">채용정보</a>
+            <a href="https://forms.gle/fCz3WaVfGpvRxiGe6" class="job-btn apply" target="_blank" rel="noopener noreferrer">신청하기</a>
           </div>
         </div>
-        
+
         <!-- 연계 프로그램 -->
         <div class="linked-accordion" id="linkedAccordion">
           <button type="button" class="linked-trigger" id="linkedTrigger">
@@ -869,8 +889,7 @@
                 일경험 연계 추천서는 참여 신청서 작성 완료자에 한하여 제공됩니다.
               </p>
             </div>
-            
-            <!-- 1 -->
+
             <div class="linked-program">
               <div class="linked-program-top">
                 <div class="linked-num-badge">1</div>
@@ -884,8 +903,6 @@
 
               <div class="company-image-wrap">
                 <img src="company-list.png" alt="퍼스트인잡 참여기업 리스트">
-                <div class="company-image-note">
-                </div>
               </div>
 
               <div class="linked-btn-row">
@@ -894,7 +911,6 @@
               </div>
             </div>
 
-            <!-- 2 -->
             <div class="linked-program">
               <div class="linked-program-top">
                 <div class="linked-num-badge">2</div>
@@ -912,7 +928,6 @@
               </div>
             </div>
 
-            <!-- 3 -->
             <div class="linked-program">
               <div class="linked-program-top">
                 <div class="linked-num-badge">3</div>
@@ -929,7 +944,6 @@
               </div>
             </div>
 
-            <!-- 4 -->
             <div class="linked-program">
               <div class="linked-program-top">
                 <div class="linked-num-badge">4</div>
@@ -1094,35 +1108,12 @@
         <p class="method-title">1:1 진로·취업 상담 안내</p>
 
         <div class="method-steps">
-          <div class="method-step">
-            <span class="bullet">➡️</span>
-            <span>나에게 맞는 직무 찾기 및 진로 설정</span>
-          </div>
-
-          <div class="method-step">
-            <span class="bullet">➡️</span>
-            <span>자기소개서 첨삭 및 완성</span>
-          </div>
-
-          <div class="method-step">
-            <span class="bullet">➡️</span>
-            <span>면접 질문 대비 & 실전 피드백</span>
-          </div>
-
-          <div class="method-step">
-            <span class="bullet">➡️</span>
-            <span>기업/직무 분석 방법 코칭</span>
-          </div>
-
-          <div class="method-step">
-            <span class="bullet">➡️</span>
-            <span>채용정보 제공 및 추천채용 연계</span>
-          </div>
-
-          <div class="method-step">
-            <span class="bullet">➡️</span>
-            <span>취업까지 이어지는 맞춤 전략 설계</span>
-          </div>
+          <div class="method-step"><span class="bullet">➡️</span><span>나에게 맞는 직무 찾기 및 진로 설정</span></div>
+          <div class="method-step"><span class="bullet">➡️</span><span>자기소개서 첨삭 및 완성</span></div>
+          <div class="method-step"><span class="bullet">➡️</span><span>면접 질문 대비 & 실전 피드백</span></div>
+          <div class="method-step"><span class="bullet">➡️</span><span>기업/직무 분석 방법 코칭</span></div>
+          <div class="method-step"><span class="bullet">➡️</span><span>채용정보 제공 및 추천채용 연계</span></div>
+          <div class="method-step"><span class="bullet">➡️</span><span>취업까지 이어지는 맞춤 전략 설계</span></div>
         </div>
       </div>
     </section>
