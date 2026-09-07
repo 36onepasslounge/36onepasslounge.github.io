@@ -2,12 +2,10 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   >
-
   <meta name="theme-color" content="#f8f5ff">
 
   <title>졸특 PICK | 방송·영상 콘텐츠 기획·개발 CREW</title>
@@ -60,7 +58,6 @@
     content="삼육대학교 졸업생특화프로그램 졸특 PICK"
   >
 
-  <!-- 기타 SNS 미리보기 -->
   <meta
     name="twitter:card"
     content="summary_large_image"
@@ -126,17 +123,23 @@
     .card {
       position: relative;
       overflow: hidden;
+
       background: rgba(255, 255, 255, 0.94);
+
       border: 1px solid #ebe6f7;
       border-radius: 32px;
+
       padding: 24px 20px 20px;
-      box-shadow: 0 20px 45px rgba(110, 90, 160, 0.13);
+
+      box-shadow:
+        0 20px 45px rgba(110, 90, 160, 0.13);
     }
 
     .top {
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 12px;
       margin-bottom: 15px;
     }
@@ -144,20 +147,28 @@
     .pick {
       display: inline-flex;
       align-items: center;
+
       padding: 10px 18px;
+
       background: #8e6de5;
       color: #ffffff;
+
       border-radius: 999px;
+
       font-size: 18px;
       font-weight: 900;
+
       letter-spacing: -0.03em;
     }
 
     .deadline {
       padding: 9px 13px;
+
       background: #f2ecff;
       color: #7057c7;
+
       border-radius: 999px;
+
       font-size: 13px;
       font-weight: 800;
     }
@@ -166,35 +177,47 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
       gap: 9px;
       margin-bottom: 17px;
+
       font-size: 12px;
       font-weight: 800;
+
       color: #76809c;
     }
 
     .school::before,
     .school::after {
       content: "";
+
       width: 42px;
       height: 1px;
+
       background: #d6d9e8;
     }
 
     .experience {
       display: inline-block;
+
       margin-bottom: 7px;
+
       color: #8e6de5;
+
       font-size: 21px;
       font-weight: 950;
+
       letter-spacing: -0.03em;
     }
 
     h1 {
       margin: 0;
+
       font-size: 39px;
       line-height: 1.08;
+
       letter-spacing: -0.055em;
+
       font-weight: 950;
     }
 
@@ -212,33 +235,47 @@
 
     .desc {
       margin: 14px 0 16px;
+
       font-size: 16px;
       line-height: 1.55;
+
       font-weight: 700;
+
       color: #505b79;
     }
 
     .project-pill {
       margin-bottom: 18px;
+
       padding: 13px 14px;
+
       text-align: center;
+
       background: #eee7ff;
+
       border-radius: 999px;
+
       color: #4d4772;
+
       font-size: 15px;
       font-weight: 900;
     }
 
     .facts {
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
+
       gap: 10px;
+
       margin-bottom: 14px;
     }
 
     .fact {
       min-height: 118px;
+
       padding: 16px 14px;
+
       border-radius: 22px;
     }
 
@@ -260,17 +297,23 @@
 
     .label {
       display: block;
+
       margin-bottom: 7px;
+
       color: #6c7691;
+
       font-size: 13px;
       font-weight: 900;
     }
 
     .value {
       display: block;
+
       font-size: 19px;
       line-height: 1.3;
+
       font-weight: 950;
+
       letter-spacing: -0.03em;
     }
 
@@ -278,16 +321,23 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+
       gap: 7px;
+
       margin: 2px 0 17px;
     }
 
     .benefits span {
       padding: 8px 11px;
+
       border-radius: 999px;
+
       background: #f5f5fb;
+
       border: 1px solid #e7e7f2;
+
       color: #5b6580;
+
       font-size: 12px;
       font-weight: 850;
     }
@@ -296,13 +346,20 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
+
       gap: 4px;
+
       margin: 6px 0 10px;
     }
 
     .mascots img {
       object-fit: contain;
-      filter: drop-shadow(0 8px 8px rgba(110, 100, 150, 0.08));
+
+      filter:
+        drop-shadow(
+          0 8px 8px
+          rgba(110, 100, 150, 0.08)
+        );
     }
 
     .suho {
@@ -316,24 +373,46 @@
     .cta {
       width: 100%;
       min-height: 64px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       gap: 10px;
+
       text-decoration: none;
-      background: linear-gradient(135deg, #8e6de5, #ae8df2);
+
+      background:
+        linear-gradient(
+          135deg,
+          #8e6de5,
+          #ae8df2
+        );
+
       color: #ffffff;
+
       border-radius: 999px;
+
       font-size: 25px;
       font-weight: 950;
+
       letter-spacing: -0.04em;
-      box-shadow: 0 12px 24px rgba(142, 109, 229, 0.24);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+      box-shadow:
+        0 12px 24px
+        rgba(142, 109, 229, 0.24);
+
+      transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
     }
 
     .cta:hover {
       transform: translateY(-2px);
-      box-shadow: 0 15px 30px rgba(142, 109, 229, 0.28);
+
+      box-shadow:
+        0 15px 30px
+        rgba(142, 109, 229, 0.28);
     }
 
     .arrow {
@@ -343,11 +422,15 @@
 
     .footer {
       margin-top: 15px;
+
       display: flex;
       justify-content: center;
       align-items: center;
+
       gap: 8px;
+
       color: #858da4;
+
       font-size: 11px;
       font-weight: 700;
     }
@@ -355,6 +438,7 @@
     .footer img {
       width: 22px;
       height: 22px;
+
       object-fit: contain;
     }
 
@@ -403,74 +487,144 @@
   <main class="card">
 
     <div class="top">
-      <div class="pick">졸특 PICK</div>
-      <div class="deadline">모집 ~ 09.13</div>
+
+      <div class="pick">
+        졸특 PICK
+      </div>
+
+      <div class="deadline">
+        모집 ~ 09.13
+      </div>
+
     </div>
+
 
     <div class="school">
       삼육대 졸업생특화프로그램
     </div>
 
+
     <div class="experience">
       지금 추천하는 일경험
     </div>
 
+
     <h1>
-      <span class="purple">방송·영상 콘텐츠</span>
+
+      <span class="purple">
+        방송·영상 콘텐츠
+      </span>
+
       <br>
-      <span class="blue">기획·개발</span>
-      <span class="navy">CREW</span>
+
+      <span class="blue">
+        기획·개발
+      </span>
+
+      <span class="navy">
+        CREW
+      </span>
+
     </h1>
 
+
     <p class="desc">
+
       현직 PD·작가·감독과 함께하는
+
       <br>
-      <strong>8주 실전 콘텐츠 프로젝트</strong>
+
+      <strong>
+        8주 실전 콘텐츠 프로젝트
+      </strong>
+
     </p>
+
 
     <div class="project-pill">
       현직자 멘토링 · 실제 프로젝트 수행
     </div>
 
+
     <section class="facts">
 
       <article class="fact fact1">
-        <span class="label">모집기간</span>
-        <span class="value">09.01 ~ 09.13</span>
+
+        <span class="label">
+          모집기간
+        </span>
+
+        <span class="value">
+          09.01 ~ 09.13
+        </span>
+
       </article>
+
 
       <article class="fact fact2">
-        <span class="label">프로젝트</span>
-        <span class="value">09.28 ~ 11.22</span>
+
+        <span class="label">
+          프로젝트
+        </span>
+
+        <span class="value">
+          09.28 ~ 11.22
+        </span>
+
       </article>
 
+
       <article class="fact fact3">
-        <span class="label">지원대상</span>
+
+        <span class="label">
+          지원대상
+        </span>
+
         <span class="value">
           만 15~34세
           <br>
           미취업 청년
         </span>
+
       </article>
 
+
       <article class="fact fact4">
-        <span class="label">참여혜택</span>
+
+        <span class="label">
+          참여혜택
+        </span>
+
         <span class="value">
           개인 최대
           <br>
           80만원
         </span>
+
       </article>
 
     </section>
 
+
     <div class="benefits">
-      <span>교육·참여비 전액 무료</span>
-      <span>전공무관</span>
-      <span>4인 1팀</span>
+
+      <span>
+        교육·참여비 전액 무료
+      </span>
+
+      <span>
+        전공무관
+      </span>
+
+      <span>
+        4인 1팀
+      </span>
+
     </div>
 
+
     <div class="mascots">
+
       <img
         class="suho"
         src="/suho.png"
@@ -482,7 +636,11 @@
         src="/suya.png"
         alt="삼육대학교 캐릭터"
       >
+
     </div>
+
+
+    <!-- 삼육대학교 홈페이지 연결 -->
 
     <a
       class="cta"
@@ -490,17 +648,27 @@
       target="_blank"
       rel="noopener"
     >
+
       알아보기
-      <span class="arrow">›</span>
+
+      <span class="arrow">
+        ›
+      </span>
+
     </a>
 
+
     <div class="footer">
+
       <img
         src="/syu-logo.png"
         alt="삼육대학교"
       >
+
       삼육대학교 대학일자리본부 · 졸특 안내
+
     </div>
+
 
   </main>
 
