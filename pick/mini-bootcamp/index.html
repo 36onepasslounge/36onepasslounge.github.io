@@ -8,12 +8,10 @@
   <title>졸특 PICK | 현직자와 함께하는 미니 직무부트캠프</title>
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="졸특 PICK | 지원서에 쓸 직무경험, 5주 안에 만든다">
-  <meta property="og:description" content="4개 직무 모두 모집 중! 직무 확인부터 신청까지 한 번에.">
+  <meta property="og:title" content="졸특 PICK | 미니 직무부트캠프 추가모집">
+  <meta property="og:description" content="디자인·포트폴리오와 IT·AWS 클라우드 과정 추가모집 중">
   <meta property="og:url" content="https://36onepasslounge.github.io/pick/mini-bootcamp/">
   <meta property="og:image" content="https://36onepasslounge.github.io/pick/mini-bootcamp/preview.png">
-  <meta property="og:image:secure_url" content="https://36onepasslounge.github.io/pick/mini-bootcamp/preview.png">
-  <meta property="og:image:type" content="image/png">
 
   <style>
     * {
@@ -28,7 +26,6 @@
 
     body {
       min-height: 100vh;
-
       background:
         radial-gradient(circle at 10% 10%, #e5dcff 0, transparent 22%),
         radial-gradient(circle at 90% 12%, #dff1ff 0, transparent 22%),
@@ -82,8 +79,8 @@
     }
 
     .recruiting {
-      background: #e9f7ee;
-      color: #257b47;
+      background: #fff0b8;
+      color: #8a6100;
       border-radius: 999px;
       padding: 8px 11px;
       font-size: 12px;
@@ -138,7 +135,6 @@
       border-radius: 17px;
       font-size: 15px;
       font-weight: 900;
-      line-height: 1.45;
     }
 
     .impact b {
@@ -148,9 +144,9 @@
     .status-note {
       margin-top: 11px;
       padding: 12px 13px;
-      background: #f6f8ff;
+      background: #fff8e8;
       border-radius: 16px;
-      color: #59637f;
+      color: #6b5a35;
       font-size: 12px;
       line-height: 1.55;
       font-weight: 800;
@@ -176,6 +172,11 @@
       background: #fff;
     }
 
+    .job.closed {
+      opacity: .62;
+      background: #f6f6f8;
+    }
+
     .job summary {
       list-style: none;
       cursor: pointer;
@@ -191,7 +192,7 @@
       display: none;
     }
 
-    .job summary .left {
+    .left {
       display: flex;
       align-items: center;
       gap: 11px;
@@ -207,21 +208,10 @@
       flex: 0 0 auto;
     }
 
-    .ico.design {
-      background: #ffe6ef;
-    }
-
-    .ico.it {
-      background: #e4f0ff;
-    }
-
-    .ico.food {
-      background: #e4f5eb;
-    }
-
-    .ico.biz {
-      background: #fff1cf;
-    }
+    .design { background: #ffe6ef; }
+    .it { background: #e4f0ff; }
+    .food { background: #e4f5eb; }
+    .biz { background: #fff1cf; }
 
     .jobname {
       font-size: 17px;
@@ -250,19 +240,14 @@
       color: #d63a4c;
     }
 
-    .open {
-      background: #eaf7ee;
-      color: #278149;
+    .closed-tag {
+      background: #ececf0;
+      color: #777b86;
     }
 
     .chev {
       font-size: 22px;
       color: #8e6de5;
-      transition: .2s;
-    }
-
-    details[open] .chev {
-      transform: rotate(90deg);
     }
 
     .jobbody {
@@ -313,7 +298,6 @@
       padding: 9px 5px;
       text-align: center;
       font-size: 10px;
-      line-height: 1.35;
       color: #5b6580;
     }
 
@@ -339,7 +323,6 @@
       text-decoration: none;
       font-weight: 950;
       font-size: 15px;
-      text-align: center;
       padding: 12px 15px;
     }
 
@@ -357,7 +340,6 @@
     .cta.apply {
       background: #ef4d5e;
       color: #fff;
-      box-shadow: 0 9px 18px rgba(239, 77, 94, .20);
     }
 
     .apply-guide {
@@ -370,11 +352,6 @@
       font-size: 11px;
       line-height: 1.55;
       text-align: center;
-      font-weight: 750;
-    }
-
-    .apply-guide strong {
-      color: #d63a4c;
     }
 
     .foot {
@@ -409,7 +386,7 @@
 
     <div class="topline">
       <div class="pick">졸특 PICK</div>
-      <div class="recruiting">4개 직무 모두 모집 중</div>
+      <div class="recruiting">2개 과정 추가모집 중</div>
     </div>
 
     <div class="kicker">
@@ -417,30 +394,28 @@
     </div>
 
     <h1>
-      지원서에 쓸
-      <span class="blue">직무경험,</span>
+      아직 기회 있어요.
       <br>
-      <span class="purple">5주 안에 만든다.</span>
+      <span class="blue">2개 직무</span>
+      <span class="purple">추가모집 중!</span>
     </h1>
 
     <p class="hero-copy">
-      “관심 있습니다”에서 끝내지 말고,
+      디자인·포트폴리오와 AWS 클라우드 과정은
       <br>
-      <strong>실제로 해본 경험 하나를 가져가세요.</strong>
+      <strong>모집기간이 연장되었습니다.</strong>
     </p>
 
     <div class="impact">
-      현직자 과제
-      <b>→</b>
-      실무 피드백
-      <b>→</b>
+      현직자 과제 <b>→</b>
+      실무 피드백 <b>→</b>
       결과물 완성
     </div>
 
     <div class="status-note">
-      <strong>현재 4개 직무 모두 모집 중입니다.</strong>
-      <br>
-      디자인·포트폴리오와 IT·AWS 클라우드 과정은 모집기간이 연장되었습니다.
+      <strong>추가모집 중</strong><br>
+      디자인·포트폴리오 : 9/11(금) 12:00까지<br>
+      IT·AWS 클라우드 : 9/16(수)까지
     </div>
 
   </section>
@@ -448,37 +423,27 @@
 
   <section class="section">
 
-    <h2>어떤 직무를 경험해볼까?</h2>
+    <h2>지금 신청 가능한 과정</h2>
 
     <p class="sub">
-      4개 과정 모두 신청 가능해요. 관심 직무를 눌러 상세 내용을 확인해보세요.
+      모집 중인 2개 과정은 바로 신청할 수 있어요.
     </p>
 
 
     <details class="job">
 
       <summary>
-
         <div class="left">
-
           <div class="ico design">🎨</div>
 
           <div>
             <div class="jobname">디자인 · 포트폴리오</div>
-
-            <span class="tag">
-              마케팅 / 디자인
-            </span>
-
-            <span class="status-tag extended">
-              모집 연장 · 9/11(금) 12:00까지
-            </span>
+            <span class="tag">마케팅 / 디자인</span>
+            <span class="status-tag extended">모집 연장 · 9/11(금) 12:00까지</span>
           </div>
-
         </div>
 
         <div class="chev">›</div>
-
       </summary>
 
       <div class="jobbody">
@@ -496,13 +461,6 @@
           <span>현직자 피드백</span>
         </div>
 
-        <h3>이 과정이 딱 맞는 경우</h3>
-
-        <p>
-          포트폴리오에 넣을 경험은 있는데 무엇을 어떻게 보여줘야 할지
-          막막하거나, 지원 전에 완성도를 확실히 끌어올리고 싶다면.
-        </p>
-
       </div>
 
     </details>
@@ -511,27 +469,17 @@
     <details class="job">
 
       <summary>
-
         <div class="left">
-
           <div class="ico it">☁️</div>
 
           <div>
             <div class="jobname">IT · AWS 클라우드</div>
-
-            <span class="tag">
-              IT / SW
-            </span>
-
-            <span class="status-tag extended">
-              모집 연장 · 9/16(수)까지
-            </span>
+            <span class="tag">IT / SW</span>
+            <span class="status-tag extended">모집 연장 · 9/16(수)까지</span>
           </div>
-
         </div>
 
         <div class="chev">›</div>
-
       </summary>
 
       <div class="jobbody">
@@ -540,8 +488,7 @@
 
         <p>
           AWS를 단순히 배우는 데서 끝내지 않고,
-          클라우드 구축부터 운영까지 현직자가 실제로 보는
-          실무 흐름을 경험합니다.
+          클라우드 구축부터 운영까지 실무 흐름을 경험합니다.
         </p>
 
         <div class="chips">
@@ -550,123 +497,41 @@
           <span>운영 실무</span>
         </div>
 
-        <h3>이 과정이 딱 맞는 경우</h3>
-
-        <p>
-          클라우드·인프라 직무에 관심은 있지만
-          지원서에 넣을 프로젝트가 부족하거나,
-          AWS 경험을 실무 이야기로 연결하고 싶다면.
-        </p>
-
       </div>
 
     </details>
 
 
-    <details class="job">
+    <details class="job closed">
 
       <summary>
-
         <div class="left">
-
           <div class="ico food">🧪</div>
 
           <div>
             <div class="jobname">식품 R&D · 연구개발</div>
-
-            <span class="tag">
-              식품 / R&D
-            </span>
-
-            <span class="status-tag open">
-              모집 중
-            </span>
+            <span class="tag">식품 / R&D</span>
+            <span class="status-tag closed-tag">모집마감</span>
           </div>
-
         </div>
-
-        <div class="chev">›</div>
-
       </summary>
-
-      <div class="jobbody">
-
-        <h3>5주 뒤 남는 경험</h3>
-
-        <p>
-          식품대기업 R&D 현직자와 함께
-          제품 아이디어가 실제 상품으로 이어지는
-          기획부터 출시까지의 과정을 따라갑니다.
-        </p>
-
-        <div class="chips">
-          <span>제품 기획</span>
-          <span>R&D 프로세스</span>
-          <span>출시 과정</span>
-        </div>
-
-        <h3>이 과정이 딱 맞는 경우</h3>
-
-        <p>
-          식품 R&D 직무가 실제로 어떤 일을 하는지 구체적으로 알고 싶거나,
-          면접에서 이야기할 제품개발 경험이 필요하다면.
-        </p>
-
-      </div>
 
     </details>
 
 
-    <details class="job">
+    <details class="job closed">
 
       <summary>
-
         <div class="left">
-
           <div class="ico biz">📊</div>
 
           <div>
             <div class="jobname">경영기획</div>
-
-            <span class="tag">
-              경영 / 사무 / 행정
-            </span>
-
-            <span class="status-tag open">
-              모집 중
-            </span>
+            <span class="tag">경영 / 사무 / 행정</span>
+            <span class="status-tag closed-tag">모집마감</span>
           </div>
-
         </div>
-
-        <div class="chev">›</div>
-
       </summary>
-
-      <div class="jobbody">
-
-        <h3>5주 뒤 남는 경험</h3>
-
-        <p>
-          예산 적정성을 검토하고 KPI를 설정하며,
-          기업이 실제로 계획을 세우고 성과를 관리하는 과정을 경험합니다.
-        </p>
-
-        <div class="chips">
-          <span>예산 검토</span>
-          <span>KPI 수립</span>
-          <span>경영기획 실무</span>
-        </div>
-
-        <h3>이 과정이 딱 맞는 경우</h3>
-
-        <p>
-          경영기획·사업관리 직무를 생각하고 있지만
-          실제 업무를 설명하기 어렵거나,
-          숫자와 전략을 연결하는 경험이 필요하다면.
-        </p>
-
-      </div>
 
     </details>
 
@@ -722,14 +587,12 @@
         직무별 커리큘럼 확인
       </a>
 
-
       <a
         class="cta school"
         href="https://www.syu.ac.kr/blog/2026%EB%85%84-%ED%98%84%EC%A7%81%EC%9E%90%EC%99%80-%ED%95%A8%EA%BB%98%ED%95%98%EB%8A%94-%EB%AF%B8%EB%8B%88-%EC%A7%81%EB%AC%B4%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/"
       >
         홈페이지 확인하기
       </a>
-
 
       <a
         class="cta apply"
@@ -744,11 +607,8 @@
 
 
     <div class="apply-guide">
-      <strong>신청 경로</strong>
-      <br>
-      학생역량통합관리시스템 → 비교과프로그램 →
-      <br>
-      <b>‘현직자와 함께하는 미니 직무부트캠프’</b> 선택
+      학생역량통합관리시스템 → 비교과프로그램 →<br>
+      <strong>‘현직자와 함께하는 미니 직무부트캠프’</strong> 선택
     </div>
 
   </section>
