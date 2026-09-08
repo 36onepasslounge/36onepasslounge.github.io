@@ -1,28 +1,835 @@
-<div class="cta-group">
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f8f5ff">
 
-  <a
-    class="cta-main"
-    href="https://comento.kr/edu/univ/sahmyoo1"
-    target="_blank"
-    rel="noopener"
-  >
-    직무별 커리큘럼 확인
-  </a>
+  <title>졸특 PICK | 현직자와 함께하는 미니 직무부트캠프</title>
 
-  <a
-    class="cta-sub"
-    href="https://www.syu.ac.kr/blog/2026%EB%85%84-%ED%98%84%EC%A7%81%EC%9E%90%EC%99%80-%ED%95%A8%EA%BB%98%ED%95%98%EB%8A%94-%EB%AF%B8%EB%8B%88-%EC%A7%81%EB%AC%B4%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/"
-  >
-    학교 공식 안내 확인
-  </a>
+  <!-- 카카오톡 / SNS 미리보기 -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="졸특 PICK | 지원서에 쓸 직무경험, 5주 안에 만든다">
+  <meta property="og:description" content="4개 직무 모두 모집 중! 직무 확인부터 신청까지 한 번에.">
+  <meta property="og:url" content="https://36onepasslounge.github.io/pick/mini-bootcamp/">
+  <meta property="og:image" content="https://36onepasslounge.github.io/pick/mini-bootcamp/preview.png">
+  <meta property="og:image:secure_url" content="https://36onepasslounge.github.io/pick/mini-bootcamp/preview.png">
+  <meta property="og:image:type" content="image/png">
 
-  <a
-    class="cta-apply"
-    href="https://sujpf.syu.ac.kr"
-    target="_blank"
-    rel="noopener"
-  >
-    바로 신청하기
-  </a>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="졸특 PICK | 지원서에 쓸 직무경험, 5주 안에 만든다">
+  <meta name="twitter:description" content="4개 직무 모두 모집 중! 직무 확인부터 신청까지 한 번에.">
+  <meta name="twitter:image" content="https://36onepasslounge.github.io/pick/mini-bootcamp/preview.png">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+
+      background:
+        radial-gradient(circle at 10% 10%, #e5dcff 0, transparent 22%),
+        radial-gradient(circle at 90% 12%, #dff1ff 0, transparent 22%),
+        radial-gradient(circle at 12% 90%, #e4f7ef 0, transparent 20%),
+        radial-gradient(circle at 90% 90%, #fff0cf 0, transparent 20%),
+        #faf8ff;
+
+      color: #28314f;
+
+      font-family:
+        Pretendard,
+        "Noto Sans KR",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      padding: 18px 13px 36px;
+    }
+
+    .wrap {
+      width: min(100%, 620px);
+      margin: 0 auto;
+    }
+
+    .hero,
+    .section {
+      background: #ffffff;
+      border: 1px solid #ece7f6;
+      border-radius: 28px;
+      padding: 20px;
+      box-shadow: 0 16px 36px rgba(93, 74, 140, .09);
+      margin-bottom: 13px;
+    }
+
+    .topline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 13px;
+    }
+
+    .pick {
+      background: #e83c4f;
+      color: #ffffff;
+      font-weight: 950;
+      border-radius: 999px;
+      padding: 9px 15px;
+      font-size: 16px;
+    }
+
+    .recruiting {
+      background: #e9f7ee;
+      color: #257b47;
+      border-radius: 999px;
+      padding: 8px 11px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .kicker {
+      display: inline-block;
+      background: #e7f2ff;
+      color: #3d75ba;
+      padding: 7px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 950;
+      margin-bottom: 9px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 37px;
+      line-height: 1.08;
+      letter-spacing: -.055em;
+      font-weight: 950;
+    }
+
+    h1 .blue {
+      color: #458fe5;
+    }
+
+    h1 .purple {
+      color: #8e6de5;
+    }
+
+    .hero-copy {
+      margin: 12px 0 0;
+      color: #4f5975;
+      font-size: 15px;
+      line-height: 1.55;
+      font-weight: 750;
+    }
+
+    .hero-copy strong {
+      color: #2e3857;
+      font-weight: 950;
+    }
+
+    .impact {
+      margin-top: 15px;
+      background: #2f3653;
+      color: #ffffff;
+      padding: 13px 15px;
+      border-radius: 17px;
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1.45;
+    }
+
+    .impact b {
+      color: #c9b7ff;
+    }
+
+    .status-note {
+      margin-top: 11px;
+      padding: 12px 13px;
+      background: #f6f8ff;
+      border-radius: 16px;
+      color: #59637f;
+      font-size: 12px;
+      line-height: 1.55;
+      font-weight: 800;
+    }
+
+    .section h2 {
+      margin: 0 0 5px;
+      font-size: 24px;
+      letter-spacing: -.04em;
+    }
+
+    .section .sub {
+      margin: 0 0 15px;
+      color: #747d94;
+      font-size: 13px;
+    }
+
+    .job {
+      border: 1px solid #e7e5ef;
+      border-radius: 19px;
+      overflow: hidden;
+      margin: 9px 0;
+      background: #ffffff;
+    }
+
+    .job summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-weight: 900;
+    }
+
+    .job summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .job summary .left {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .ico {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      flex: 0 0 auto;
+    }
+
+    .ico.design {
+      background: #ffe6ef;
+    }
+
+    .ico.it {
+      background: #e4f0ff;
+    }
+
+    .ico.food {
+      background: #e4f5eb;
+    }
+
+    .ico.biz {
+      background: #fff1cf;
+    }
+
+    .jobname {
+      font-size: 17px;
+      line-height: 1.2;
+    }
+
+    .tag {
+      display: block;
+      margin-top: 3px;
+      font-size: 11px;
+      color: #858ca0;
+      font-weight: 750;
+    }
+
+    .status-tag {
+      display: inline-block;
+      margin-top: 5px;
+      padding: 4px 7px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .extended {
+      background: #fff0f2;
+      color: #d63a4c;
+    }
+
+    .open {
+      background: #eaf7ee;
+      color: #278149;
+    }
+
+    .chev {
+      font-size: 22px;
+      color: #8e6de5;
+      transition: .2s;
+    }
+
+    details[open] .chev {
+      transform: rotate(90deg);
+    }
+
+    .jobbody {
+      border-top: 1px solid #eeeaf5;
+      padding: 0 15px 15px;
+    }
+
+    .jobbody h3 {
+      margin: 15px 0 6px;
+      font-size: 14px;
+      color: #5f4ec4;
+    }
+
+    .jobbody p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #4e5872;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 9px;
+    }
+
+    .chips span {
+      background: #f6f5fb;
+      color: #5d667c;
+      border: 1px solid #e8e5f1;
+      border-radius: 999px;
+      padding: 6px 8px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 5px;
+      margin-top: 11px;
+    }
+
+    .step {
+      background: #f5f7fc;
+      border-radius: 13px;
+      padding: 9px 5px;
+      text-align: center;
+      font-size: 10px;
+      line-height: 1.35;
+      color: #5b6580;
+    }
+
+    .step b {
+      display: block;
+      color: #34405f;
+      margin-bottom: 3px;
+    }
+
+    .cta-group {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 9px;
+      margin-top: 16px;
+    }
+
+    .cta {
+      min-height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-weight: 950;
+      font-size: 15px;
+      text-align: center;
+      padding: 12px 15px;
+    }
+
+    .cta.curriculum {
+      background: #8e6de5;
+      color: #ffffff;
+    }
+
+    .cta.school {
+      background: #edf4ff;
+      color: #376baa;
+    }
+
+    .cta.apply {
+      background: #ef4d5e;
+      color: #ffffff;
+      box-shadow: 0 9px 18px rgba(239,77,94,.20);
+    }
+
+    .apply-guide {
+      margin-top: 10px;
+      padding: 11px 12px;
+      background: #fff7f8;
+      border: 1px solid #ffe0e4;
+      border-radius: 14px;
+      color: #6e5c62;
+      font-size: 11px;
+      line-height: 1.55;
+      text-align: center;
+      font-weight: 750;
+    }
+
+    .apply-guide strong {
+      color: #d63a4c;
+    }
+
+    .foot {
+      text-align: center;
+      color: #888fa1;
+      font-size: 10px;
+      margin-top: 11px;
+    }
+
+    @media (max-width: 520px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .step {
+        text-align: left;
+        padding: 9px 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <section class="hero">
+
+    <div class="topline">
+      <div class="pick">
+        졸특 PICK
+      </div>
+
+      <div class="recruiting">
+        4개 직무 모두 모집 중
+      </div>
+    </div>
+
+    <div class="kicker">
+      현직자와 함께하는 5주 직무 프로젝트
+    </div>
+
+    <h1>
+      지원서에 쓸
+      <span class="blue">
+        직무경험,
+      </span>
+      <br>
+      <span class="purple">
+        5주 안에 만든다.
+      </span>
+    </h1>
+
+    <p class="hero-copy">
+      “관심 있습니다”에서 끝내지 말고,
+      <br>
+      <strong>
+        실제로 해본 경험 하나를 가져가세요.
+      </strong>
+    </p>
+
+    <div class="impact">
+      현직자 과제
+      <b>→</b>
+      실무 피드백
+      <b>→</b>
+      결과물 완성
+    </div>
+
+    <div class="status-note">
+      <strong>현재 4개 직무 모두 모집 중입니다.</strong><br>
+      디자인·포트폴리오와 IT·AWS 클라우드 과정은 모집기간이 연장되었습니다.
+    </div>
+
+  </section>
+
+
+  <section class="section">
+
+    <h2>
+      어떤 직무를 경험해볼까?
+    </h2>
+
+    <p class="sub">
+      4개 과정 모두 신청 가능해요. 관심 직무를 눌러 상세 내용을 확인해보세요.
+    </p>
+
+
+    <details class="job">
+
+      <summary>
+
+        <div class="left">
+
+          <div class="ico design">
+            🎨
+          </div>
+
+          <div>
+
+            <div class="jobname">
+              디자인 · 포트폴리오
+            </div>
+
+            <span class="tag">
+              마케팅 / 디자인
+            </span>
+
+            <span class="status-tag extended">
+              모집 연장 · 9/11(금) 12:00까지
+            </span>
+
+          </div>
+
+        </div>
+
+        <div class="chev">
+          ›
+        </div>
+
+      </summary>
+
+
+      <div class="jobbody">
+
+        <h3>
+          5주 뒤 남는 경험
+        </h3>
+
+        <p>
+          대기업 현직자와 함께 포트폴리오의 방향을 잡고,
+          경험을 선별하고, 보여주는 구조까지 직접 완성합니다.
+        </p>
+
+        <div class="chips">
+          <span>포트폴리오 기획</span>
+          <span>스토리 구성</span>
+          <span>현직자 피드백</span>
+        </div>
+
+        <h3>
+          이 과정이 딱 맞는 경우
+        </h3>
+
+        <p>
+          포트폴리오에 넣을 경험은 있는데 무엇을 어떻게 보여줘야 할지
+          막막하거나, 지원 전에 완성도를 확실히 끌어올리고 싶다면.
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <details class="job">
+
+      <summary>
+
+        <div class="left">
+
+          <div class="ico it">
+            ☁️
+          </div>
+
+          <div>
+
+            <div class="jobname">
+              IT · AWS 클라우드
+            </div>
+
+            <span class="tag">
+              IT / SW
+            </span>
+
+            <span class="status-tag extended">
+              모집 연장 · 9/16(수)까지
+            </span>
+
+          </div>
+
+        </div>
+
+        <div class="chev">
+          ›
+        </div>
+
+      </summary>
+
+
+      <div class="jobbody">
+
+        <h3>
+          5주 뒤 남는 경험
+        </h3>
+
+        <p>
+          AWS를 단순히 배우는 데서 끝내지 않고,
+          클라우드 구축부터 운영까지 현직자가 실제로 보는
+          실무 흐름을 경험합니다.
+        </p>
+
+        <div class="chips">
+          <span>AWS</span>
+          <span>클라우드 구축</span>
+          <span>운영 실무</span>
+        </div>
+
+        <h3>
+          이 과정이 딱 맞는 경우
+        </h3>
+
+        <p>
+          클라우드·인프라 직무에 관심은 있지만
+          지원서에 넣을 프로젝트가 부족하거나,
+          AWS 경험을 실무 이야기로 연결하고 싶다면.
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <details class="job">
+
+      <summary>
+
+        <div class="left">
+
+          <div class="ico food">
+            🧪
+          </div>
+
+          <div>
+
+            <div class="jobname">
+              식품 R&D · 연구개발
+            </div>
+
+            <span class="tag">
+              식품 / R&D
+            </span>
+
+            <span class="status-tag open">
+              모집 중
+            </span>
+
+          </div>
+
+        </div>
+
+        <div class="chev">
+          ›
+        </div>
+
+      </summary>
+
+
+      <div class="jobbody">
+
+        <h3>
+          5주 뒤 남는 경험
+        </h3>
+
+        <p>
+          식품대기업 R&D 현직자와 함께
+          제품 아이디어가 실제 상품으로 이어지는
+          기획부터 출시까지의 과정을 따라갑니다.
+        </p>
+
+        <div class="chips">
+          <span>제품 기획</span>
+          <span>R&D 프로세스</span>
+          <span>출시 과정</span>
+        </div>
+
+        <h3>
+          이 과정이 딱 맞는 경우
+        </h3>
+
+        <p>
+          식품 R&D 직무가 실제로 어떤 일을 하는지 구체적으로 알고 싶거나,
+          면접에서 이야기할 제품개발 경험이 필요하다면.
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <details class="job">
+
+      <summary>
+
+        <div class="left">
+
+          <div class="ico biz">
+            📊
+          </div>
+
+          <div>
+
+            <div class="jobname">
+              경영기획
+            </div>
+
+            <span class="tag">
+              경영 / 사무 / 행정
+            </span>
+
+            <span class="status-tag open">
+              모집 중
+            </span>
+
+          </div>
+
+        </div>
+
+        <div class="chev">
+          ›
+        </div>
+
+      </summary>
+
+
+      <div class="jobbody">
+
+        <h3>
+          5주 뒤 남는 경험
+        </h3>
+
+        <p>
+          예산 적정성을 검토하고 KPI를 설정하며,
+          기업이 실제로 계획을 세우고 성과를 관리하는 과정을 경험합니다.
+        </p>
+
+        <div class="chips">
+          <span>예산 검토</span>
+          <span>KPI 수립</span>
+          <span>경영기획 실무</span>
+        </div>
+
+        <h3>
+          이 과정이 딱 맞는 경우
+        </h3>
+
+        <p>
+          경영기획·사업관리 직무를 생각하고 있지만
+          실제 업무를 설명하기 어렵거나,
+          숫자와 전략을 연결하는 경험이 필요하다면.
+        </p>
+
+      </div>
+
+    </details>
+
+  </section>
+
+
+  <section class="section">
+
+    <h2>
+      강의만 듣고 끝? 아니요.
+    </h2>
+
+    <p class="sub">
+      과제를 직접 해보고 현직자의 피드백을 받는 5주입니다.
+    </p>
+
+    <div class="flow">
+
+      <div class="step">
+        <b>1주차</b>
+        현직자 직무 에센스
+      </div>
+
+      <div class="step">
+        <b>2주차</b>
+        실무 과제 수행
+      </div>
+
+      <div class="step">
+        <b>3주차</b>
+        현직자 온라인 세션
+      </div>
+
+      <div class="step">
+        <b>4주차</b>
+        과제 수행 & 피드백
+      </div>
+
+      <div class="step">
+        <b>5주차</b>
+        결과 발표 & 피드백
+      </div>
+
+    </div>
+
+
+    <!-- 3개 버튼 -->
+
+    <div class="cta-group">
+
+      <a
+        class="cta curriculum"
+        href="https://comento.kr/edu/univ/sahmyoo1"
+        target="_blank"
+        rel="noopener"
+      >
+        직무별 커리큘럼 확인
+      </a>
+
+
+      <a
+        class="cta school"
+        href="https://www.syu.ac.kr/blog/2026%EB%85%84-%ED%98%84%EC%A7%81%EC%9E%90%EC%99%80-%ED%95%A8%EA%BB%98%ED%95%98%EB%8A%94-%EB%AF%B8%EB%8B%88-%EC%A7%81%EB%AC%B4%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/"
+      >
+        학교 공식 안내 확인
+      </a>
+
+
+      <a
+        class="cta apply"
+        href="https://sujpf.syu.ac.kr"
+        target="_blank"
+        rel="noopener"
+      >
+        바로 신청하기 →
+      </a>
+
+    </div>
+
+
+    <div class="apply-guide">
+      <strong>신청 경로</strong><br>
+      학생역량통합관리시스템 → 비교과프로그램 →<br>
+      <b>‘현직자와 함께하는 미니 직무부트캠프’</b> 선택
+    </div>
+
+  </section>
+
+
+  <div class="foot">
+    삼육대학교 대학일자리본부 · 졸특 안내
+  </div>
 
 </div>
+
+</body>
+</html>
