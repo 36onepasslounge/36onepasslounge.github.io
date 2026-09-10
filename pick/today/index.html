@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>오늘의 졸특 PICK</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="오늘의 졸특 PICK | 지금 신청할 취업 프로그램 4">
+  <meta property="og:description" content="AI 실무부터 자격증, Google 수료증, CAREER RUN까지. 지금 필요한 프로그램을 골라보세요.">
+  <meta property="og:url" content="https://36onepasslounge.github.io/pick/today/">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family:
+        Pretendard,
+        "Noto Sans KR",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      background:
+        radial-gradient(circle at 10% 5%, #e8e1ff 0, transparent 22%),
+        radial-gradient(circle at 90% 8%, #dff7f4 0, transparent 20%),
+        #f7f7fb;
+
+      color: #252b40;
+      padding: 16px 12px 40px;
+    }
+
+    .wrap {
+      width: min(100%, 620px);
+      margin: 0 auto;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 22px 20px;
+      margin-bottom: 14px;
+      box-shadow: 0 15px 35px rgba(45, 45, 80, .08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #eee8ff;
+      right: -55px;
+      top: -55px;
+    }
+
+    .pick {
+      display: inline-block;
+      background: #ef3e55;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 950;
+      padding: 8px 13px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 35px;
+      line-height: 1.06;
+      letter-spacing: -.055em;
+      margin: 0;
+      font-weight: 950;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 span {
+      color: #785fe5;
+    }
+
+    .hero p {
+      margin: 12px 0 0;
+      color: #687087;
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 700;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-guide {
+      margin-top: 15px;
+      padding: 11px 13px;
+      background: #f5f2ff;
+      border-radius: 14px;
+      color: #62578f;
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    /* ---------- CARDS ---------- */
+
+    .program {
+      border: 0;
+      border-radius: 24px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      box-shadow: 0 12px 28px rgba(45, 45, 70, .07);
+    }
+
+    .program summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px;
+      position: relative;
+    }
+
+    .program summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .program-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .number {
+      font-size: 11px;
+      font-weight: 950;
+      opacity: .65;
+      margin-bottom: 5px;
+    }
+
+    .title {
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 950;
+      letter-spacing: -.04em;
+    }
+
+    .desc {
+      margin-top: 7px;
+      font-size: 13px;
+      line-height: 1.5;
+      font-weight: 750;
+      opacity: .8;
+    }
+
+    .arrow {
+      width: 34px;
+      height: 34px;
+      background: rgba(255,255,255,.65);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 21px;
+      flex: 0 0 auto;
+      transition: .2s;
+    }
+
+    details[open] .arrow {
+      transform: rotate(90deg);
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 13px;
+    }
+
+    .meta span {
+      display: inline-block;
+      background: rgba(255,255,255,.70);
+      border-radius: 999px;
+      padding: 6px 9px;
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .body {
+      background: #fff;
+      padding: 17px;
+    }
+
+    .body h3 {
+      margin: 0 0 9px;
+      font-size: 14px;
+      font-weight: 950;
+    }
+
+    .body ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #596075;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .message {
+      margin-top: 14px;
+      padding: 12px 13px;
+      border-radius: 14px;
+      font-size: 12px;
+      line-height: 1.55;
+      font-weight: 850;
+    }
+
+    /* ---------- PROGRAM COLORS ---------- */
+
+    /* 1. AI 미래역량 - 민트 */
+    .future summary {
+      background: linear-gradient(135deg, #bceee7, #dff7f3);
+      color: #164e4a;
+    }
+
+    .future .message {
+      background: #edfafa;
+      color: #24746d;
+    }
+
+    /* 2. AI-POP - 블루 */
+    .aipop summary {
+      background: linear-gradient(135deg, #b9e2ff, #dcefff);
+      color: #135d91;
+    }
+
+    .aipop .message {
+      background: #eef7ff;
+      color: #276f9f;
+    }
+
+    /* 3. Google - 옐로 */
+    .google summary {
+      background: linear-gradient(135deg, #fff17e, #fff7ba);
+      color: #272200;
+    }
+
+    .google .message {
+      background: #fffbe2;
+      color: #665b00;
+    }
+
+    /* 4. Career Run - 블루 + 라임 */
+    .career summary {
+      background: linear-gradient(135deg, #245be5, #3d78ff);
+      color: #fff;
+    }
+
+    .career .number,
+    .career .desc {
+      color: #fff;
+    }
+
+    .career .meta span {
+      background: #ddff32;
+      color: #16327b;
+    }
+
+    .career .arrow {
+      color: #1c4dce;
+    }
+
+    .career .message {
+      background: #eff3ff;
+      color: #3150a7;
+    }
+
+    /* ---------- BUTTONS ---------- */
+
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .btn {
+      min-height: 52px;
+      border-radius: 15px;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 11px 14px;
+      font-weight: 950;
+      font-size: 14px;
+      transition: .15s;
+    }
+
+    .btn:active {
+      transform: scale(.98);
+    }
+
+    .future .primary {
+      background: #28a99d;
+      color: #fff;
+    }
+
+    .aipop .primary {
+      background: #1689d4;
+      color: #fff;
+    }
+
+    .google .primary {
+      background: #ffda00;
+      color: #242000;
+    }
+
+    .google .secondary {
+      background: #252525;
+      color: #fff;
+    }
+
+    .career .primary {
+      background: #275bdb;
+      color: #fff;
+    }
+
+    .secondary {
+      background: #f0f2f8;
+      color: #536078;
+    }
+
+    .route {
+      margin-top: 9px;
+      color: #888fa0;
+      font-size: 10px;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    /* ---------- FOOT ---------- */
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      color: #8a90a0;
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    .brand {
+      font-weight: 950;
+      color: #586078;
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 31px;
+      }
+
+      .title {
+        font-size: 20px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+<div class="wrap">
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="pick">
+      오늘의 졸특 PICK
+    </div>
+
+    <h1>
+      지금 필요한 취업 준비,<br>
+      <span>4개만 골라왔어요.</span>
+    </h1>
+
+    <p>
+      AI 실무부터 자격 취득, Google 공식 수료증,
+      참여형 취업 이벤트까지.<br>
+      관심 있는 프로그램을 눌러 확인해보세요.
+    </p>
+
+    <div class="hero-guide">
+      👆 카드를 누르면 상세내용과 신청 버튼이 열려요.
+    </div>
+
+  </section>
+
+
+  <!-- 01 -->
+
+  <details class="program future">
+
+    <summary>
+
+      <div class="program-top">
+
+        <div>
+
+          <div class="number">
+            PICK 01 · AI 실무
+          </div>
+
+          <div class="title">
+            AI 미래역량 부트캠프
+          </div>
+
+          <div class="desc">
+            AI를 아는 것에서 끝내지 말고,<br>
+            직접 쓰는 실무역량으로.
+          </div>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
+      </div>
+
+      <div class="meta">
+        <span>ZOOM LIVE</span>
+        <span>과정별 2일</span>
+        <span>MVP 100점</span>
+        <span>수료증</span>
+      </div>
+
+    </summary>
+
+
+    <div class="body">
+
+      <h3>
+        원하는 과정만 골라서 참여하세요
+      </h3>
+
+      <ul>
+        <li>
+          <b>AI 멀티미디어 콘텐츠 제작</b><br>
+          9/14(월)~9/15(화) 18:00~21:30
+        </li>
+
+        <li>
+          <b>AI 에이전트 & n8n 업무자동화</b><br>
+          9/21(월)~9/22(화) 18:00~21:30
+        </li>
+
+        <li>
+          <b>CANVA 마스터 클래스</b><br>
+          9/28(월)~9/29(화) 18:00~21:30
+        </li>
+      </ul>
+
+      <div class="message">
+        생성형 AI · 업무자동화 · 콘텐츠 제작 · 디자인까지
+        직접 해보는 실습형 과정입니다.
+      </div>
+
+      <div class="buttons">
+
+        <a
+          class="btn primary"
+          href="https://sujpf.syu.ac.kr/"
+          target="_blank"
+          rel="noopener"
+        >
+          바로 신청하기 →
+        </a>
+
+      </div>
+
+      <div class="route">
+        SU-JPF → 비교과프로그램<br>
+        졸업생·지역청년은 [일반인] 회원가입 후 신청
+      </div>
+
+    </div>
+
+  </details>
+
+
+
+  <!-- 02 -->
+
+  <details class="program aipop">
+
+    <summary>
+
+      <div class="program-top">
+
+        <div>
+
+          <div class="number">
+            PICK 02 · AI 자격
+          </div>
+
+          <div class="title">
+            AI-POP 취업 스펙
+          </div>
+
+          <div class="desc">
+            AI 활용 능력,<br>
+            이제 자격으로 증명하세요.
+          </div>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
+      </div>
+
+      <div class="meta">
+        <span>9/14~9/22</span>
+        <span>ZOOM</span>
+        <span>총 28시간</span>
+        <span>자격시험 대비</span>
+      </div>
+
+    </summary>
+
+
+    <div class="body">
+
+      <h3>
+        AI 활용부터 자격시험까지 한 번에
+      </h3>
+
+      <ul>
+        <li>생성형 AI 핵심 원리 및 활용</li>
+        <li>프롬프트 엔지니어링 실전</li>
+        <li>AI-POP 자격시험 대비</li>
+        <li>취업·직무에 활용하는 AI 역량 강화</li>
+      </ul>
+
+      <div class="message">
+        AI를 써봤다는 경험에서 끝내지 않고,
+        자격으로 남기는 과정.
+      </div>
+
+      <div class="buttons">
+
+        <a
+          class="btn primary"
+          href="https://sujpf.syu.ac.kr/"
+          target="_blank"
+          rel="noopener"
+        >
+          바로 신청하기 →
+        </a>
+
+      </div>
+
+      <div class="route">
+        SU-JPF → 비교과프로그램<br>
+        삼육대 재학생·졸업(예정)생·지역청년 참여 가능
+      </div>
+
+    </div>
+
+  </details>
+
+
+
+  <!-- 03 -->
+
+  <details class="program google">
+
+    <summary>
+
+      <div class="program-top">
+
+        <div>
+
+          <div class="number">
+            PICK 03 · GOOGLE
+          </div>
+
+          <div class="title">
+            Google AI Professional Certificate
+          </div>
+
+          <div class="desc">
+            AI 실무 역량,<br>
+            구글 공식 수료증으로 남기세요.
+          </div>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
+      </div>
+
+      <div class="meta">
+        <span>Google × Coursera</span>
+        <span>공식 수료증</span>
+        <span>온라인</span>
+        <span>1만 명+ 등록</span>
+      </div>
+
+    </summary>
+
+
+    <div class="body">
+
+      <h3>
+        Google이 설계한 AI 전문 커리큘럼
+      </h3>
+
+      <ul>
+        <li>Google 공식 AI 수료증 취득</li>
+        <li>생성형 AI 및 실무 활용 중심 학습</li>
+        <li>Coursera를 통한 유연한 온라인 학습</li>
+        <li>취업 준비 시 AI 활용 역량 어필</li>
+      </ul>
+
+      <div class="message">
+        “AI를 배웠어요”보다
+        Google 공식 Certificate로 보여주세요.
+      </div>
+
+      <div class="buttons">
+
+        <a
+          class="btn primary"
+          href="https://buly.kr/28vfX8u"
+          target="_blank"
+          rel="noopener"
+        >
+          프로그램 알아보기
+        </a>
+
+        <a
+          class="btn secondary"
+          href="https://forms.gle/7DCHPWhnjvYZTbtPA"
+          target="_blank"
+          rel="noopener"
+        >
+          바로 신청하기 →
+        </a>
+
+      </div>
+
+    </div>
+
+  </details>
+
+
+
+  <!-- 04 -->
+
+  <details class="program career">
+
+    <summary>
+
+      <div class="program-top">
+
+        <div>
+
+          <div class="number">
+            PICK 04 · CAREER EVENT
+          </div>
+
+          <div class="title">
+            120 CAREER RUN
+          </div>
+
+          <div class="desc">
+            가만히 듣는 취업 프로그램 말고,<br>
+            이번엔 직접 뛰어보자!
+          </div>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
+      </div>
+
+      <div class="meta">
+        <span>10/1(목)</span>
+        <span>13:00~17:00</span>
+        <span>솔로몬 광장</span>
+        <span>CJ 기프트카드</span>
+      </div>
+
+    </summary>
+
+
+    <div class="body">
+
+      <h3>
+        36(삼육) 코스를 돌며 5가지 취업 미션!
+      </h3>
+
+      <ul>
+        <li>자기이해 ZONE</li>
+        <li>직무탐색 ZONE</li>
+        <li>서류준비 ZONE</li>
+        <li>면접대비 ZONE</li>
+        <li>취업전략 ZONE</li>
+      </ul>
+
+      <div class="message">
+        취업 준비를 어렵게 시작하지 말고,
+        미션을 수행하면서 재미있게 경험해보세요.
+      </div>
+
+      <div class="buttons">
+
+        <a
+          class="btn primary"
+          href="https://www.syu.ac.kr/blog/2026%eb%85%84-%ec%a1%b8%ec%97%85%ec%83%9d%ed%8a%b9%ed%99%94%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8-%eb%82%b4-%ec%9d%bc%ec%9d%84-%ed%96%a5%ed%95%b4-%eb%9b%b0%ec%96%b4%eb%9d%bc-%ec%82%bc%ec%9c%a1/?pageds=1&k=&t=&c="
+          target="_blank"
+          rel="noopener"
+        >
+          홈페이지 확인하기 →
+        </a>
+
+      </div>
+
+      <div class="route">
+        10월 1일(목) 13:00~17:00 · 삼육대학교 솔로몬 광장
+      </div>
+
+    </div>
+
+  </details>
+
+
+
+  <div class="footer">
+    <span class="brand">
+      삼육대학교 대학일자리본부 · 졸특
+    </span>
+    <br>
+    프로그램별 모집 일정 및 신청 방법은 상세 안내를 확인해주세요.
+  </div>
+
+
+</div>
+
+</body>
+</html>
