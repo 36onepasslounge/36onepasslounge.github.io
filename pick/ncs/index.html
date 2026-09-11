@@ -74,7 +74,7 @@
       -webkit-tap-highlight-color: rgba(124, 58, 237, 0.15);
     }
 
-    /* 이미지 510×1024 기준 */
+    /* 현재 ncs-detail.png 기준 위치 */
     .hotspot-yes {
       top: 68.9%;
       height: 7.3%;
@@ -90,7 +90,7 @@
       outline-offset: -3px;
     }
 
-    /* 불참 사유 */
+    /* 불참 사유 박스 */
     .reason-box {
       display: none;
       margin-top: 16px;
@@ -130,6 +130,48 @@
       background: #f5f3ff;
     }
 
+    /* 기타 입력 영역 */
+    .other-box {
+      display: none;
+      margin-top: 12px;
+    }
+
+    .other-box textarea {
+      width: 100%;
+      min-height: 100px;
+      resize: vertical;
+      padding: 13px;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      font-family: inherit;
+      font-size: 14px;
+      line-height: 1.5;
+      outline: none;
+    }
+
+    .other-box textarea:focus {
+      border-color: #8b5cf6;
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
+    }
+
+    .other-submit {
+      margin-top: 10px;
+      width: 100%;
+      padding: 14px;
+      border: 0;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .other-submit:active {
+      transform: scale(.99);
+    }
+
+    /* 완료 메시지 */
     #message {
       display: none;
       margin-top: 16px;
@@ -145,6 +187,10 @@
     .submitted .hotspot {
       pointer-events: none;
     }
+
+    .submitted .reason-box {
+      display: none !important;
+    }
   </style>
 </head>
 
@@ -152,7 +198,7 @@
 
   <main class="wrap" id="page">
 
-    <!-- 포스터 + 이미지 속 실제 클릭 영역 -->
+    <!-- 포스터 + 이미지 속 클릭 영역 -->
     <div class="poster-wrap">
 
       <img
@@ -161,7 +207,7 @@
         class="poster"
       >
 
-      <!-- 이미지 속 '참여할래요' 위 -->
+      <!-- 이미지 속 '참여할래요' -->
       <button
         type="button"
         class="hotspot hotspot-yes"
@@ -169,7 +215,7 @@
         aria-label="참여할래요"
       ></button>
 
-      <!-- 이미지 속 '참여가 어려워요' 위 -->
+      <!-- 이미지 속 '참여가 어려워요' -->
       <button
         type="button"
         class="hotspot hotspot-no"
@@ -178,6 +224,7 @@
       ></button>
 
     </div>
+
 
     <!-- 불참 사유 -->
     <section class="reason-box" id="reasonBox">
@@ -188,30 +235,69 @@
 
       <div class="reason-buttons">
 
-        <button type="button" data-reason="일정이 맞지 않아요">
+        <button
+          type="button"
+          data-reason="일정이 맞지 않아요"
+        >
           📅 일정이 맞지 않아요
         </button>
 
-        <button type="button" data-reason="시간이 맞지 않아요">
+        <button
+          type="button"
+          data-reason="시간이 맞지 않아요"
+        >
           🕕 시간이 맞지 않아요
         </button>
 
-        <button type="button" data-reason="NCS 과정이 필요하지 않아요">
+        <button
+          type="button"
+          data-reason="NCS 과정이 필요하지 않아요"
+        >
           📚 NCS 과정이 필요하지 않아요
         </button>
 
-        <button type="button" data-reason="다른 일정 또는 취업 준비가 있어요">
+        <button
+          type="button"
+          data-reason="다른 일정 또는 취업 준비가 있어요"
+        >
           💼 다른 일정 또는 취업 준비가 있어요
         </button>
 
-        <button type="button" data-reason="기타">
+        <button
+          type="button"
+          id="otherButton"
+        >
           ✏️ 기타
+        </button>
+
+      </div>
+
+
+      <!-- 기타 직접 입력 -->
+      <div
+        class="other-box"
+        id="otherBox"
+      >
+
+        <textarea
+          id="otherReason"
+          placeholder="참여가 어려운 이유를 간단히 적어주세요."
+        ></textarea>
+
+        <button
+          type="button"
+          class="other-submit"
+          id="otherSubmit"
+        >
+          기타 사유 제출하기
         </button>
 
       </div>
 
     </section>
 
+
+    <!-- 완료 메시지 -->
     <div id="message">
       응답 완료! 감사합니다 🙌
     </div>
@@ -225,8 +311,17 @@
       target="hiddenFrame"
       style="display:none;"
     >
-      <input type="hidden" name="answer" value="참여하고 싶어요">
-      <input type="hidden" name="reason" value="">
+      <input
+        type="hidden"
+        name="answer"
+        value="참여하고 싶어요"
+      >
+
+      <input
+        type="hidden"
+        name="reason"
+        value=""
+      >
     </form>
 
 
@@ -238,7 +333,12 @@
       target="hiddenFrame"
       style="display:none;"
     >
-      <input type="hidden" name="answer" value="참여가 어려워요">
+      <input
+        type="hidden"
+        name="answer"
+        value="참여가 어려워요"
+      >
+
       <input
         type="hidden"
         name="reason"
@@ -248,6 +348,7 @@
     </form>
 
 
+    <!-- Apps Script 결과는 숨김 -->
     <iframe
       name="hiddenFrame"
       style="display:none;"
@@ -257,7 +358,9 @@
 
 
   <script>
-    const page = document.getElementById("page");
+
+    const page =
+      document.getElementById("page");
 
     const yesButton =
       document.getElementById("yesButton");
@@ -276,6 +379,18 @@
 
     const reasonInput =
       document.getElementById("reasonInput");
+
+    const otherButton =
+      document.getElementById("otherButton");
+
+    const otherBox =
+      document.getElementById("otherBox");
+
+    const otherReason =
+      document.getElementById("otherReason");
+
+    const otherSubmit =
+      document.getElementById("otherSubmit");
 
     const message =
       document.getElementById("message");
@@ -300,10 +415,7 @@
     }
 
 
-    /*
-      이미지 속
-      '참여할래요' 클릭
-    */
+    /* 참여할래요 */
     yesButton.addEventListener(
       "click",
       () => {
@@ -316,15 +428,13 @@
     );
 
 
-    /*
-      이미지 속
-      '참여가 어려워요' 클릭
-    */
+    /* 참여가 어려워요 */
     noButton.addEventListener(
       "click",
       () => {
 
         reasonBox.style.display = "block";
+        otherBox.style.display = "none";
 
         reasonBox.scrollIntoView({
           behavior: "smooth",
@@ -335,9 +445,7 @@
     );
 
 
-    /*
-      불참 사유 클릭
-    */
+    /* 일반 불참 사유 */
     document
       .querySelectorAll("[data-reason]")
       .forEach(button => {
@@ -359,9 +467,55 @@
       });
 
 
-    /*
-      이미 응답했던 브라우저
-    */
+    /* 기타 클릭 */
+    otherButton.addEventListener(
+      "click",
+      () => {
+
+        otherBox.style.display = "block";
+
+        otherReason.focus();
+
+        otherBox.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest"
+        });
+
+      }
+    );
+
+
+    /* 기타 제출 */
+    otherSubmit.addEventListener(
+      "click",
+      () => {
+
+        const text =
+          otherReason.value.trim();
+
+        if (!text) {
+
+          alert(
+            "기타 사유를 입력해주세요."
+          );
+
+          otherReason.focus();
+
+          return;
+        }
+
+        reasonInput.value =
+          "기타: " + text;
+
+        noForm.submit();
+
+        completeVote();
+
+      }
+    );
+
+
+    /* 이미 응답한 브라우저 */
     if (
       localStorage.getItem(
         "ncsSurvey2026"
@@ -373,6 +527,7 @@
       message.style.display = "block";
 
     }
+
   </script>
 
 </body>
