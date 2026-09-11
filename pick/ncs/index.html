@@ -42,12 +42,21 @@
       padding: 16px 14px 40px;
     }
 
-    .poster {
+    /* 포스터 이미지 안의 가짜 버튼 영역을 숨김 */
+    .poster-crop {
       width: 100%;
-      display: block;
+      height: 660px;
+      overflow: hidden;
       border-radius: 24px;
       margin-bottom: 18px;
+      background: #ffffff;
       box-shadow: 0 14px 36px rgba(82, 66, 220, 0.14);
+    }
+
+    .poster {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .survey-box {
@@ -156,19 +165,29 @@
       font-weight: 900;
       color: #5b4df2;
     }
+
+    @media (max-width: 560px) {
+      .poster-crop {
+        height: 128vw;
+        max-height: 660px;
+      }
+    }
   </style>
 </head>
 
 <body>
   <main class="wrap">
 
-    <!-- 실제 페이지 안에 보일 세로 이미지 -->
-    <img
-      src="ncs-detail.png"
-      alt="NCS 취업준비 과정 안내"
-      class="poster"
-    >
+    <!-- 이미지 안의 버튼 영역은 아래쪽에서 잘려서 안 보임 -->
+    <div class="poster-crop">
+      <img
+        src="ncs-detail.png"
+        alt="NCS 취업준비 과정 안내"
+        class="poster"
+      >
+    </div>
 
+    <!-- 실제 클릭 가능한 버튼 -->
     <section class="survey-box">
 
       <div class="question">
@@ -183,17 +202,8 @@
           method="POST"
           target="hiddenFrame"
         >
-          <input
-            type="hidden"
-            name="answer"
-            value="참여하고 싶어요"
-          >
-
-          <input
-            type="hidden"
-            name="reason"
-            value=""
-          >
+          <input type="hidden" name="answer" value="참여하고 싶어요">
+          <input type="hidden" name="reason" value="">
 
           <button class="yes" type="submit">
             🙋 참여할래요
@@ -281,8 +291,7 @@
       </form>
 
       <div class="notice">
-        ※ 본 일정은 가계획이며, 참여 희망 결과에 따라
-        일정 및 운영시간은 조정될 수 있습니다.
+        ※ 본 일정은 가계획이며, 참여 희망 결과에 따라 일정 및 운영시간은 조정될 수 있습니다.
       </div>
 
       <div id="message"></div>
@@ -297,91 +306,56 @@
   </main>
 
   <script>
-    const yesForm =
-      document.getElementById("yesForm");
-
-    const noForm =
-      document.getElementById("noForm");
-
-    const noButton =
-      document.getElementById("noButton");
-
-    const reasonBox =
-      document.getElementById("reasonBox");
-
-    const reasonInput =
-      document.getElementById("reasonInput");
-
-    const message =
-      document.getElementById("message");
-
-    const allButtons =
-      document.querySelectorAll("button");
+    const yesForm = document.getElementById("yesForm");
+    const noForm = document.getElementById("noForm");
+    const noButton = document.getElementById("noButton");
+    const reasonBox = document.getElementById("reasonBox");
+    const reasonInput = document.getElementById("reasonInput");
+    const message = document.getElementById("message");
+    const allButtons = document.querySelectorAll("button");
 
     function finishVote() {
-      localStorage.setItem(
-        "ncsSurvey2026",
-        "done"
-      );
+      localStorage.setItem("ncsSurvey2026", "done");
 
       allButtons.forEach(btn => {
         btn.disabled = true;
       });
 
       reasonBox.style.display = "none";
-
-      message.textContent =
-        "응답 완료! 감사합니다 🙌";
+      message.textContent = "응답 완료! 감사합니다 🙌";
     }
 
-    if (
-      localStorage.getItem(
-        "ncsSurvey2026"
-      )
-    ) {
+    if (localStorage.getItem("ncsSurvey2026")) {
       allButtons.forEach(btn => {
         btn.disabled = true;
       });
 
-      message.textContent =
-        "이미 응답했어요. 감사합니다!";
+      message.textContent = "이미 응답했어요. 감사합니다!";
     }
 
-    yesForm.addEventListener(
-      "submit",
-      () => {
-        finishVote();
-      }
-    );
+    yesForm.addEventListener("submit", () => {
+      finishVote();
+    });
 
-    noButton.addEventListener(
-      "click",
-      () => {
-        reasonBox.style.display = "block";
+    noButton.addEventListener("click", () => {
+      reasonBox.style.display = "block";
 
-        reasonBox.scrollIntoView({
-          behavior: "smooth",
-          block: "nearest"
-        });
-      }
-    );
+      reasonBox.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    });
 
     document
       .querySelectorAll("[data-reason]")
       .forEach(btn => {
 
-        btn.addEventListener(
-          "click",
-          () => {
+        btn.addEventListener("click", () => {
+          reasonInput.value = btn.dataset.reason;
+          noForm.submit();
+          finishVote();
+        });
 
-            reasonInput.value =
-              btn.dataset.reason;
-
-            noForm.submit();
-
-            finishVote();
-          }
-        );
       });
   </script>
 
