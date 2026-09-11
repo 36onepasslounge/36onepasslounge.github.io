@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>NCS 취업준비 과정</title>
 
   <!-- 카카오톡 / SNS 미리보기 -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="졸특 PICK | NCS 취업준비 과정" />
-  <meta property="og:description" content="11/2~11/5 · 18:00~21:00 예정 · NCS 진단검사부터 기업 준비전략·모의시험까지" />
-  <meta property="og:url" content="https://36onepasslounge.github.io/pick/ncs/" />
-  <meta property="og:image" content="https://36onepasslounge.github.io/pick/ncs/og-ncs.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="졸특 PICK | NCS 취업준비 과정">
+  <meta
+    property="og:description"
+    content="11/2~11/5 · 18:00~21:00 예정 · NCS 진단검사부터 기업 준비전략·모의시험까지"
+  >
+  <meta
+    property="og:url"
+    content="https://36onepasslounge.github.io/pick/ncs/"
+  >
+  <meta
+    property="og:image"
+    content="https://36onepasslounge.github.io/pick/ncs/og-ncs.png"
+  >
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <style>
     * {
@@ -22,38 +31,69 @@
 
     body {
       margin: 0;
-      background: linear-gradient(180deg, #f7f5ff 0%, #ffffff 100%);
-      font-family: Pretendard, "Noto Sans KR", Arial, sans-serif;
+      background: linear-gradient(
+        180deg,
+        #f7f5ff 0%,
+        #ffffff 100%
+      );
+      font-family:
+        Pretendard,
+        "Noto Sans KR",
+        Arial,
+        sans-serif;
       color: #111827;
     }
 
     .wrap {
       width: min(560px, 100%);
       margin: 0 auto;
-      padding: 18px 16px 40px;
+      padding: 16px 14px 40px;
+    }
+
+    /* =========================
+       포스터 이미지
+       아래쪽 가짜 버튼 영역은 숨김
+       ========================= */
+
+    .poster-crop {
+      width: 100%;
+      aspect-ratio: 510 / 660;
+      overflow: hidden;
+      border-radius: 24px;
+      margin-bottom: 18px;
+      background: #ffffff;
+
+      box-shadow:
+        0 14px 36px
+        rgba(82, 66, 220, 0.14);
     }
 
     .poster {
       width: 100%;
+      height: auto;
       display: block;
-      border-radius: 24px;
-      box-shadow: 0 14px 36px rgba(82, 66, 220, 0.14);
-      margin-bottom: 20px;
     }
+
+    /* =========================
+       실제 설문 영역
+       ========================= */
 
     .survey-box {
       background: #ffffff;
       border-radius: 24px;
       padding: 22px 18px;
-      box-shadow: 0 12px 30px rgba(17,24,39,.08);
+
+      box-shadow:
+        0 12px 30px
+        rgba(17, 24, 39, 0.08);
     }
 
     .question {
       font-size: 20px;
       font-weight: 900;
-      margin-bottom: 15px;
       text-align: center;
       color: #1e1b4b;
+      margin-bottom: 16px;
     }
 
     .buttons {
@@ -61,14 +101,28 @@
       gap: 12px;
     }
 
+    form {
+      margin: 0;
+    }
+
     button {
       width: 100%;
       border: 0;
-      border-radius: 16px;
+      border-radius: 17px;
       padding: 18px 14px;
+
       font-size: 18px;
       font-weight: 900;
+
       cursor: pointer;
+
+      transition:
+        transform .15s ease,
+        opacity .15s ease;
+    }
+
+    button:active {
+      transform: scale(.98);
     }
 
     button:disabled {
@@ -76,32 +130,55 @@
       cursor: default;
     }
 
+    /* 참여 버튼 */
+
     .yes {
-      background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
       color: #ffffff;
-      box-shadow: 0 10px 24px rgba(124, 58, 237, 0.22);
+
+      background:
+        linear-gradient(
+          135deg,
+          #9b5cff 0%,
+          #7138ee 100%
+        );
+
+      box-shadow:
+        0 10px 24px
+        rgba(124, 58, 237, .24);
     }
 
+    /* 참여 어려움 */
+
     .no {
-      background: #f4f1ff;
+      background: #f5f2ff;
       color: #1f2937;
       border: 1px solid #e3ddff;
     }
 
+    /* =========================
+       불참 사유
+       ========================= */
+
     .reason-box {
       display: none;
-      margin-top: 14px;
-      padding: 15px;
+
+      margin-top: 15px;
+      padding: 16px;
+
       background: #faf9ff;
-      border-radius: 16px;
-      border: 1px solid #ece8ff;
+
+      border:
+        1px solid #ece8ff;
+
+      border-radius: 17px;
     }
 
     .reason-title {
       font-size: 15px;
       font-weight: 900;
       color: #5b4df2;
-      margin-bottom: 10px;
+
+      margin-bottom: 11px;
     }
 
     .reason-buttons {
@@ -112,72 +189,188 @@
     .reason-buttons button {
       background: #ffffff;
       color: #111827;
-      border: 1px solid #e5e7eb;
+
+      border:
+        1px solid #e5e7eb;
+
       font-size: 14px;
+      font-weight: 700;
+
       text-align: left;
-      padding: 13px;
+      padding: 13px 12px;
     }
+
+    /* =========================
+       안내문
+       ========================= */
 
     .notice {
       margin-top: 18px;
+      padding: 14px;
+
+      background: #f8f5ff;
+
+      border-radius: 14px;
+
+      color: #6b21a8;
+
       font-size: 13px;
       line-height: 1.6;
-      color: #6b21a8;
-      background: #f8f5ff;
-      border-radius: 14px;
-      padding: 13px;
+      font-weight: 700;
     }
 
+    /* 완료 메시지 */
+
     #message {
-      margin-top: 15px;
+      margin-top: 16px;
+      min-height: 24px;
+
       text-align: center;
+
       font-size: 15px;
       font-weight: 900;
+
       color: #5b4df2;
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
 
-    <img
-      src="ncs-detail.png"
-      alt="NCS 취업준비 과정 안내"
-      class="poster"
-    />
+  <main class="wrap">
 
-    <div class="survey-box">
+    <!-- =========================
+         안내 포스터
+         이미지 안의 가짜 버튼 부분은
+         CSS에서 잘라서 숨김
+         ========================= -->
+
+    <div class="poster-crop">
+
+      <img
+        src="ncs-detail.png"
+        alt="NCS 취업준비 과정 안내"
+        class="poster"
+      >
+
+    </div>
+
+
+    <!-- =========================
+         실제 클릭 가능한 설문
+         ========================= -->
+
+    <section class="survey-box">
+
       <div class="question">
         참여 가능 여부를 알려주세요!
       </div>
 
+
       <div class="buttons">
+
+        <!-- 참여할래요 -->
+
         <form
           id="yesForm"
           action="https://script.google.com/macros/s/AKfycbyc3EoRU_u1rxLSyFYeUYXHbks2y-hDP5YPyRPkTeC2DFZGAFjV5OVudG4euwcjXb8/exec"
           method="POST"
           target="hiddenFrame"
         >
-          <input type="hidden" name="answer" value="참여하고 싶어요">
-          <input type="hidden" name="reason" value="">
-          <button class="yes" type="submit">🙋 참여할래요</button>
+
+          <input
+            type="hidden"
+            name="answer"
+            value="참여하고 싶어요"
+          >
+
+          <input
+            type="hidden"
+            name="reason"
+            value=""
+          >
+
+          <button
+            class="yes"
+            type="submit"
+          >
+            🙋 참여할래요
+          </button>
+
         </form>
 
-        <button class="no" id="noButton" type="button">🙅 참여가 어려워요</button>
+
+        <!-- 참여가 어려워요 -->
+
+        <button
+          class="no"
+          id="noButton"
+          type="button"
+        >
+          🙅 참여가 어려워요
+        </button>
+
       </div>
 
-      <div class="reason-box" id="reasonBox">
-        <div class="reason-title">참여가 어려운 이유를 알려주세요.</div>
+
+      <!-- =========================
+           불참 사유
+           ========================= -->
+
+      <div
+        class="reason-box"
+        id="reasonBox"
+      >
+
+        <div class="reason-title">
+          참여가 어려운 이유를 알려주세요.
+        </div>
 
         <div class="reason-buttons">
-          <button type="button" data-reason="일정이 맞지 않아요">📅 일정이 맞지 않아요</button>
-          <button type="button" data-reason="시간이 맞지 않아요">🕕 시간이 맞지 않아요</button>
-          <button type="button" data-reason="NCS 과정이 필요하지 않아요">📚 NCS 과정이 필요하지 않아요</button>
-          <button type="button" data-reason="다른 일정 또는 취업 준비가 있어요">💼 다른 일정 또는 취업 준비가 있어요</button>
-          <button type="button" data-reason="기타">✏️ 기타</button>
+
+          <button
+            type="button"
+            data-reason="일정이 맞지 않아요"
+          >
+            📅 일정이 맞지 않아요
+          </button>
+
+          <button
+            type="button"
+            data-reason="시간이 맞지 않아요"
+          >
+            🕕 시간이 맞지 않아요
+          </button>
+
+          <button
+            type="button"
+            data-reason="NCS 과정이 필요하지 않아요"
+          >
+            📚 NCS 과정이 필요하지 않아요
+          </button>
+
+          <button
+            type="button"
+            data-reason="다른 일정 또는 취업 준비가 있어요"
+          >
+            💼 다른 일정 또는 취업 준비가 있어요
+          </button>
+
+          <button
+            type="button"
+            data-reason="기타"
+          >
+            ✏️ 기타
+          </button>
+
         </div>
+
       </div>
+
+
+      <!-- =========================
+           불참 데이터 전송용
+           ========================= -->
 
       <form
         id="noForm"
@@ -186,60 +379,164 @@
         target="hiddenFrame"
         style="display:none;"
       >
-        <input type="hidden" name="answer" value="참여가 어려워요">
-        <input type="hidden" name="reason" id="reasonInput" value="">
+
+        <input
+          type="hidden"
+          name="answer"
+          value="참여가 어려워요"
+        >
+
+        <input
+          type="hidden"
+          name="reason"
+          id="reasonInput"
+          value=""
+        >
+
       </form>
 
+
       <div class="notice">
-        ※ 본 일정은 가계획이며, 참여 희망 결과에 따라 일정 및 운영시간은 조정될 수 있습니다.
+
+        ※ 본 일정은 가계획이며,
+        참여 희망 결과에 따라
+        일정 및 운영시간은 조정될 수 있습니다.
+
       </div>
+
 
       <div id="message"></div>
 
-      <iframe name="hiddenFrame" style="display:none;"></iframe>
-    </div>
-  </div>
+
+      <!-- Apps Script 응답 화면을
+           사용자에게 보이지 않게 처리 -->
+
+      <iframe
+        name="hiddenFrame"
+        style="display:none;"
+      ></iframe>
+
+    </section>
+
+  </main>
+
 
   <script>
-    const yesForm = document.getElementById("yesForm");
-    const noForm = document.getElementById("noForm");
-    const noButton = document.getElementById("noButton");
-    const reasonBox = document.getElementById("reasonBox");
-    const reasonInput = document.getElementById("reasonInput");
-    const message = document.getElementById("message");
-    const allButtons = document.querySelectorAll("button");
+
+    const yesForm =
+      document.getElementById("yesForm");
+
+    const noForm =
+      document.getElementById("noForm");
+
+    const noButton =
+      document.getElementById("noButton");
+
+    const reasonBox =
+      document.getElementById("reasonBox");
+
+    const reasonInput =
+      document.getElementById("reasonInput");
+
+    const message =
+      document.getElementById("message");
+
+    const allButtons =
+      document.querySelectorAll("button");
+
+
+    /* 응답 완료 처리 */
 
     function finishVote() {
-      localStorage.setItem("ncsSurvey2026", "done");
+
+      localStorage.setItem(
+        "ncsSurvey2026",
+        "done"
+      );
+
       allButtons.forEach(btn => {
         btn.disabled = true;
       });
+
       reasonBox.style.display = "none";
-      message.textContent = "응답 완료! 감사합니다 🙌";
+
+      message.textContent =
+        "응답 완료! 감사합니다 🙌";
     }
 
-    if (localStorage.getItem("ncsSurvey2026")) {
+
+    /* 이미 응답한 브라우저 */
+
+    if (
+      localStorage.getItem(
+        "ncsSurvey2026"
+      )
+    ) {
+
       allButtons.forEach(btn => {
         btn.disabled = true;
       });
-      message.textContent = "이미 응답했어요. 감사합니다!";
+
+      message.textContent =
+        "이미 응답했어요. 감사합니다!";
     }
 
-    yesForm.addEventListener("submit", () => {
-      finishVote();
-    });
 
-    noButton.addEventListener("click", () => {
-      reasonBox.style.display = "block";
-    });
+    /* 참여할래요 */
 
-    document.querySelectorAll("[data-reason]").forEach(btn => {
-      btn.addEventListener("click", () => {
-        reasonInput.value = btn.dataset.reason;
-        noForm.submit();
+    yesForm.addEventListener(
+      "submit",
+      () => {
+
         finishVote();
+
+      }
+    );
+
+
+    /* 참여가 어려워요 */
+
+    noButton.addEventListener(
+      "click",
+      () => {
+
+        reasonBox.style.display =
+          "block";
+
+        reasonBox.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest"
+        });
+
+      }
+    );
+
+
+    /* 불참 사유 선택 */
+
+    document
+      .querySelectorAll(
+        "[data-reason]"
+      )
+      .forEach(btn => {
+
+        btn.addEventListener(
+          "click",
+          () => {
+
+            reasonInput.value =
+              btn.dataset.reason;
+
+            noForm.submit();
+
+            finishVote();
+
+          }
+        );
+
       });
-    });
+
   </script>
+
 </body>
 </html>
