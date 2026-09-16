@@ -1,158 +1,227 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1, viewport-fit=cover">
-
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
   <title>졸특 PICK | 120 CAREER RUN</title>
+  <meta name="theme-color" content="#0d47c9" />
 
-  <!-- 카카오톡 미리보기 -->
-  <meta property="og:type" content="website">
+  <!-- 기본 설명 -->
+  <meta
+    name="description"
+    content="졸특 PICK | 120 CAREER RUN - 내 일을 향해 뛰어라! 삼육대학교 120주년 기념 취업 미션 프로그램"
+  />
 
-  <meta property="og:title"
-        content="졸특 PICK | 120 CAREER RUN">
+  <!-- Open Graph / 카카오톡 미리보기 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="졸특 PICK | 120 CAREER RUN" />
+  <meta
+    property="og:description"
+    content="내 일을 향해 뛰어라! 선착순 120명 BIG EVENT, 5가지 취업 미션"
+  />
+  <meta
+    property="og:url"
+    content="https://36onepasslounge.github.io/pick/career-run/"
+  />
+  <meta
+    property="og:image"
+    content="https://36onepasslounge.github.io/pick/career-run/career-run-thumb.png"
+  />
+  <meta property="og:image:secure_url" content="https://36onepasslounge.github.io/pick/career-run/career-run-thumb.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="졸특 PICK 120 CAREER RUN 썸네일" />
 
-  <meta property="og:description"
-        content="내 일을 향해 뛰어라! 5가지 취업 미션과 선착순 120명 BIG EVENT">
-
-  <meta property="og:url"
-        content="https://36onepasslounge.github.io/pick/career-run/">
-
-  <meta property="og:image"
-        content="https://36onepasslounge.github.io/pick/career-run/preview.png">
-
-  <meta property="og:image:secure_url"
-        content="https://36onepasslounge.github.io/pick/career-run/preview.png">
-
-  <meta property="og:image:type"
-        content="image/png">
-
-  <meta name="twitter:card" content="summary_large_image">
-
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="졸특 PICK | 120 CAREER RUN" />
+  <meta
+    name="twitter:description"
+    content="내 일을 향해 뛰어라! 삼육대학교 120주년 기념 취업 미션 프로그램"
+  />
+  <meta
+    name="twitter:image"
+    content="https://36onepasslounge.github.io/pick/career-run/career-run-thumb.png"
+  />
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
+    * { box-sizing: border-box; }
+    html, body {
       margin: 0;
       padding: 0;
-      background: #073b92;
+      background: #0b3ea9;
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      color: #fff;
     }
 
     body {
-      min-height: 100vh;
       display: flex;
       justify-content: center;
-      font-family:
-        Pretendard,
-        "Noto Sans KR",
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
+      min-height: 100vh;
     }
 
     .page {
-      width: min(100%, 620px);
-      margin: 0 auto;
-      position: relative;
+      width: 100%;
+      max-width: 820px;
+      padding: 18px 14px 28px;
     }
 
-    .poster {
+    .top-chip {
+      display: inline-block;
+      margin: 0 0 14px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+
+    .poster-wrap {
       position: relative;
       width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0,0,0,.22);
+      background: #ffffff;
     }
 
-    .poster img {
+    .poster-wrap img {
+      display: block;
       width: 100%;
       height: auto;
-      display: block;
     }
 
-    /*
-      포스터 안의 실제 버튼 위에
-      투명한 클릭 영역을 올림
-    */
-
+    /* 포스터 안 버튼 클릭 영역 */
     .hotspot {
       position: absolute;
       display: block;
-      z-index: 10;
-      border-radius: 18px;
-      -webkit-tap-highlight-color: transparent;
+      z-index: 5;
+      border-radius: 999px;
+      text-indent: -9999px;
+      overflow: hidden;
+      background: rgba(255,255,255,0);
     }
 
-    /* 바로 신청하기 */
-    .apply {
-      left: 2.5%;
-      width: 51%;
-      top: 84.2%;
-      height: 6.6%;
+    /* 노란 버튼: 바로 신청하기 */
+    .apply-hotspot {
+      left: 4.8%;
+      bottom: 6.2%;
+      width: 41.5%;
+      height: 7.9%;
     }
 
-    /* 홈페이지 안내 보기 */
-    .home {
-      left: 55%;
-      width: 42.5%;
-      top: 84.2%;
-      height: 6.6%;
+    /* 파란 버튼: 홈페이지 안내 보기 */
+    .home-hotspot {
+      right: 4.6%;
+      bottom: 6.2%;
+      width: 41.8%;
+      height: 7.9%;
     }
 
-    /* PC에서 위치 확인하기 쉽게 */
+    /* 키보드 포커스용 */
+    .hotspot:focus,
     .hotspot:hover {
-      background: rgba(255,255,255,.06);
+      outline: 3px solid rgba(255,255,255,.9);
+      outline-offset: -3px;
+      box-shadow: inset 0 0 0 3px rgba(13,71,201,.9);
     }
 
+    .info {
+      margin: 16px auto 0;
+      max-width: 760px;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(255,255,255,.88);
+    }
+
+    .info strong {
+      color: #fff36b;
+    }
+
+    .mini-links {
+      margin-top: 8px;
+      font-size: 12px;
+      color: rgba(255,255,255,.76);
+      word-break: break-all;
+    }
+
+    .mini-links a {
+      color: #dbe8ff;
+      text-decoration: none;
+    }
+
+    .mini-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 520px) {
+      .page {
+        padding: 10px 8px 20px;
+      }
+
+      .top-chip {
+        font-size: 12px;
+        padding: 6px 10px;
+        margin-bottom: 10px;
+      }
+
+      .info {
+        font-size: 12px;
+      }
+    }
   </style>
 </head>
-
-
 <body>
-
   <main class="page">
+    <div class="top-chip">🏃 졸특 PICK · 클릭해서 바로 신청 가능</div>
 
-    <div class="poster">
-
-      <!-- 실제 포스터 -->
+    <section class="poster-wrap" aria-label="120 CAREER RUN 안내 포스터">
       <img
-        src="hero.png"
-        alt="졸특 PICK 120 CAREER RUN"
-      >
+        src="./career-run-main.png"
+        alt="졸특 PICK 120 CAREER RUN 포스터"
+      />
 
-
-      <!--
-        포스터 안 '바로 신청하기' 클릭 영역
-      -->
+      <!-- 포스터 안 노란 버튼 클릭 → 네이버 사전신청 -->
       <a
-        class="hotspot apply"
+        class="hotspot apply-hotspot"
         href="https://naver.me/IgMaDdhK"
         target="_blank"
-        rel="noopener"
-        aria-label="120 CAREER RUN 바로 신청하기"
-        title="바로 신청하기"
-      ></a>
+        rel="noopener noreferrer"
+        aria-label="바로 신청하기"
+      >
+        바로 신청하기
+      </a>
 
-
-      <!--
-        포스터 안 '홈페이지 안내 보기' 클릭 영역
-      -->
+      <!-- 포스터 안 파란 버튼 클릭 → 삼육대 홈페이지 안내 -->
       <a
-        class="hotspot home"
+        class="hotspot home-hotspot"
         href="https://www.syu.ac.kr/blog/2026%eb%85%84-%ec%a1%b8%ec%97%85%ec%83%9d%ed%8a%b9%ed%99%94%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8-%eb%82%b4-%ec%9d%bc%ec%9d%84-%ed%96%a5%ed%95%b4-%eb%9b%b0%ec%96%b4%eb%9d%bc-%ec%82%bc%ec%9c%a1/?pageds=1&k=&t=&c="
         target="_blank"
-        rel="noopener"
-        aria-label="120 CAREER RUN 홈페이지 안내 보기"
-        title="홈페이지 안내 보기"
-      ></a>
+        rel="noopener noreferrer"
+        aria-label="홈페이지 안내 보기"
+      >
+        홈페이지 안내 보기
+      </a>
+    </section>
 
+    <div class="info">
+      포스터 안 버튼을 클릭하면 바로 이동합니다.<br />
+      <strong>노란 버튼</strong>은 사전신청,
+      <strong>파란 버튼</strong>은 삼육대 홈페이지 안내로 연결됩니다.
+      <div class="mini-links">
+        페이지 링크:
+        <a href="https://36onepasslounge.github.io/pick/career-run/" target="_blank" rel="noopener noreferrer">
+          https://36onepasslounge.github.io/pick/career-run/
+        </a>
+      </div>
     </div>
-
   </main>
-
 </body>
 </html>
