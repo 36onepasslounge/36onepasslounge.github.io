@@ -2,22 +2,47 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <title>졸특 PICK | 120 CAREER RUN</title>
 
-  <!-- 카카오톡 / SNS 미리보기 -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="졸특 PICK | 120 CAREER RUN">
-  <meta property="og:description" content="취업 준비, 이제 직접 뛰어보세요! 5가지 취업 미션과 선착순 BIG EVENT">
-  <meta property="og:url" content="https://36onepasslounge.github.io/pick/career-run/">
-  <meta property="og:image" content="https://36onepasslounge.github.io/pick/career-run/preview.png">
-  <meta property="og:image:secure_url" content="https://36onepasslounge.github.io/pick/career-run/preview.png">
-  <meta property="og:image:type" content="image/png">
 
-  <meta name="twitter:card" content="summary_large_image">
+  <!-- =========================
+       카카오톡 미리보기
+  ========================== -->
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:title"
+        content="졸특 PICK | 120 CAREER RUN">
+
+  <meta property="og:description"
+        content="내 일을 향해 뛰어라! 5가지 취업 미션과 선착순 120명 BIG EVENT">
+
+  <meta property="og:url"
+        content="https://36onepasslounge.github.io/pick/career-run/">
+
+  <!-- 카톡에서는 preview.png -->
+  <meta property="og:image"
+        content="https://36onepasslounge.github.io/pick/career-run/preview.png">
+
+  <meta property="og:image:secure_url"
+        content="https://36onepasslounge.github.io/pick/career-run/preview.png">
+
+  <meta property="og:image:type"
+        content="image/png">
+
+  <meta name="twitter:card"
+        content="summary_large_image">
+
+  <meta name="twitter:image"
+        content="https://36onepasslounge.github.io/pick/career-run/preview.png">
+
 
   <style>
+
     * {
       box-sizing: border-box;
     }
@@ -30,6 +55,7 @@
 
     body {
       min-height: 100vh;
+
       font-family:
         Pretendard,
         "Noto Sans KR",
@@ -39,565 +65,726 @@
         sans-serif;
 
       background:
-        radial-gradient(circle at 15% 0%, #167cff 0%, transparent 28%),
-        radial-gradient(circle at 90% 8%, #35b8ff 0%, transparent 20%),
-        linear-gradient(180deg, #062767 0%, #073e99 55%, #05235a 100%);
+        radial-gradient(circle at 15% 0%, #167cff 0, transparent 25%),
+        radial-gradient(circle at 90% 8%, #2fb9ff 0, transparent 20%),
+        linear-gradient(180deg, #062766 0%, #063c95 55%, #041d4c 100%);
 
-      padding: 14px 10px 35px;
       color: #fff;
+
+      padding: 14px 10px 40px;
     }
+
 
     .wrap {
       width: min(100%, 620px);
       margin: 0 auto;
     }
 
-    .poster-page {
-      border-radius: 26px;
-      overflow: hidden;
-      background:
-        linear-gradient(180deg, #0d57ce 0%, #08398f 100%);
-      border: 2px solid rgba(110, 190, 255, .8);
-      box-shadow: 0 18px 38px rgba(0, 0, 0, .24);
-    }
 
-    /* ---------- HERO ---------- */
+    /* =========================
+       졸특 이름표
+    ========================== */
 
-    .hero {
-      position: relative;
-      padding: 19px 17px 16px;
-      background:
-        radial-gradient(circle at 90% 10%, rgba(80,190,255,.40), transparent 25%),
-        linear-gradient(145deg, #105fd6, #073181);
+    .pick-row {
+      margin-bottom: 10px;
     }
 
     .pick-badge {
       display: inline-flex;
       align-items: center;
-      gap: 3px;
 
-      background: #061d4b;
-      border: 2px solid #39b8ff;
-      color: #fff;
+      background: #061d4c;
 
-      border-radius: 12px;
-      padding: 7px 11px;
+      border: 2px solid #38baff;
 
-      font-size: 13px;
+      border-radius: 13px;
+
+      padding: 7px 12px;
+
+      font-size: 14px;
       font-weight: 950;
 
-      box-shadow: 0 5px 12px rgba(0,0,0,.16);
+      box-shadow: 0 6px 15px rgba(0,0,0,.18);
     }
+
 
     .special {
       display: inline-block;
-      font-weight: 950;
 
-      background: linear-gradient(
-        180deg,
-        #ff9c00 0%,
-        #ffe42d 28%,
-        #64db28 46%,
-        #ff3fad 66%,
-        #8259ff 84%,
-        #28c9ff 100%
-      );
+      margin: 0 2px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #ff9e00 0%,
+          #ffe726 25%,
+          #6ae029 45%,
+          #ff41ae 65%,
+          #7d5cff 82%,
+          #29c8ff 100%
+        );
 
       -webkit-background-clip: text;
       background-clip: text;
+
       color: transparent;
-    }
 
-    .hero-title {
-      margin-top: 14px;
-      line-height: .9;
-      letter-spacing: -.055em;
       font-weight: 950;
     }
 
-    .hero-title .num {
+
+    /* =========================
+       실제 메인 포스터
+    ========================== */
+
+    .hero-poster {
+      overflow: hidden;
+
+      background: #fff;
+
+      border-radius: 24px;
+
+      box-shadow:
+        0 18px 38px rgba(0,0,0,.25);
+
+      margin-bottom: 13px;
+    }
+
+
+    .hero-poster img {
       display: block;
-      color: #efff00;
-      font-size: 52px;
-      text-shadow: 0 5px 0 rgba(0,0,0,.13);
+
+      width: 100%;
+      height: auto;
     }
 
-    .hero-title .career {
-      display: block;
-      color: #efff00;
-      font-size: 47px;
-      text-shadow: 0 5px 0 rgba(0,0,0,.13);
+
+    /* =========================
+       핵심 정보
+    ========================== */
+
+    .info-section {
+      background:
+        linear-gradient(
+          145deg,
+          #105bd0,
+          #062e78
+        );
+
+      border: 2px solid rgba(99,184,255,.65);
+
+      border-radius: 22px;
+
+      padding: 15px;
+
+      margin-bottom: 12px;
     }
 
-    .hero-title .run {
-      color: #fff;
-    }
 
-    .hero-sub {
-      margin-top: 8px;
-      font-size: 24px;
+    .info-title {
+      font-size: 22px;
       font-weight: 950;
+
       letter-spacing: -.04em;
+
+      margin-bottom: 4px;
     }
 
-    .hero-desc {
-      margin-top: 10px;
-      font-size: 12px;
-      line-height: 1.55;
-      color: #eaf3ff;
+
+    .info-sub {
+      font-size: 11px;
+
+      color: #dcecff;
+
+      line-height: 1.5;
+
+      margin-bottom: 12px;
+
       font-weight: 750;
     }
 
-    .hero-highlight {
-      display: inline-block;
-      margin-top: 12px;
-
-      background: #efff00;
-      color: #17316d;
-
-      border-radius: 999px;
-      padding: 8px 12px;
-
-      font-size: 11px;
-      font-weight: 950;
-    }
-
-    /* ---------- INFO ---------- */
 
     .info-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
 
-      padding: 0 14px 14px;
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 8px;
     }
+
 
     .info-box {
-      background: #f8f9fc;
+      min-height: 74px;
+
+      background: #fff;
+
+      color: #17316b;
+
       border-radius: 14px;
 
-      padding: 11px 12px;
-      min-height: 76px;
-
-      color: #17316d;
+      padding: 11px;
     }
+
 
     .info-label {
       font-size: 10px;
-      color: #2b6fd8;
+
+      color: #2a6dda;
+
       font-weight: 950;
-      margin-bottom: 5px;
+
+      margin-bottom: 4px;
     }
+
 
     .info-value {
       font-size: 12px;
-      line-height: 1.45;
+
+      line-height: 1.4;
+
       font-weight: 900;
     }
 
-    /* ---------- MISSION ---------- */
 
-    .mission-panel {
-      margin: 0 14px 12px;
-      padding: 14px;
+    /* =========================
+       미션
+    ========================== */
 
+    .mission-section {
       background: #fff;
-      border-radius: 19px;
 
-      color: #1f2d4f;
+      color: #202e4c;
+
+      border-radius: 22px;
+
+      padding: 16px;
+
+      margin-bottom: 12px;
+
+      box-shadow:
+        0 12px 25px rgba(0,0,0,.13);
     }
 
-    .panel-title {
+
+    .mission-title {
       display: flex;
+
       align-items: center;
+
       gap: 7px;
 
+      color: #173c8a;
+
       font-size: 22px;
+
       font-weight: 950;
-      color: #183d8d;
+
+      margin-bottom: 5px;
     }
 
-    .panel-title .five {
-      width: 30px;
-      height: 30px;
 
-      border-radius: 10px;
+    .mission-title .num {
+      width: 31px;
+      height: 31px;
 
       display: grid;
       place-items: center;
 
-      background: #286fff;
+      border-radius: 10px;
+
+      background: #276cf2;
+
       color: #fff;
 
       font-size: 15px;
     }
 
-    .panel-sub {
-      margin-top: 5px;
+
+    .mission-intro {
       margin-bottom: 11px;
 
       font-size: 10px;
-      line-height: 1.45;
 
-      color: #7d879d;
-      font-weight: 700;
+      color: #7b8498;
+
+      line-height: 1.5;
     }
 
-    .mission-list {
+
+    .missions {
       display: grid;
       gap: 7px;
     }
 
-    .mission-item {
+
+    .mission {
       display: flex;
+
       align-items: center;
+
       gap: 10px;
 
-      padding: 9px 10px;
+      padding: 10px;
 
-      background: #f2f5fb;
+      background: #f2f5fa;
+
       border-radius: 12px;
     }
 
-    .mission-item b {
-      width: 26px;
-      height: 26px;
 
-      border-radius: 50%;
-      background: #fff;
+    .mission b {
+      width: 27px;
+      height: 27px;
 
       display: grid;
       place-items: center;
 
-      color: #2865dd;
+      flex: 0 0 auto;
+
+      border-radius: 50%;
+
+      background: #fff;
+
+      color: #2765dc;
+
       font-size: 11px;
 
-      box-shadow: 0 2px 7px rgba(0,0,0,.05);
-      flex: 0 0 auto;
+      box-shadow:
+        0 2px 7px rgba(0,0,0,.06);
     }
 
-    .mission-item span {
+
+    .mission span {
       font-size: 12px;
+
       font-weight: 900;
-      color: #202c4a;
     }
 
-    /* ---------- EVENT ---------- */
 
-    .event-panel {
-      margin: 0 14px 12px;
-      padding: 14px;
+    /* =========================
+       이벤트
+    ========================== */
 
-      border-radius: 19px;
-
+    .event {
       background:
-        linear-gradient(135deg, #fff600 0%, #ffd100 100%);
+        linear-gradient(
+          135deg,
+          #fff600,
+          #ffd300
+        );
 
-      color: #18306b;
+      color: #17316a;
+
+      border-radius: 20px;
+
+      padding: 15px;
+
+      margin-bottom: 12px;
+
+      box-shadow:
+        0 12px 25px rgba(0,0,0,.14);
     }
+
 
     .event-title {
-      font-size: 21px;
+      font-size: 22px;
+
       font-weight: 950;
-      letter-spacing: -.03em;
+
+      margin-bottom: 8px;
     }
+
 
     .event-text {
-      margin-top: 7px;
-      font-size: 11px;
-      line-height: 1.55;
+      font-size: 12px;
+
       font-weight: 800;
+
+      line-height: 1.6;
     }
+
 
     .event-text strong {
-      font-size: 13px;
+      font-size: 14px;
     }
 
-    /* ---------- CTA ---------- */
 
-    .button-group {
+    /* =========================
+       버튼
+    ========================== */
+
+    .buttons {
       display: grid;
-      gap: 9px;
 
-      padding: 0 14px 14px;
+      gap: 9px;
     }
+
 
     .btn {
-      min-height: 54px;
-
-      border-radius: 16px;
+      min-height: 58px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
-      padding: 11px 14px;
-
-      text-decoration: none;
       text-align: center;
 
-      font-size: 15px;
+      text-decoration: none;
+
+      border-radius: 17px;
+
+      padding: 12px 15px;
+
+      font-size: 16px;
+
       font-weight: 950;
 
       transition: .15s;
     }
 
+
     .btn:active {
       transform: scale(.98);
     }
 
-    .btn.apply {
-      background: #efff00;
-      color: #14316f;
 
-      box-shadow: 0 8px 18px rgba(239,255,0,.20);
+    .apply {
+      background: #efff00;
+
+      color: #15316c;
+
+      box-shadow:
+        0 9px 20px rgba(239,255,0,.19);
     }
 
-    .btn.home {
-      background: #0b59cf;
+
+    .home {
+      background: #0b57ca;
+
       color: #fff;
 
-      border: 2px solid #69b8ff;
+      border: 2px solid #65b7ff;
     }
 
-    .direct-note {
+
+    .button-note {
+      margin-top: 10px;
+
       text-align: center;
 
-      padding: 0 15px 14px;
+      font-size: 10px;
 
-      font-size: 9px;
-      color: #d8e9ff;
       line-height: 1.5;
+
+      color: #d7e9ff;
     }
 
-    /* ---------- FOOT ---------- */
+
+    /* =========================
+       푸터
+    ========================== */
 
     .footer {
-      background: #041e4d;
-
-      padding: 15px;
+      margin-top: 18px;
 
       text-align: center;
 
-      color: #c8dcff;
+      color: #bfd8ff;
 
       font-size: 9px;
+
       line-height: 1.6;
     }
 
+
     .footer strong {
       display: block;
-      margin-bottom: 3px;
 
       color: #fff;
+
       font-size: 11px;
+
+      margin-bottom: 3px;
     }
+
 
     @media (max-width: 480px) {
-      .hero-title .num {
-        font-size: 45px;
+
+      .info-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
-      .hero-title .career {
-        font-size: 40px;
-      }
-
-      .hero-sub {
-        font-size: 21px;
-      }
     }
+
   </style>
+
 </head>
+
 
 <body>
 
+
 <div class="wrap">
 
-  <main class="poster-page">
 
-    <!-- HERO -->
+  <!-- ========================
+       졸특 PICK
+  ========================= -->
 
-    <section class="hero">
+  <div class="pick-row">
 
-      <div class="pick-badge">
-        졸<span class="special">특</span> PICK
-      </div>
+    <div class="pick-badge">
+      졸<span class="special">특</span> PICK
+    </div>
 
-      <div class="hero-title">
-        <span class="num">120</span>
-        <span class="career">CAREER <span class="run">RUN</span></span>
-      </div>
-
-      <div class="hero-sub">
-        내 일을 향해 뛰어라!
-      </div>
-
-      <div class="hero-desc">
-        취업 준비, 이제 가만히 있지 말고 직접 뛰어보세요.<br>
-        36(삼육) 모양의 코스를 돌며
-        <strong>5가지 취업 미션</strong>을 수행하는
-        참여형 커리어 프로그램입니다.
-      </div>
-
-      <div class="hero-highlight">
-        취업 준비 + 미션 + 선물까지 한 번에!
-      </div>
-
-    </section>
+  </div>
 
 
-    <!-- INFO -->
 
-    <section class="info-grid">
+  <!-- ========================
+       웹페이지에서 실제로 보이는
+       메인 이미지
+       hero.png
+  ========================= -->
+
+  <section class="hero-poster">
+
+    <img
+      src="hero.png"
+      alt="졸특 PICK 120 CAREER RUN 내 일을 향해 뛰어라"
+    >
+
+  </section>
+
+
+
+  <!-- ========================
+       기본 정보
+  ========================= -->
+
+  <section class="info-section">
+
+    <div class="info-title">
+      🏃 120 CAREER RUN
+    </div>
+
+    <div class="info-sub">
+      36(삼육) 모양의 코스를 돌며
+      5가지 취업 미션을 수행하는
+      참여형 취업 프로그램입니다.
+    </div>
+
+
+    <div class="info-grid">
+
 
       <div class="info-box">
-        <div class="info-label">일시</div>
+
+        <div class="info-label">
+          일시
+        </div>
 
         <div class="info-value">
           2026. 10. 1.(목)<br>
           13:00~17:00
         </div>
+
       </div>
 
 
       <div class="info-box">
-        <div class="info-label">장소</div>
+
+        <div class="info-label">
+          장소
+        </div>
 
         <div class="info-value">
           삼육대학교<br>
           솔로몬광장
         </div>
+
       </div>
 
 
       <div class="info-box">
-        <div class="info-label">대상</div>
+
+        <div class="info-label">
+          대상
+        </div>
 
         <div class="info-value">
           삼육대 4학년 2학기 재학생·졸업생·지역청년
         </div>
+
       </div>
 
 
       <div class="info-box">
-        <div class="info-label">참여방법</div>
+
+        <div class="info-label">
+          참여방법
+        </div>
 
         <div class="info-value">
           개인 또는<br>
           팀 참여 가능
         </div>
-      </div>
-
-    </section>
-
-
-    <!-- MISSIONS -->
-
-    <section class="mission-panel">
-
-      <div class="panel-title">
-        <div class="five">5</div>
-        가지 취업 미션
-      </div>
-
-      <div class="panel-sub">
-        삼육대학교 캠퍼스를 돌며 취업 준비에 필요한 핵심 활동을 직접 경험합니다.
-      </div>
-
-      <div class="mission-list">
-
-        <div class="mission-item">
-          <b>1</b>
-          <span>나의 직업가치관 찾기</span>
-        </div>
-
-        <div class="mission-item">
-          <b>2</b>
-          <span>직무 인싸 몸으로 말해요</span>
-        </div>
-
-        <div class="mission-item">
-          <b>3</b>
-          <span>이력서 구출작전!</span>
-        </div>
-
-        <div class="mission-item">
-          <b>4</b>
-          <span>금지어를 피해라! 자기소개 챌린지</span>
-        </div>
-
-        <div class="mission-item">
-          <b>5</b>
-          <span>취업공약선언문 만들기</span>
-        </div>
 
       </div>
 
-    </section>
+
+    </div>
+
+  </section>
 
 
-    <!-- EVENT -->
 
-    <section class="event-panel">
+  <!-- ========================
+       5가지 미션
+  ========================= -->
 
-      <div class="event-title">
-        🎁 선착순 120명 BIG EVENT
+  <section class="mission-section">
+
+
+    <div class="mission-title">
+
+      <div class="num">
+        5
       </div>
 
-      <div class="event-text">
-        사전 신청 후 행사 당일 참여 시<br>
-        <strong>CJ 통합기프트카드 1만원 증정!</strong>
-        <br><br>
-        취업 사연 선정 시
-        <strong>1만원 추가 증정</strong>
-      </div>
+      가지 취업 미션
 
-    </section>
-
-
-    <!-- BUTTONS -->
-
-    <section class="button-group">
-
-      <a
-        class="btn apply"
-        href="https://naver.me/IgMaDdhK"
-        target="_blank"
-        rel="noopener"
-      >
-        🔥 바로 신청하기 →
-      </a>
-
-
-      <a
-        class="btn home"
-        href="https://www.syu.ac.kr/blog/2026%eb%85%84-%ec%a1%b8%ec%97%85%ec%83%9d%ed%8a%b9%ed%99%94%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8-%eb%82%b4-%ec%9d%bc%ec%9d%84-%ed%96%a5%ed%95%b4-%eb%9b%b0%ec%96%b4%eb%9d%bc-%ec%82%bc%ec%9c%a1/?pageds=1&k=&t=&c="
-        target="_blank"
-        rel="noopener"
-      >
-        홈페이지 안내 보기 →
-      </a>
-
-    </section>
-
-
-    <div class="direct-note">
-      ‘바로 신청하기’를 누르면
-      120 CAREER RUN 사전신청서로 바로 이동합니다.
     </div>
 
 
-    <footer class="footer">
+    <div class="mission-intro">
+      캠퍼스를 돌며 취업 준비에 필요한 핵심 활동을 직접 경험해보세요.
+    </div>
+
+
+    <div class="missions">
+
+      <div class="mission">
+        <b>1</b>
+        <span>나의 직업가치관 찾기</span>
+      </div>
+
+      <div class="mission">
+        <b>2</b>
+        <span>직무 인싸 몸으로 말해요</span>
+      </div>
+
+      <div class="mission">
+        <b>3</b>
+        <span>이력서 구출작전!</span>
+      </div>
+
+      <div class="mission">
+        <b>4</b>
+        <span>금지어를 피해라! 자기소개 챌린지</span>
+      </div>
+
+      <div class="mission">
+        <b>5</b>
+        <span>취업공약선언문 만들기</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ========================
+       이벤트
+  ========================= -->
+
+  <section class="event">
+
+    <div class="event-title">
+      🎁 선착순 120명 BIG EVENT!
+    </div>
+
+    <div class="event-text">
+
+      사전 신청 후 행사 당일 참여 시
+      <br>
+
       <strong>
-        삼육대학교 대학일자리본부 · 졸업생특화프로그램(졸특)
+        CJ 통합기프트카드 1만원 증정!
       </strong>
 
-      내 일을 향해 뛰어라! 120 CAREER RUN
-    </footer>
+      <br><br>
 
-  </main>
+      취업 사연 선정 시
+      <strong>
+        1만원 추가 증정!
+      </strong>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ========================
+       버튼
+  ========================= -->
+
+  <div class="buttons">
+
+
+    <!-- 사전신청 -->
+
+    <a
+      class="btn apply"
+      href="https://naver.me/IgMaDdhK"
+      target="_blank"
+      rel="noopener"
+    >
+      🔥 바로 신청하기 →
+    </a>
+
+
+    <!-- 학교 홈페이지 -->
+
+    <a
+      class="btn home"
+      href="https://www.syu.ac.kr/blog/2026%eb%85%84-%ec%a1%b8%ec%97%85%ec%83%9d%ed%8a%b9%ed%99%94%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8-%eb%82%b4-%ec%9d%bc%ec%9d%84-%ed%96%a5%ed%95%b4-%eb%9b%b0%ec%96%b4%eb%9d%bc-%ec%82%bc%ec%9c%a1/?pageds=1&k=&t=&c="
+      target="_blank"
+      rel="noopener"
+    >
+      홈페이지 안내 보기 →
+    </a>
+
+
+  </div>
+
+
+  <div class="button-note">
+    ‘바로 신청하기’를 누르면
+    120 CAREER RUN 사전신청서로 바로 이동합니다.
+  </div>
+
+
+
+  <footer class="footer">
+
+    <strong>
+      삼육대학교 대학일자리본부 · 졸업생특화프로그램(졸특)
+    </strong>
+
+    내 일을 향해 뛰어라! 120 CAREER RUN
+
+  </footer>
+
 
 </div>
+
 
 </body>
 </html>
