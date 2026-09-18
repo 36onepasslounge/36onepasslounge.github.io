@@ -1,1 +1,398 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <meta name="theme-color" content="#0b2e86" />
 
+  <title>졸특 PICK | 저, 이 직무에 진심인데요?</title>
+  <meta
+    name="description"
+    content="내 경험을 ‘합격 자소서’로 바꾸는 법 | 2026.10.26.(월)~10.30.(금) | 14:00~17:00 | 비대면(ZOOM)"
+  />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="졸특 PICK | 저, 이 직무에 진심인데요?" />
+  <meta
+    property="og:description"
+    content="내 경험을 ‘합격 자소서’로 바꾸는 법 | 5일 완성 실전 커리큘럼"
+  />
+  <meta
+    property="og:url"
+    content="https://36onepasslounge.github.io/pick/job-essay/"
+  />
+  <meta
+    property="og:image"
+    content="https://36onepasslounge.github.io/pick/job-essay/preview.png"
+  />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="36onepasslounge" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="졸특 PICK | 저, 이 직무에 진심인데요?" />
+  <meta
+    name="twitter:description"
+    content="내 경험을 ‘합격 자소서’로 바꾸는 법 | 5일 완성 실전 커리큘럼"
+  />
+  <meta
+    name="twitter:image"
+    content="https://36onepasslounge.github.io/pick/job-essay/preview.png"
+  />
+
+  <style>
+    :root {
+      --bg: #eef6ff;
+      --card: #ffffff;
+      --line: #d8e6ff;
+      --text: #13233f;
+      --sub: #4b5d7b;
+      --blue: #0d51c1;
+      --blue-dark: #082f7a;
+      --yellow: #ffe44d;
+      --shadow: 0 18px 40px rgba(10, 42, 102, 0.12);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, #f9fcff 0%, #eef6ff 45%, #e4f0ff 100%);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(100%, 920px);
+      margin: 0 auto;
+      padding: 18px 16px 40px;
+    }
+
+    .top-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #083280, #0d63db);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card,
+    .section-card,
+    .poster-card {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(216,230,255,0.95);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-img-link {
+      display: block;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-img {
+      width: 100%;
+      aspect-ratio: 1200 / 630;
+      object-fit: cover;
+      background: #dbe9ff;
+    }
+
+    .hero-body {
+      padding: 18px 18px 20px;
+    }
+
+    .title {
+      margin: 0;
+      font-size: clamp(24px, 4vw, 38px);
+      line-height: 1.18;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: #0c2c78;
+    }
+
+    .desc {
+      margin: 10px 0 0;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--sub);
+      font-weight: 600;
+    }
+
+    .chips {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 18px 0 0;
+    }
+
+    .chip {
+      background: #f7fbff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 14px;
+    }
+
+    .chip .label {
+      font-size: 12px;
+      color: #5e7095;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .chip .value {
+      font-size: 15px;
+      font-weight: 800;
+      color: #12305f;
+      line-height: 1.5;
+    }
+
+    .btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 56px;
+      padding: 0 18px;
+      border-radius: 16px;
+      font-size: 16px;
+      font-weight: 900;
+      transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0b49c6, #1678ff);
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(20, 98, 255, 0.22);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, #ffe54f, #ffd22e);
+      color: #0c2c78;
+      box-shadow: 0 10px 22px rgba(255, 212, 46, 0.28);
+    }
+
+    .section-card {
+      margin-top: 18px;
+      padding: 18px;
+    }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: 21px;
+      font-weight: 900;
+      color: #0d2c72;
+      letter-spacing: -0.02em;
+    }
+
+    .section-text {
+      margin: 0;
+      color: var(--sub);
+      line-height: 1.75;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .poster-card {
+      margin-top: 18px;
+      padding: 14px;
+    }
+
+    .poster-label {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 900;
+      color: #0d2c72;
+    }
+
+    .poster-link {
+      display: block;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .poster-img {
+      width: 100%;
+      object-fit: contain;
+      background: #fff;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.65;
+      color: #66799c;
+      font-weight: 700;
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        padding: 14px 12px 32px;
+      }
+
+      .hero-body,
+      .section-card,
+      .poster-card {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .chips,
+      .btns {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        min-height: 54px;
+        font-size: 15px;
+      }
+
+      .section-title,
+      .poster-label {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top-tag">🎯 졸특 PICK 추천 프로그램</div>
+
+    <section class="hero-card">
+      <a
+        class="hero-img-link"
+        href="https://www.syu.ac.kr/blog/2026%eb%85%84-%ec%a1%b8%ec%97%85%ec%83%9d%ed%8a%b9%ed%99%94%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8-%ec%a0%80-%ec%9d%b4-%ec%a7%81%eb%ac%b4%ec%97%90-%ec%a7%84%ec%8b%ac%ec%9d%b8%eb%8d%b0%ec%9a%94/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="홈페이지 안내 보기"
+      >
+        <img
+          src="./preview.png"
+          alt="졸특 PICK 저, 이 직무에 진심인데요? 프로그램 대표 이미지"
+          class="hero-img"
+        />
+      </a>
+
+      <div class="hero-body">
+        <h1 class="title">저, 이 직무에 진심인데요?</h1>
+        <p class="desc">
+          내 경험을 <strong>‘합격 자소서’</strong>로 바꾸는 법.<br />
+          직무와 나의 경험을 효과적으로 연결해
+          <strong>기업별 맞춤 자기소개서</strong>를 완성하는 5일 실전 프로그램입니다.
+        </p>
+
+        <div class="chips">
+          <div class="chip">
+            <div class="label">운영기간</div>
+            <div class="value">2026. 10. 26.(월) ~ 10. 30.(금)</div>
+          </div>
+          <div class="chip">
+            <div class="label">운영시간</div>
+            <div class="value">14:00 ~ 17:00</div>
+          </div>
+          <div class="chip">
+            <div class="label">운영방법</div>
+            <div class="value">비대면(ZOOM)</div>
+          </div>
+          <div class="chip">
+            <div class="label">운영대상</div>
+            <div class="value">졸업(예정)생, 지역청년</div>
+          </div>
+        </div>
+
+        <div class="btns">
+          <a
+            class="btn btn-primary"
+            href="https://www.syu.ac.kr/blog/2026%eb%85%84-%ec%a1%b8%ec%97%85%ec%83%9d%ed%8a%b9%ed%99%94%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8-%ec%a0%80-%ec%9d%b4-%ec%a7%81%eb%ac%b4%ec%97%90-%ec%a7%84%ec%8b%ac%ec%9d%b8%eb%8d%b0%ec%9a%94/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            홈페이지 안내 보기 →
+          </a>
+          <a
+            class="btn btn-secondary"
+            href="./poster.png"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            포스터 크게 보기 →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2 class="section-title">프로그램 핵심 포인트</h2>
+      <p class="section-text">
+        1일차에는 <strong>경험 발굴과 자기이해</strong>, 2일차에는
+        <strong>지원동기와 입사 후 포부</strong>, 3일차에는
+        <strong>직무역량과 관련 경험</strong>, 4일차에는
+        <strong>협업·갈등·소통 경험</strong>, 5일차에는
+        <strong>문제해결·도전·성과 경험</strong>까지 다룹니다.
+        자소서 문항을 막연하게 쓰는 것이 아니라,
+        직무와 경험을 연결해 실제 합격 가능성을 높이는 방향으로 완성할 수 있도록 돕는 과정입니다.
+      </p>
+    </section>
+
+    <section class="poster-card">
+      <h2 class="poster-label">프로그램 포스터</h2>
+      <a
+        class="poster-link"
+        href="./poster.png"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="./poster.png"
+          alt="저, 이 직무에 진심인데요? 프로그램 전체 포스터"
+          class="poster-img"
+        />
+      </a>
+    </section>
+
+    <p class="footer-note">
+      삼육대학교 대학일자리본부 · 졸업생특화프로그램<br />
+      자세한 내용은 홈페이지 안내를 확인해주세요.
+    </p>
+  </main>
+</body>
+</html>
