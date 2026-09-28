@@ -1,168 +1,217 @@
-<style>
-  * {
-    box-sizing: border-box;
-  }
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-  }
+  <title>졸특 PICK | 저, 이 직무에 진심인데요?</title>
+  <meta name="theme-color" content="#153b80">
+  <meta name="description"
+        content="내 경험을 합격 자소서로 바꾸는 법! 10월 26일~30일, 비대면 ZOOM 실전 프로그램">
 
-  body {
-    min-height: 100vh;
+  <!-- 카카오톡 썸네일 -->
+  <meta property="og:type" content="website">
 
-    /* 기존 파랑 → 따뜻한 라벤더/크림 */
-    background:
-      radial-gradient(circle at 15% 0%,
-        #ffe8e2 0%,
-        transparent 32%),
-      radial-gradient(circle at 90% 10%,
-        #e7dcff 0%,
-        transparent 35%),
-      linear-gradient(
-        180deg,
-        #fffaf6 0%,
-        #f7efff 55%,
-        #fff3ee 100%
-      );
+  <meta property="og:title"
+        content="졸특 PICK | 저, 이 직무에 진심인데요?">
 
-    font-family:
-      "Apple SD Gothic Neo",
-      "Malgun Gothic",
-      Arial,
-      sans-serif;
-  }
+  <meta property="og:description"
+        content="내 경험을 합격 자소서로 바꾸는 법! 5일 완성 실전 프로그램">
 
-  .page {
-    width: min(100%, 620px);
-    margin: 0 auto;
-    padding: 14px 10px 32px;
-  }
+  <meta property="og:url"
+        content="https://36onepasslounge.github.io/pick/job-essay/">
 
+  <meta property="og:image"
+        content="https://36onepasslounge.github.io/pick/job-essay/preview.png">
 
-  /* 포스터 */
+  <meta property="og:image:secure_url"
+        content="https://36onepasslounge.github.io/pick/job-essay/preview.png">
 
-  .poster {
-    overflow: hidden;
-    border-radius: 22px;
-    background: #ffffff;
+  <meta property="og:image:type"
+        content="image/png">
 
-    border: 2px solid #eadcff;
+  <meta name="twitter:card"
+        content="summary_large_image">
 
-    box-shadow:
-      0 14px 32px rgba(113, 73, 148, .15);
-  }
+  <meta name="twitter:image"
+        content="https://36onepasslounge.github.io/pick/job-essay/preview.png">
 
-  .poster img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-
-  /* 버튼 */
-
-  .buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-top: 13px;
-  }
-
-  .btn {
-    min-height: 58px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 12px 10px;
-
-    border-radius: 17px;
-
-    text-align: center;
-    text-decoration: none;
-
-    font-size: 15px;
-    font-weight: 900;
-
-    word-break: keep-all;
-
-    transition:
-      transform .15s ease,
-      box-shadow .15s ease;
-  }
-
-  .btn:active {
-    transform: scale(.98);
-  }
-
-
-  /* 바로 신청하기
-     노란색 → 코랄 */
-
-  .apply {
-    background:
-      linear-gradient(
-        135deg,
-        #ff806f,
-        #ffad87
-      );
-
-    color: #ffffff;
-
-    box-shadow:
-      0 8px 18px rgba(255, 114, 96, .24);
-  }
-
-
-  /* 홈페이지 안내
-     파랑 → 라벤더 */
-
-  .home {
-    background:
-      linear-gradient(
-        135deg,
-        #7355c7,
-        #9c7bea
-      );
-
-    color: #ffffff;
-
-    box-shadow:
-      0 8px 18px rgba(116, 84, 199, .22);
-  }
-
-
-  /* 안내문 */
-
-  .note {
-    margin: 14px 4px 0;
-
-    padding: 12px 14px;
-
-    background: rgba(255,255,255,.72);
-
-    border: 1px solid #eadcf6;
-
-    border-radius: 14px;
-
-    color: #705f76;
-
-    font-size: 12px;
-    line-height: 1.65;
-
-    text-align: center;
-  }
-
-
-  @media (max-width: 360px) {
-
-    .btn {
-      font-size: 13px;
-      padding: 9px 6px;
+  <style>
+    * {
+      box-sizing: border-box;
     }
 
-  }
-</style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #eaf3ff;
+
+      font-family:
+        "Apple SD Gothic Neo",
+        "Malgun Gothic",
+        Arial,
+        sans-serif;
+    }
+
+    .page {
+      width: min(100%, 620px);
+      margin: 0 auto;
+      padding: 12px 10px 30px;
+    }
+
+    /* 세로 포스터 */
+
+    .poster {
+      overflow: hidden;
+      border-radius: 20px;
+
+      background: #ffffff;
+
+      box-shadow:
+        0 12px 32px rgba(12, 44, 100, .15);
+    }
+
+    .poster img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* 버튼 */
+
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .btn {
+      min-height: 58px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 12px 10px;
+
+      border-radius: 16px;
+
+      text-align: center;
+      text-decoration: none;
+
+      font-size: 15px;
+      font-weight: 900;
+
+      word-break: keep-all;
+
+      transition: transform .15s ease;
+    }
+
+    .btn:active {
+      transform: scale(.98);
+    }
+
+    /* 바로 신청하기 */
+
+    .apply {
+      background: #ffe333;
+      color: #102d65;
+
+      box-shadow:
+        0 6px 14px rgba(255, 190, 0, .18);
+    }
+
+    /* 홈페이지 안내 */
+
+    .home {
+      background: #1254c6;
+      color: #ffffff;
+
+      box-shadow:
+        0 6px 14px rgba(18, 84, 198, .18);
+    }
+
+    /* 안내 */
+
+    .note {
+      margin: 12px 0 0;
+
+      color: #536b90;
+
+      font-size: 12px;
+      line-height: 1.6;
+
+      text-align: center;
+    }
+
+    @media (max-width: 360px) {
+      .btn {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <!-- 기존 세로 포스터 -->
+    <div class="poster">
+
+      <img
+        src="./poster.png"
+        alt="졸특 PICK 저, 이 직무에 진심인데요? 2026년 10월 26일부터 30일까지 14시부터 17시까지 ZOOM 진행"
+      >
+
+    </div>
+
+    <!-- 실제 클릭 버튼 -->
+
+    <div class="buttons">
+
+      <!-- SU-JPF 신청 -->
+
+      <a
+        class="btn apply"
+        href="https://sujpf.syu.ac.kr/community/Program/programView.aspx?encpgdx=7D72564E894E9DB17E83C20F57E9EE8A059A2DBAFC7419DA8FE3BC79BD2E5AA5"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ✍️ 바로 신청하기 →
+      </a>
+
+      <!-- 삼육대 홈페이지 안내 -->
+
+      <a
+        class="btn home"
+        href="https://www.syu.ac.kr/blog/2026%eb%85%84-%ec%a1%b8%ec%97%85%ec%83%9d%ed%8a%b9%ed%99%94%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8-%ec%a0%80-%ec%9d%b4-%ec%a7%81%eb%ac%b4%ec%97%90-%ec%a7%84%ec%8b%ac%ec%9d%b8%eb%8d%b0%ec%9a%94/?pageds=1&amp;k=&amp;t=&amp;c="
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        홈페이지 안내 보기 →
+      </a>
+
+    </div>
+
+    <p class="note">
+
+      바로 신청하기를 누르면
+      SU-JPF 프로그램 신청 페이지로 이동합니다.<br>
+
+      로그인이 필요한 경우 로그인 후 신청해 주세요.
+
+    </p>
+
+  </main>
+
+</body>
+</html>
