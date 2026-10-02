@@ -1,1 +1,1164 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <title>오늘의 졸특 PICK | 취업 프로그램 4</title>
+
+  <meta
+    name="description"
+    content="취업박람회 · NCS · 합격 자소서 · Google AI. 지금 필요한 취업 프로그램을 한 번에 확인하세요."
+  >
+
+  <meta name="theme-color" content="#173a82">
+
+
+  <!-- =============================
+       카카오톡 / SNS 미리보기
+  ============================== -->
+
+  <meta property="og:type" content="website">
+
+  <meta
+    property="og:title"
+    content="오늘의 졸특 PICK | 지금 챙겨야 할 취업 프로그램 4"
+  >
+
+  <meta
+    property="og:description"
+    content="취업박람회 · NCS · 합격 자소서 · Google AI"
+  >
+
+  <meta
+    property="og:url"
+    content="https://36onepasslounge.github.io/pick/today-pick/"
+  >
+
+  <meta
+    property="og:image"
+    content="https://36onepasslounge.github.io/pick/today-pick/today-main.png.png"
+  >
+
+  <meta
+    property="og:image:secure_url"
+    content="https://36onepasslounge.github.io/pick/today-pick/today-main.png.png"
+  >
+
+  <meta property="og:image:type" content="image/png">
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://36onepasslounge.github.io/pick/today-pick/today-main.png.png"
+  >
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+
+      font-family:
+        "Apple SD Gothic Neo",
+        "Malgun Gothic",
+        Arial,
+        sans-serif;
+
+      color: #17233d;
+
+      background:
+        linear-gradient(
+          180deg,
+          #edf6ff 0%,
+          #ffffff 38%,
+          #f8f5ff 100%
+        );
+    }
+
+
+    .wrap {
+      width: min(100%, 620px);
+      margin: 0 auto;
+
+      padding:
+        10px
+        10px
+        35px;
+    }
+
+
+    /* =============================
+       메인 이미지
+    ============================== */
+
+    .main-image {
+      overflow: hidden;
+
+      border-radius: 22px;
+
+      background: #ffffff;
+
+      box-shadow:
+        0 12px 30px rgba(29, 55, 110, .15);
+
+      margin-bottom: 15px;
+    }
+
+    .main-image img {
+      display: block;
+
+      width: 100%;
+      height: auto;
+    }
+
+
+    /* =============================
+       안내
+    ============================== */
+
+    .guide {
+      margin:
+        0
+        2px
+        14px;
+
+      padding:
+        13px
+        15px;
+
+      border-radius: 15px;
+
+      background: #ffffff;
+
+      text-align: center;
+
+      font-size: 13px;
+      line-height: 1.6;
+
+      color: #52627e;
+
+      box-shadow:
+        0 7px 20px rgba(20, 45, 90, .07);
+    }
+
+    .guide strong {
+      color: #173a82;
+    }
+
+
+    /* =============================
+       아코디언 공통
+    ============================== */
+
+    .program {
+      margin-bottom: 12px;
+
+      border-radius: 21px;
+
+      overflow: hidden;
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        rgba(25, 45, 85, .08);
+
+      box-shadow:
+        0 9px 24px rgba(38, 54, 90, .09);
+    }
+
+
+    .program-toggle {
+      width: 100%;
+
+      border: 0;
+
+      padding:
+        15px
+        15px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 11px;
+
+      text-align: left;
+
+      cursor: pointer;
+
+      font-family: inherit;
+    }
+
+
+    .num {
+      width: 43px;
+      height: 43px;
+
+      flex:
+        0
+        0
+        43px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 14px;
+
+      color: #ffffff;
+
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+
+    .heading {
+      flex: 1;
+      min-width: 0;
+    }
+
+
+    .title {
+      display: block;
+
+      font-size: 16px;
+      font-weight: 900;
+
+      letter-spacing: -.035em;
+
+      line-height: 1.3;
+    }
+
+
+    .date {
+      display: block;
+
+      margin-top: 4px;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      opacity: .72;
+    }
+
+
+    .arrow {
+      width: 31px;
+      height: 31px;
+
+      flex:
+        0
+        0
+        31px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,.8);
+
+      font-size: 17px;
+      font-weight: 900;
+
+      transition:
+        transform .20s ease;
+    }
+
+
+    .program.open .arrow {
+      transform: rotate(180deg);
+    }
+
+
+    .program-body {
+      display: none;
+
+      padding:
+        0
+        13px
+        15px;
+    }
+
+
+    .program.open .program-body {
+      display: block;
+    }
+
+
+    /* =============================
+       상세 이미지
+    ============================== */
+
+    .poster {
+      overflow: hidden;
+
+      border-radius: 16px;
+
+      background: #f4f6f9;
+
+      margin-bottom: 13px;
+    }
+
+
+    .poster img {
+      display: block;
+
+      width: 100%;
+      height: auto;
+    }
+
+
+    /* =============================
+       내용
+    ============================== */
+
+    .intro {
+      margin-bottom: 12px;
+
+      font-size: 13px;
+      line-height: 1.7;
+
+      color: #485671;
+
+      word-break: keep-all;
+    }
+
+
+    .info {
+      margin-bottom: 13px;
+
+      padding:
+        12px
+        13px;
+
+      border-radius: 14px;
+
+      font-size: 12px;
+      line-height: 1.7;
+
+      font-weight: 700;
+
+      word-break: keep-all;
+    }
+
+
+    .list {
+      margin:
+        0
+        0
+        14px;
+
+      padding-left: 18px;
+
+      font-size: 12px;
+      line-height: 1.8;
+
+      color: #45516a;
+    }
+
+
+    /* =============================
+       실제 이동 버튼
+    ============================== */
+
+    .actions {
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap: 8px;
+
+      margin-top: 12px;
+    }
+
+
+    .actions.one {
+      grid-template-columns: 1fr;
+    }
+
+
+    .actions.three {
+      grid-template-columns: 1fr;
+    }
+
+
+    .btn {
+      min-height: 51px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding:
+        10px
+        9px;
+
+      border-radius: 14px;
+
+      text-decoration: none;
+
+      text-align: center;
+
+      font-size: 13px;
+      font-weight: 900;
+
+      word-break: keep-all;
+
+      transition:
+        transform .15s ease,
+        opacity .15s ease;
+    }
+
+
+    .btn:active {
+      transform: scale(.98);
+    }
+
+
+    /* =============================
+       01 취업박람회 - ORANGE
+    ============================== */
+
+    .fair .program-toggle {
+      background:
+        linear-gradient(
+          135deg,
+          #fff4df,
+          #ffe3c5
+        );
+    }
+
+    .fair .num {
+      background: #f36b21;
+    }
+
+    .fair .title {
+      color: #bd5015;
+    }
+
+    .fair .info {
+      background: #fff3dc;
+      color: #785028;
+    }
+
+    .fair .notice {
+      background:
+        linear-gradient(
+          135deg,
+          #ff7a21,
+          #ef5818
+        );
+
+      color: #ffffff;
+    }
+
+
+    /* =============================
+       02 NCS - GREEN
+    ============================== */
+
+    .ncs .program-toggle {
+      background:
+        linear-gradient(
+          135deg,
+          #e5fff2,
+          #d7f6e6
+        );
+    }
+
+    .ncs .num {
+      background: #0d9d6d;
+    }
+
+    .ncs .title {
+      color: #087653;
+    }
+
+    .ncs .info {
+      background: #eafaf2;
+      color: #356653;
+    }
+
+    .ncs .apply {
+      background: #ffe337;
+      color: #17345f;
+    }
+
+    .ncs .notice {
+      background: #119267;
+      color: #ffffff;
+    }
+
+
+    /* =============================
+       03 자소서 - PURPLE / PINK
+    ============================== */
+
+    .essay .program-toggle {
+      background:
+        linear-gradient(
+          135deg,
+          #f3e5ff,
+          #ffe6f3
+        );
+    }
+
+    .essay .num {
+      background:
+        linear-gradient(
+          135deg,
+          #8b4ad3,
+          #d94aa5
+        );
+    }
+
+    .essay .title {
+      color: #7838a7;
+    }
+
+    .essay .info {
+      background: #f8edff;
+      color: #694978;
+    }
+
+    .essay .apply {
+      background:
+        linear-gradient(
+          135deg,
+          #ff668e,
+          #ff866e
+        );
+
+      color: #ffffff;
+    }
+
+    .essay .notice {
+      background:
+        linear-gradient(
+          135deg,
+          #8c4fd0,
+          #6d46b6
+        );
+
+      color: #ffffff;
+    }
+
+
+    /* =============================
+       04 GOOGLE AI - BLACK / NEON
+    ============================== */
+
+    .google .program-toggle {
+      background:
+        linear-gradient(
+          135deg,
+          #101510,
+          #263225
+        );
+
+      color: #ffffff;
+    }
+
+    .google .num {
+      background: #bfff00;
+      color: #152100;
+    }
+
+    .google .title {
+      color: #d9ff44;
+    }
+
+    .google .date {
+      color: #e9e9e9;
+    }
+
+    .google .arrow {
+      color: #233000;
+    }
+
+    .google .info {
+      background: #eefbd5;
+      color: #45611c;
+    }
+
+    .google .learn {
+      background: #161c14;
+      color: #d9ff43;
+
+      border:
+        1px solid
+        #b5f500;
+    }
+
+    .google .apply {
+      background:
+        linear-gradient(
+          135deg,
+          #d7ff00,
+          #83f53c
+        );
+
+      color: #142100;
+    }
+
+    .google .notice {
+      background: #286030;
+      color: #ffffff;
+    }
+
+
+    /* =============================
+       Footer
+    ============================== */
+
+    footer {
+      padding:
+        16px
+        5px
+        2px;
+
+      text-align: center;
+
+      color: #7b869b;
+
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+
+    @media(max-width: 390px) {
+
+      .title {
+        font-size: 15px;
+      }
+
+      .actions {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+<main class="wrap">
+
+
+  <!-- =============================
+       메인 졸특 PICK 이미지
+  ============================== -->
+
+  <section class="main-image">
+
+    <img
+      src="./today-main.png.png"
+      alt="오늘의 졸특 PICK 지금 챙겨야 할 취업 프로그램 4"
+    >
+
+  </section>
+
+
+  <div class="guide">
+    궁금한 프로그램을 <strong>클릭</strong>해보세요 👆<br>
+    상세내용부터 신청·관련 공고까지 한 번에 확인할 수 있어요.
+  </div>
+
+
+
+  <!-- ====================================
+       01 취업박람회
+  ===================================== -->
+
+  <section class="program fair">
+
+    <button
+      class="program-toggle"
+      type="button"
+      aria-expanded="false"
+    >
+
+      <span class="num">01</span>
+
+      <span class="heading">
+
+        <span class="title">
+          2026 삼육대학교 취업박람회 OPEN!
+        </span>
+
+        <span class="date">
+          10.13.(화) ~ 10.14.(수) · 솔로몬광장
+        </span>
+
+      </span>
+
+      <span class="arrow">⌄</span>
+
+    </button>
+
+
+    <div class="program-body">
+
+      <div class="poster">
+
+        <img
+          src="./fair.png.jpg"
+          alt="2026 삼육대학교 취업박람회"
+        >
+
+      </div>
+
+
+      <div class="intro">
+        기업·직무상담부터 취업상담,
+        퍼스널컬러, 인생네컷, 푸드트럭까지!
+        취업도 잡고 혜택도 챙길 수 있는
+        삼육대학교 취업박람회입니다.
+      </div>
+
+
+      <div class="info">
+        🔥 <strong>기업·직무상담 ZONE</strong><br>
+        LG · 현대 · 롯데월드 · 이랜드 · 카카오 · 네이버 ·
+        한국전력공사 등 총 24개 기업 참여 예정
+      </div>
+
+
+      <ul class="list">
+        <li>📅 10/13(화) ~ 10/14(수) 12:00~17:00</li>
+        <li>📍 삼육대학교 솔로몬광장</li>
+        <li>👥 재학생 · 졸업생 · 지역청년 누구나</li>
+        <li>✨ 퍼스널컬러진단 · 인생네컷 · 푸드트럭</li>
+        <li>🎁 부스 참여 시 기념품 및 경품추첨</li>
+        <li>🎧 에어팟 · 상품권 · 텀블러 등</li>
+      </ul>
+
+
+      <div class="actions one">
+
+        <a
+          class="btn notice"
+          href="https://www.syu.ac.kr/blog/2026%eb%85%84-%e3%80%8c%ec%82%bc%ec%9c%a1%eb%8c%80%ed%95%99%ea%b5%90-%ec%b7%a8%ec%97%85%eb%b0%95%eb%9e%8c%ed%9a%8c%e3%80%8d%ec%b0%b8%ec%97%ac-%ec%95%88%eb%82%b4/?pageds=1&amp;k=&amp;t=&amp;c="
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📢 관련 공고 확인하기 →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ====================================
+       02 NCS
+  ===================================== -->
+
+  <section class="program ncs">
+
+    <button
+      class="program-toggle"
+      type="button"
+      aria-expanded="false"
+    >
+
+      <span class="num">02</span>
+
+      <span class="heading">
+
+        <span class="title">
+          NCS, 감 잡았어?
+        </span>
+
+        <span class="date">
+          11.2.(월) ~ 11.5.(목) · 18:00~21:00
+        </span>
+
+      </span>
+
+      <span class="arrow">⌄</span>
+
+    </button>
+
+
+    <div class="program-body">
+
+      <div class="poster">
+
+        <img
+          src="./ncs.png.png"
+          alt="NCS 감 잡았어 프로그램"
+        >
+
+      </div>
+
+
+      <div class="intro">
+        공기업 취업 준비,
+        어디서부터 시작해야 할지 막막하다면?
+        NCS 준비전략부터 핵심이론,
+        문제풀이와 실전 모의시험까지
+        4일 동안 집중해서 준비합니다.
+      </div>
+
+
+      <div class="info">
+        🌿 <strong>공기업 취업 NCS 4일 완성</strong><br>
+        준비전략 → 핵심이론 → 영역별 문제풀이 →
+        실전 모의시험 및 복습
+      </div>
+
+
+      <ul class="list">
+        <li>공기업 취업 및 NCS 준비전략</li>
+        <li>NCS 핵심이론 및 문제풀이</li>
+        <li>실전 모의시험 및 복습강의</li>
+        <li>비대면 온라인 Live</li>
+        <li>재학생 · 졸업(예정)생 · 지역청년</li>
+      </ul>
+
+
+      <div class="actions">
+
+        <a
+          class="btn apply"
+          href="https://sujpf.syu.ac.kr/community/Program/programView.aspx?encpgdx=318AF9FC328A1E0BB49B938D440CED6F63D7AEFBA8D5DE45C4C5762E93ADD8B7"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ✏️ 바로 신청하기 →
+        </a>
+
+
+        <a
+          class="btn notice"
+          href="https://www.syu.ac.kr/blog/2026%eb%85%84-ncs-%ea%b0%90-%ec%9e%a1%ec%95%98%ec%96%b4-%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8-%ec%95%88%eb%82%b4/?pageds=1&amp;k=&amp;t=&amp;c="
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📢 관련 공고 확인 →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ====================================
+       03 자소서
+  ===================================== -->
+
+  <section class="program essay">
+
+    <button
+      class="program-toggle"
+      type="button"
+      aria-expanded="false"
+    >
+
+      <span class="num">03</span>
+
+      <span class="heading">
+
+        <span class="title">
+          저, 이 직무에 진심인데요?
+        </span>
+
+        <span class="date">
+          10.26.(월) ~ 10.30.(금) · 14:00~17:00
+        </span>
+
+      </span>
+
+      <span class="arrow">⌄</span>
+
+    </button>
+
+
+    <div class="program-body">
+
+      <div class="poster">
+
+        <img
+          src="./job-essay.png.png"
+          alt="저 이 직무에 진심인데요 프로그램"
+        >
+
+      </div>
+
+
+      <div class="intro">
+        내 경험을 단순히 나열하는 자기소개서가 아니라,
+        직무와 경험을 연결해
+        <strong>기업별 맞춤 자기소개서</strong>로
+        완성하는 5일 실전 프로그램입니다.
+      </div>
+
+
+      <div class="info">
+        💜 <strong>5일 완성 실전 커리큘럼</strong><br>
+        경험 발굴 → 지원동기 → 직무역량 →
+        협업·소통 → 문제해결·성과
+      </div>
+
+
+      <ul class="list">
+        <li>1일차 · 경험 발굴과 자기이해</li>
+        <li>2일차 · 지원동기 + 입사 후 포부</li>
+        <li>3일차 · 직무역량과 관련 경험</li>
+        <li>4일차 · 협업·갈등·소통 경험</li>
+        <li>5일차 · 문제해결·도전·성과 경험</li>
+      </ul>
+
+
+      <div class="actions">
+
+        <a
+          class="btn apply"
+          href="https://sujpf.syu.ac.kr/community/Program/programView.aspx?encpgdx=7D72564E894E9DB17E83C20F57E9EE8A059A2DBAFC7419DA8FE3BC79BD2E5AA5"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ✏️ 바로 신청하기 →
+        </a>
+
+
+        <a
+          class="btn notice"
+          href="https://www.syu.ac.kr/blog/2026%eb%85%84-%ec%a1%b8%ec%97%85%ec%83%9d%ed%8a%b9%ed%99%94%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8-%ec%a0%80-%ec%9d%b4-%ec%a7%81%eb%ac%b4%ec%97%90-%ec%a7%84%ec%8b%ac%ec%9d%b8%eb%8d%b0%ec%9a%94/?pageds=1&amp;k=&amp;t=&amp;c="
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📢 관련 공고 확인 →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ====================================
+       04 GOOGLE AI
+  ===================================== -->
+
+  <section class="program google">
+
+    <button
+      class="program-toggle"
+      type="button"
+      aria-expanded="false"
+    >
+
+      <span class="num">04</span>
+
+      <span class="heading">
+
+        <span class="title">
+          Google AI Professional Certificate
+        </span>
+
+        <span class="date">
+          구글 청년 AI 역량강화 프로그램
+        </span>
+
+      </span>
+
+      <span class="arrow">⌄</span>
+
+    </button>
+
+
+    <div class="program-body">
+
+      <div class="poster">
+
+        <img
+          src="./google-ai.png.png"
+          alt="구글 청년 AI 역량강화 프로그램"
+        >
+
+      </div>
+
+
+      <div class="intro">
+        생성형 AI 활용부터 실무 적용까지.
+        Google이 설계한 전문 커리큘럼을 통해
+        취업에 활용할 수 있는 AI 역량을
+        체계적으로 쌓아보세요.
+      </div>
+
+
+      <div class="info">
+        ⚡ <strong>Google 공식 AI 수료증</strong><br>
+        Google AI Professional Certificate ·
+        실무 중심 학습 · Coursera 온라인 학습
+      </div>
+
+
+      <ul class="list">
+        <li>Google이 설계한 전문 AI 커리큘럼</li>
+        <li>공식 Google AI 수료증 취득</li>
+        <li>취업·직무에 활용 가능한 AI 실무 역량</li>
+        <li>Coursera를 통한 유연한 온라인 학습</li>
+      </ul>
+
+
+      <div class="actions three">
+
+        <a
+          class="btn learn"
+          href="https://buly.kr/28vfX8u"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🔍 프로그램 알아보기 →
+        </a>
+
+
+        <a
+          class="btn apply"
+          href="https://forms.gle/7DCHPWhnjvYZTbtPA"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ✏️ 바로 신청하기 →
+        </a>
+
+
+        <a
+          class="btn notice"
+          href="https://www.syu.ac.kr/blog/%ec%a1%b8%ed%8a%b9-2026%eb%85%84-%e3%80%8c%ea%b5%ac%ea%b8%80-%ec%b2%ad%eb%85%84-ai-%ec%97%ad%eb%9f%89%ea%b0%95%ed%99%94-%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8google-ai-professional-certificate/?pageds=1&amp;k=&amp;t=&amp;c="
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📢 관련 공고 확인하기 →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <footer>
+    삼육대학교 대학일자리본부<br>
+    졸업생특화프로그램 · 오늘의 졸특 PICK
+  </footer>
+
+
+</main>
+
+
+<script>
+
+  const programs =
+    document.querySelectorAll(".program");
+
+
+  programs.forEach(program => {
+
+    const button =
+      program.querySelector(".program-toggle");
+
+
+    button.addEventListener("click", () => {
+
+      const currentlyOpen =
+        program.classList.contains("open");
+
+
+      /*
+        다른 프로그램은 모두 닫기
+      */
+
+      programs.forEach(item => {
+
+        item.classList.remove("open");
+
+        const itemButton =
+          item.querySelector(".program-toggle");
+
+        itemButton.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      });
+
+
+      /*
+        방금 클릭한 프로그램 열기
+      */
+
+      if (!currentlyOpen) {
+
+        program.classList.add("open");
+
+        button.setAttribute(
+          "aria-expanded",
+          "true"
+        );
+
+
+        /*
+          열린 카드 위치로 자연스럽게 이동
+        */
+
+        setTimeout(() => {
+
+          program.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }, 120);
+
+      }
+
+    });
+
+  });
+
+</script>
+
+
+</body>
+</html>
