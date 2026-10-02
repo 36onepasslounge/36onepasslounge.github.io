@@ -12,12 +12,16 @@
 
   <meta
     name="description"
-    content="취업박람회 · NCS · 합격 자소서 · Google AI 프로그램을 한 번에 확인하세요."
+    content="취업박람회 · NCS · 합격 자소서 · Google AI. 지금 필요한 취업 프로그램을 한 번에 확인하세요."
   >
 
   <meta name="theme-color" content="#173a82">
 
-  <!-- 카카오톡 미리보기 -->
+
+  <!-- ===================================
+       카카오톡 미리보기
+  ==================================== -->
+
   <meta property="og:type" content="website">
 
   <meta
@@ -37,12 +41,12 @@
 
   <meta
     property="og:image"
-    content="https://36onepasslounge.github.io/pick/today-pick/today-main.png.png"
+    content="https://36onepasslounge.github.io/pick/today-pick/today-pick-thumb.png"
   >
 
   <meta
     property="og:image:secure_url"
-    content="https://36onepasslounge.github.io/pick/today-pick/today-main.png.png"
+    content="https://36onepasslounge.github.io/pick/today-pick/today-pick-thumb.png"
   >
 
   <meta property="og:image:type" content="image/png">
@@ -53,9 +57,15 @@
   >
 
   <meta
-    name="twitter:image"
-    content="https://36onepasslounge.github.io/pick/today-pick/today-main.png.png"
+    name="twitter:title"
+    content="오늘의 졸특 PICK | 취업 프로그램 4"
   >
+
+  <meta
+    name="twitter:image"
+    content="https://36onepasslounge.github.io/pick/today-pick/today-pick-thumb.png"
+  >
+
 
   <style>
     * {
@@ -86,9 +96,10 @@
       padding: 10px 10px 35px;
     }
 
-    /* ==========================
+
+    /* ==================================
        메인 PICK 이미지
-    ========================== */
+    =================================== */
 
     .pick-menu {
       position: relative;
@@ -99,7 +110,7 @@
 
       border-radius: 22px;
 
-      background: #fff;
+      background: #ffffff;
 
       box-shadow:
         0 12px 30px rgba(28, 52, 105, .16);
@@ -112,17 +123,14 @@
       height: auto;
     }
 
-    /*
-      이미지 위 투명 클릭 영역
-    */
+
+    /* 이미지 위 클릭 영역 */
 
     .hotspot {
       position: absolute;
 
       left: 2.5%;
       width: 95%;
-
-      display: block;
 
       border: 0;
       border-radius: 18px;
@@ -140,7 +148,11 @@
         rgba(255,255,255,.12);
     }
 
-    /* 프로그램 위치 */
+
+    /*
+      today-main 이미지 안에서
+      각각의 프로그램 영역
+    */
 
     .hotspot-fair {
       top: 18.6%;
@@ -163,9 +175,9 @@
     }
 
 
-    /* ==========================
-       안내
-    ========================== */
+    /* ==================================
+       사용 안내
+    =================================== */
 
     .guide {
       margin-top: 11px;
@@ -174,7 +186,7 @@
 
       border-radius: 14px;
 
-      background: #fff;
+      background: #ffffff;
 
       text-align: center;
 
@@ -192,9 +204,9 @@
     }
 
 
-    /* ==========================
-       펼쳐지는 상세 영역
-    ========================== */
+    /* ==================================
+       상세 영역
+    =================================== */
 
     .detail {
       display: none;
@@ -205,7 +217,7 @@
 
       border-radius: 22px;
 
-      background: #fff;
+      background: #ffffff;
 
       box-shadow:
         0 12px 28px rgba(38,54,90,.12);
@@ -215,7 +227,6 @@
       display: block;
     }
 
-
     .detail-image img {
       display: block;
 
@@ -223,11 +234,9 @@
       height: auto;
     }
 
-
     .detail-content {
       padding: 17px 15px 18px;
     }
-
 
     .detail-title {
       margin: 0 0 8px;
@@ -237,7 +246,6 @@
 
       font-weight: 900;
     }
-
 
     .detail-desc {
       margin: 0 0 14px;
@@ -249,7 +257,6 @@
 
       word-break: keep-all;
     }
-
 
     .info {
       margin-bottom: 14px;
@@ -264,12 +271,8 @@
       font-weight: 700;
     }
 
-
     .list {
-      margin:
-        0
-        0
-        15px;
+      margin: 0 0 15px;
 
       padding-left: 19px;
 
@@ -280,9 +283,9 @@
     }
 
 
-    /* ==========================
-       버튼
-    ========================== */
+    /* ==================================
+       실제 이동 버튼
+    =================================== */
 
     .actions {
       display: grid;
@@ -301,7 +304,6 @@
     .actions.three {
       grid-template-columns: 1fr;
     }
-
 
     .btn {
       min-height: 52px;
@@ -326,7 +328,9 @@
     }
 
 
-    /* 취업박람회 */
+    /* ==================================
+       취업박람회 - ORANGE
+    =================================== */
 
     #fair-detail {
       border-top: 6px solid #ff711f;
@@ -343,13 +347,19 @@
 
     .fair-notice {
       background:
-        linear-gradient(135deg,#ff7a20,#ed5417);
+        linear-gradient(
+          135deg,
+          #ff7a20,
+          #ed5417
+        );
 
-      color: #fff;
+      color: #ffffff;
     }
 
 
-    /* NCS */
+    /* ==================================
+       NCS - GREEN
+    =================================== */
 
     #ncs-detail {
       border-top: 6px solid #0b9565;
@@ -371,11 +381,13 @@
 
     .ncs-notice {
       background: #119267;
-      color: #fff;
+      color: #ffffff;
     }
 
 
-    /* 자소서 */
+    /* ==================================
+       자소서 - PURPLE / PINK
+    =================================== */
 
     #essay-detail {
       border-top: 6px solid #954fd0;
@@ -392,20 +404,30 @@
 
     .essay-apply {
       background:
-        linear-gradient(135deg,#ff678d,#ff876e);
+        linear-gradient(
+          135deg,
+          #ff678d,
+          #ff876e
+        );
 
-      color: #fff;
+      color: #ffffff;
     }
 
     .essay-notice {
       background:
-        linear-gradient(135deg,#8c50cf,#7047b8);
+        linear-gradient(
+          135deg,
+          #8c50cf,
+          #7047b8
+        );
 
-      color: #fff;
+      color: #ffffff;
     }
 
 
-    /* Google AI */
+    /* ==================================
+       GOOGLE AI
+    =================================== */
 
     #google-detail {
       border-top: 6px solid #baff00;
@@ -430,16 +452,24 @@
 
     .google-apply {
       background:
-        linear-gradient(135deg,#d8ff00,#7ff53c);
+        linear-gradient(
+          135deg,
+          #d8ff00,
+          #7ff53c
+        );
 
       color: #152100;
     }
 
     .google-notice {
       background: #296033;
-      color: #fff;
+      color: #ffffff;
     }
 
+
+    /* ==================================
+       닫기
+    =================================== */
 
     .close-btn {
       width: 100%;
@@ -481,6 +511,7 @@
       }
 
     }
+
   </style>
 </head>
 
@@ -490,9 +521,9 @@
 <main class="page">
 
 
-  <!-- ===================================
-       이 이미지 자체가 4개 프로그램 메뉴
-  ==================================== -->
+  <!-- ==================================
+       클릭 가능한 메인 이미지
+  =================================== -->
 
   <section class="pick-menu">
 
@@ -502,17 +533,13 @@
     >
 
 
-    <!-- 01 취업박람회 -->
-
     <button
       class="hotspot hotspot-fair"
       type="button"
-      aria-label="취업박람회 자세히 보기"
+      aria-label="2026 삼육대학교 취업박람회 자세히 보기"
       onclick="openDetail('fair-detail')"
     ></button>
 
-
-    <!-- 02 NCS -->
 
     <button
       class="hotspot hotspot-ncs"
@@ -522,8 +549,6 @@
     ></button>
 
 
-    <!-- 03 자소서 -->
-
     <button
       class="hotspot hotspot-essay"
       type="button"
@@ -531,8 +556,6 @@
       onclick="openDetail('essay-detail')"
     ></button>
 
-
-    <!-- 04 Google AI -->
 
     <button
       class="hotspot hotspot-google"
@@ -545,15 +568,15 @@
 
 
   <div class="guide">
-    👆 위 이미지에서 원하는 프로그램을 <strong>직접 눌러보세요.</strong><br>
+    👆 원하는 프로그램을 <strong>직접 눌러보세요.</strong><br>
     상세 내용과 신청·관련 공고가 바로 펼쳐집니다.
   </div>
 
 
 
-  <!-- ===================================
+  <!-- ==================================
        01 취업박람회
-  ==================================== -->
+  =================================== -->
 
   <section
     class="detail"
@@ -652,9 +675,9 @@
 
 
 
-  <!-- ===================================
+  <!-- ==================================
        02 NCS
-  ==================================== -->
+  =================================== -->
 
   <section
     class="detail"
@@ -748,9 +771,9 @@
 
 
 
-  <!-- ===================================
+  <!-- ==================================
        03 자소서
-  ==================================== -->
+  =================================== -->
 
   <section
     class="detail"
@@ -846,9 +869,9 @@
 
 
 
-  <!-- ===================================
+  <!-- ==================================
        04 GOOGLE AI
-  ==================================== -->
+  =================================== -->
 
   <section
     class="detail"
@@ -951,7 +974,6 @@
   </section>
 
 
-
   <footer>
     삼육대학교 대학일자리본부<br>
     졸업생특화프로그램 · 오늘의 졸특 PICK
@@ -970,9 +992,7 @@
   function closeDetails() {
 
     details.forEach(detail => {
-
       detail.classList.remove("active");
-
     });
 
 
@@ -988,20 +1008,10 @@
 
   function openDetail(id) {
 
-    /*
-      다른 상세내용 모두 닫기
-    */
-
     details.forEach(detail => {
-
       detail.classList.remove("active");
-
     });
 
-
-    /*
-      선택한 프로그램 열기
-    */
 
     const target =
       document.getElementById(id);
@@ -1009,10 +1019,6 @@
 
     target.classList.add("active");
 
-
-    /*
-      상세영역으로 부드럽게 이동
-    */
 
     setTimeout(() => {
 
