@@ -2,10 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <title>졸특 PICK | 지금 챙겨야 할 취업 프로그램 8</title>
 
@@ -14,16 +11,9 @@
     content="삼육대학교 대학일자리본부 졸업생특화프로그램. 지금 챙겨야 할 취업·AI·NCS·자소서 프로그램 8가지를 한 번에 확인하세요."
   >
 
-  <meta
-    name="theme-color"
-    content="#fff8ef"
-  >
+  <meta name="theme-color" content="#fff8ef">
 
-
-  <!-- =========================
-       카카오톡 / 채널톡 미리보기
-  ========================== -->
-
+  <!-- 카카오톡 / 채널톡 미리보기 -->
   <meta property="og:type" content="website">
 
   <meta
@@ -51,10 +41,7 @@
     content="https://36onepasslounge.github.io/pick/ai-series/pick-ai-series-preview-v1.png"
   >
 
-  <meta
-    property="og:image:type"
-    content="image/png"
-  >
+  <meta property="og:image:type" content="image/png">
 
   <meta
     name="twitter:card"
@@ -67,18 +54,11 @@
   >
 
   <meta
-    name="twitter:description"
-    content="삼육대학교 대학일자리본부 졸업생특화프로그램 모음"
-  >
-
-  <meta
     name="twitter:image"
     content="https://36onepasslounge.github.io/pick/ai-series/pick-ai-series-preview-v1.png"
   >
 
-
   <style>
-
     * {
       box-sizing: border-box;
     }
@@ -109,7 +89,6 @@
       color: #243046;
     }
 
-
     .wrap {
       width: min(100%, 680px);
 
@@ -121,10 +100,7 @@
         38px;
     }
 
-
-    /* =========================
-       메인 이미지
-    ========================== */
+    /* 메인 이미지 */
 
     .main-image {
       overflow: hidden;
@@ -141,15 +117,11 @@
 
     .main-image img {
       display: block;
-
       width: 100%;
       height: auto;
     }
 
-
-    /* =========================
-       안내문
-    ========================== */
+    /* 안내문 */
 
     .guide {
       margin-bottom: 14px;
@@ -177,22 +149,17 @@
       color: #4c3515;
     }
 
-
-    /* =========================
-       프로그램 영역
-    ========================== */
+    /* 프로그램 전체 */
 
     .programs {
       display: grid;
-
-      gap: 12px;
+      gap: 11px;
     }
-
 
     .program {
       overflow: hidden;
 
-      border-radius: 20px;
+      border-radius: 18px;
 
       background: #ffffff;
 
@@ -201,9 +168,10 @@
         rgba(0, 0, 0, .05);
 
       box-shadow:
-        0 9px 22px rgba(46, 47, 61, .08);
+        0 7px 18px rgba(46, 47, 61, .07);
     }
 
+    /* 클릭 버튼 */
 
     .program-toggle {
       width: 100%;
@@ -211,14 +179,14 @@
       border: 0;
 
       padding:
-        14px
-        15px;
+        13px
+        14px;
 
       display: flex;
 
       align-items: center;
 
-      gap: 12px;
+      gap: 11px;
 
       text-align: left;
 
@@ -227,97 +195,109 @@
       cursor: pointer;
     }
 
-
     .num {
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
 
       flex:
         0 0
-        42px;
+        40px;
 
       display: grid;
-
       place-items: center;
 
       border-radius: 50%;
 
       color: #ffffff;
 
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 900;
 
       box-shadow:
-        inset 0 -3px 0 rgba(0,0,0,.12);
+        inset 0 -3px 0 rgba(0,0,0,.10);
     }
-
 
     .heading {
       flex: 1;
       min-width: 0;
     }
 
-
     .small {
       display: block;
 
       margin-bottom: 3px;
 
-      font-size: 10px;
+      font-size: 9px;
 
       font-weight: 800;
 
-      opacity: .75;
+      opacity: .72;
     }
-
 
     .title {
       display: block;
 
-      font-size: 16px;
-      line-height: 1.35;
+      font-size: 15px;
+      line-height: 1.3;
 
       font-weight: 900;
 
-      letter-spacing: -.025em;
+      letter-spacing: -.02em;
 
       word-break: keep-all;
     }
 
-
     .arrow {
-      width: 31px;
-      height: 31px;
+      width: 30px;
+      height: 30px;
 
       flex:
         0 0
-        31px;
+        30px;
 
       display: grid;
-
       place-items: center;
 
       border-radius: 50%;
 
       background:
-        rgba(255,255,255,.75);
+        rgba(255,255,255,.78);
 
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 900;
 
       transition:
-        transform .2s ease;
+        transform .25s ease;
     }
-
 
     .program.open .arrow {
-      transform:
-        rotate(180deg);
+      transform: rotate(180deg);
     }
 
+    /* 처음에는 전부 닫힘 */
 
     .program-body {
-      display: none;
+      max-height: 0;
+      overflow: hidden;
+
+      opacity: 0;
+
+      padding:
+        0
+        14px;
+
+      transition:
+        max-height .35s ease,
+        opacity .25s ease,
+        padding .25s ease;
+    }
+
+    /* 클릭한 항목만 열림 */
+
+    .program.open .program-body {
+      max-height: 500px;
+
+      opacity: 1;
 
       padding:
         0
@@ -325,17 +305,11 @@
         15px;
     }
 
-
-    .program.open .program-body {
-      display: block;
-    }
-
-
     .desc {
       margin:
-        3px
+        4px
         0
-        13px;
+        12px;
 
       padding:
         13px
@@ -353,19 +327,14 @@
       word-break: keep-all;
     }
 
-
     .actions {
       display: grid;
-
-      grid-template-columns:
-        1fr;
-
+      grid-template-columns: 1fr;
       gap: 8px;
     }
 
-
     .btn {
-      min-height: 50px;
+      min-height: 48px;
 
       display: flex;
 
@@ -388,18 +357,11 @@
       color: #ffffff;
     }
 
-
-    /* =========================
-       프로그램별 색상
-    ========================== */
+    /* 프로그램별 색상 */
 
     .p1 .program-toggle {
       background:
-        linear-gradient(
-          135deg,
-          #fff0e1,
-          #ffd7b6
-        );
+        linear-gradient(135deg,#fff0e1,#ffd7b6);
     }
 
     .p1 .num,
@@ -414,11 +376,7 @@
 
     .p2 .program-toggle {
       background:
-        linear-gradient(
-          135deg,
-          #e8fff5,
-          #c7f3df
-        );
+        linear-gradient(135deg,#e8fff5,#c7f3df);
     }
 
     .p2 .num,
@@ -433,11 +391,7 @@
 
     .p3 .program-toggle {
       background:
-        linear-gradient(
-          135deg,
-          #fff0f5,
-          #ffd2e0
-        );
+        linear-gradient(135deg,#fff0f5,#ffd2e0);
     }
 
     .p3 .num,
@@ -452,11 +406,7 @@
 
     .p4 .program-toggle {
       background:
-        linear-gradient(
-          135deg,
-          #f4efff,
-          #ddcdfc
-        );
+        linear-gradient(135deg,#f4efff,#ddcdfc);
     }
 
     .p4 .num,
@@ -471,11 +421,7 @@
 
     .p5 .program-toggle {
       background:
-        linear-gradient(
-          135deg,
-          #eefdea,
-          #cceec7
-        );
+        linear-gradient(135deg,#eefdea,#cceec7);
     }
 
     .p5 .num,
@@ -490,11 +436,7 @@
 
     .p6 .program-toggle {
       background:
-        linear-gradient(
-          135deg,
-          #fff7dc,
-          #ffe5a0
-        );
+        linear-gradient(135deg,#fff7dc,#ffe5a0);
     }
 
     .p6 .num,
@@ -509,11 +451,7 @@
 
     .p7 .program-toggle {
       background:
-        linear-gradient(
-          135deg,
-          #fff0f8,
-          #ffd3e8
-        );
+        linear-gradient(135deg,#fff0f8,#ffd3e8);
     }
 
     .p7 .num,
@@ -528,11 +466,7 @@
 
     .p8 .program-toggle {
       background:
-        linear-gradient(
-          135deg,
-          #172134,
-          #243a55
-        );
+        linear-gradient(135deg,#172134,#243a55);
 
       color: #ffffff;
     }
@@ -555,13 +489,8 @@
 
     .p8 .btn {
       background:
-        linear-gradient(
-          135deg,
-          #263c67,
-          #5f7bc4
-        );
+        linear-gradient(135deg,#263c67,#5f7bc4);
     }
-
 
     footer {
       padding:
@@ -577,15 +506,6 @@
       line-height: 1.6;
     }
 
-
-    @media(max-width:390px) {
-
-      .title {
-        font-size: 15px;
-      }
-
-    }
-
   </style>
 </head>
 
@@ -595,10 +515,7 @@
 <main class="wrap">
 
 
-  <!-- =========================
-       페이지 메인 이미지
-       이미 올라가 있는 파일
-  ========================== -->
+  <!-- 메인 이미지 -->
 
   <section class="main-image">
 
@@ -611,8 +528,8 @@
 
 
   <div class="guide">
-    👆 아래에서 궁금한 프로그램을 <strong>클릭</strong>해보세요.<br>
-    프로그램 소개와 관련 공고를 바로 확인할 수 있습니다.
+    👆 궁금한 프로그램을 <strong>하나씩 눌러보세요.</strong><br>
+    선택한 프로그램의 내용만 펼쳐집니다.
   </div>
 
 
@@ -630,12 +547,9 @@
         aria-expanded="false"
       >
 
-        <span class="num">
-          01
-        </span>
+        <span class="num">01</span>
 
         <span class="heading">
-
           <span class="small">
             2026 졸업생특화프로그램
           </span>
@@ -643,12 +557,9 @@
           <span class="title">
             취업에 바로 쓰는 AI 문서작성
           </span>
-
         </span>
 
-        <span class="arrow">
-          ⌄
-        </span>
+        <span class="arrow">⌄</span>
 
       </button>
 
@@ -659,7 +570,6 @@
           AI를 활용해 취업 준비에 필요한
           문서작성 역량을 높이는 실전 프로그램입니다.
         </div>
-
 
         <div class="actions">
 
@@ -690,12 +600,9 @@
         aria-expanded="false"
       >
 
-        <span class="num">
-          02
-        </span>
+        <span class="num">02</span>
 
         <span class="heading">
-
           <span class="small">
             2026 졸업생특화프로그램
           </span>
@@ -703,12 +610,9 @@
           <span class="title">
             내 AI 역량 체크업
           </span>
-
         </span>
 
-        <span class="arrow">
-          ⌄
-        </span>
+        <span class="arrow">⌄</span>
 
       </button>
 
@@ -719,7 +623,6 @@
           AI 활용 능력과 문제해결 역량을 확인하고
           개인별 결과리포트까지 받을 수 있는 프로그램입니다.
         </div>
-
 
         <div class="actions">
 
@@ -750,12 +653,9 @@
         aria-expanded="false"
       >
 
-        <span class="num">
-          03
-        </span>
+        <span class="num">03</span>
 
         <span class="heading">
-
           <span class="small">
             2026 AI 활용 프로그램
           </span>
@@ -763,12 +663,9 @@
           <span class="title">
             알잘딱깔센 AI 활용법 3개과정
           </span>
-
         </span>
 
-        <span class="arrow">
-          ⌄
-        </span>
+        <span class="arrow">⌄</span>
 
       </button>
 
@@ -779,7 +676,6 @@
           실무에서 바로 활용할 수 있는 AI 활용법을
           3개 과정으로 나누어 익히는 프로그램입니다.
         </div>
-
 
         <div class="actions">
 
@@ -810,12 +706,9 @@
         aria-expanded="false"
       >
 
-        <span class="num">
-          04
-        </span>
+        <span class="num">04</span>
 
         <span class="heading">
-
           <span class="small">
             2026 거점형특화 프로그램
           </span>
@@ -823,12 +716,9 @@
           <span class="title">
             대학생활과 실무를 잇는 노코드 AI
           </span>
-
         </span>
 
-        <span class="arrow">
-          ⌄
-        </span>
+        <span class="arrow">⌄</span>
 
       </button>
 
@@ -839,7 +729,6 @@
           노코드 기반 AI 활용을 통해
           대학생활의 경험을 실무와 연결해보는 프로그램입니다.
         </div>
-
 
         <div class="actions">
 
@@ -870,12 +759,9 @@
         aria-expanded="false"
       >
 
-        <span class="num">
-          05
-        </span>
+        <span class="num">05</span>
 
         <span class="heading">
-
           <span class="small">
             2026 연합 온라인 프로그램
           </span>
@@ -883,12 +769,9 @@
           <span class="title">
             언택트 CAREER FIESTA
           </span>
-
         </span>
 
-        <span class="arrow">
-          ⌄
-        </span>
+        <span class="arrow">⌄</span>
 
       </button>
 
@@ -899,7 +782,6 @@
           서울 4개 대학과 고용노동부가 함께하는
           연합 온라인 취업지원 프로그램입니다.
         </div>
-
 
         <div class="actions">
 
@@ -930,12 +812,9 @@
         aria-expanded="false"
       >
 
-        <span class="num">
-          06
-        </span>
+        <span class="num">06</span>
 
         <span class="heading">
-
           <span class="small">
             2026 NCS 프로그램
           </span>
@@ -943,12 +822,9 @@
           <span class="title">
             NCS, 감 잡았어?
           </span>
-
         </span>
 
-        <span class="arrow">
-          ⌄
-        </span>
+        <span class="arrow">⌄</span>
 
       </button>
 
@@ -959,7 +835,6 @@
           공기업 취업에 필요한 NCS 준비전략과
           실전 문제풀이 감각을 높이는 프로그램입니다.
         </div>
-
 
         <div class="actions">
 
@@ -990,12 +865,9 @@
         aria-expanded="false"
       >
 
-        <span class="num">
-          07
-        </span>
+        <span class="num">07</span>
 
         <span class="heading">
-
           <span class="small">
             2026 졸업생특화프로그램
           </span>
@@ -1003,12 +875,9 @@
           <span class="title">
             저, 이 직무에 진심인데요?
           </span>
-
         </span>
 
-        <span class="arrow">
-          ⌄
-        </span>
+        <span class="arrow">⌄</span>
 
       </button>
 
@@ -1019,7 +888,6 @@
           직무와 개인의 경험을 연결해
           기업별 맞춤 자기소개서를 완성하는 프로그램입니다.
         </div>
-
 
         <div class="actions">
 
@@ -1050,12 +918,9 @@
         aria-expanded="false"
       >
 
-        <span class="num">
-          08
-        </span>
+        <span class="num">08</span>
 
         <span class="heading">
-
           <span class="small">
             2026 졸특 프로그램
           </span>
@@ -1063,12 +928,9 @@
           <span class="title">
             구글 청년 AI 역량강화 프로그램
           </span>
-
         </span>
 
-        <span class="arrow">
-          ⌄
-        </span>
+        <span class="arrow">⌄</span>
 
       </button>
 
@@ -1079,7 +941,6 @@
           Google AI Professional Certificate를 통해
           AI 실무 역량을 강화하고 공식 수료까지 준비하는 프로그램입니다.
         </div>
-
 
         <div class="actions">
 
@@ -1102,15 +963,12 @@
   </section>
 
 
-
   <footer>
     삼육대학교 대학일자리본부<br>
     졸업생특화프로그램 · 졸특 PICK
   </footer>
 
-
 </main>
-
 
 
 <script>
@@ -1131,6 +989,10 @@
         program.classList.contains("open");
 
 
+      /*
+        먼저 모든 항목 닫기
+      */
+
       programs.forEach(item => {
 
         item.classList.remove("open");
@@ -1146,6 +1008,11 @@
       });
 
 
+      /*
+        기존에 닫혀 있던 항목이면
+        클릭한 것만 열기
+      */
+
       if (!isOpen) {
 
         program.classList.add("open");
@@ -1154,16 +1021,6 @@
           "aria-expanded",
           "true"
         );
-
-
-        setTimeout(() => {
-
-          program.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-
-        }, 100);
 
       }
 
