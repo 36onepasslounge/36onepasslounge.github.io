@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>졸특 PICK | AI·취업 프로그램 모음</title>
+  <meta name="description" content="졸특 PICK으로 한 번에 확인하는 AI·NCS·자소서·커리어 프로그램 모음" />
+  <meta name="theme-color" content="#ff8a00" />
+
+  <!-- 오픈그래프 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="졸특 PICK | AI·취업 프로그램 모음" />
+  <meta property="og:description" content="취업에 바로 쓰는 AI 문서작성부터 NCS, 자소서, Google AI 프로그램까지 한 번에 확인하세요." />
+  <meta property="og:url" content="https://36onepasslounge.github.io/pick/ai-series/" />
+  <meta property="og:image" content="https://36onepasslounge.github.io/pick/ai-series/pick-ai-series-thumb-v1.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- 트위터 -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="졸특 PICK | AI·취업 프로그램 모음" />
+  <meta name="twitter:description" content="AI·NCS·자소서·구글 AI 프로그램을 한 페이지에서 확인하세요." />
+  <meta name="twitter:image" content="https://36onepasslounge.github.io/pick/ai-series/pick-ai-series-thumb-v1.png" />
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      background: linear-gradient(180deg, #fff8ef 0%, #fffdf8 100%);
+      color: #222;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    .wrap {
+      width: 100%;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+
+    .hero {
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.05);
+      margin-bottom: 18px;
+    }
+    .hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .intro {
+      background: linear-gradient(135deg, #fff2d9, #ffe7c2);
+      border-radius: 20px;
+      padding: 18px 18px 16px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+    }
+    .intro h1 {
+      margin: 0 0 8px;
+      font-size: 24px;
+      line-height: 1.3;
+      color: #4b2d00;
+    }
+    .intro p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #6a4a1f;
+    }
+
+    .notice {
+      background: #fff;
+      border-radius: 18px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      border: 1px solid #f1e2cc;
+      font-size: 14px;
+      color: #7a5b2b;
+      text-align: center;
+    }
+
+    .program-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    details {
+      border-radius: 22px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 700;
+      position: relative;
+    }
+    summary::-webkit-details-marker { display: none; }
+
+    .num {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 800;
+      box-shadow: inset 0 -3px 0 rgba(0,0,0,0.15);
+    }
+
+    .summary-text {
+      flex: 1;
+      min-width: 0;
+    }
+    .summary-text .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 5px 10px;
+      border-radius: 999px;
+      margin-bottom: 6px;
+      background: rgba(255,255,255,0.65);
+      color: #333;
+    }
+    .summary-text h3 {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.35;
+      word-break: keep-all;
+    }
+    .summary-text p {
+      margin: 6px 0 0;
+      font-size: 13px;
+      opacity: .9;
+      font-weight: 600;
+    }
+
+    .arrow {
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1;
+      opacity: .7;
+      transition: transform .2s ease;
+    }
+    details[open] .arrow {
+      transform: rotate(180deg);
+    }
+
+    .content {
+      padding: 0 18px 18px;
+      background: #fff;
+    }
+    .content-inner {
+      border-radius: 18px;
+      padding: 16px;
+      background: #fffaf4;
+      border: 1px solid #f3e5d3;
+    }
+    .content p {
+      margin: 0 0 14px;
+      font-size: 14px;
+      line-height: 1.65;
+      color: #5b4632;
+      word-break: keep-all;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      color: #fff;
+    }
+    .btn-secondary {
+      background: #fff;
+      color: #333;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .footer {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 12px;
+      color: #8a7c6c;
+      line-height: 1.6;
+    }
+
+    /* 개별 색상 */
+    .c1 summary { background: linear-gradient(135deg, #ffb36b, #ff7e36); color: #fff; }
+    .c1 .num, .c1 .btn-primary { background: #ff7a00; }
+
+    .c2 summary { background: linear-gradient(135deg, #b7f3da, #58c88a); color: #103d27; }
+    .c2 .num, .c2 .btn-primary { background: #19a663; }
+
+    .c3 summary { background: linear-gradient(135deg, #ffe1f2, #d688ff); color: #4a205b; }
+    .c3 .num, .c3 .btn-primary { background: #9b44e3; }
+
+    .c4 summary { background: linear-gradient(135deg, #2a2a2a, #6ad04e); color: #fff; }
+    .c4 .num, .c4 .btn-primary { background: #2d9d1f; }
+
+    .c5 summary { background: linear-gradient(135deg, #fff0b2, #ffbe3b); color: #5d4100; }
+    .c5 .num, .c5 .btn-primary { background: #e29c00; }
+
+    .c6 summary { background: linear-gradient(135deg, #d7fff7, #61d7c6); color: #0f3e3a; }
+    .c6 .num, .c6 .btn-primary { background: #1aa595; }
+
+    .c7 summary { background: linear-gradient(135deg, #ffd7c8, #ff8e72); color: #5c2316; }
+    .c7 .num, .c7 .btn-primary { background: #e45b35; }
+
+    .c8 summary { background: linear-gradient(135deg, #fff5a8, #ffe05d); color: #4d3c00; }
+    .c8 .num, .c8 .btn-primary { background: #d0a700; color: #222; }
+
+    @media (max-width: 480px) {
+      .intro h1 { font-size: 21px; }
+      .summary-text h3 { font-size: 17px; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <img src="./pick-ai-series-thumb-v1.png" alt="졸특 PICK AI·취업 프로그램 모음 썸네일">
+    </section>
+
+    <section class="intro">
+      <h1>졸특 PICK 프로그램 모음</h1>
+      <p>
+        지금 챙겨야 할 취업·AI 프로그램을 한 페이지에서 확인하세요!<br>
+        관심 있는 프로그램을 눌러 상세 내용을 보고, 바로 공고 페이지로 이동할 수 있어요.
+      </p>
+    </section>
+
+    <div class="notice">
+      원하는 프로그램을 눌러 펼쳐보세요 ▼
+    </div>
+
+    <section class="program-list">
+      <details class="c1" open>
+        <summary>
+          <div class="num">01</div>
+          <div class="summary-text">
+            <span class="badge">2026 졸업생특화프로그램</span>
+            <h3>취업에 바로 쓰는 AI 문서작성</h3>
+            <p>AI 문서활용 실전 프로그램</p>
+          </div>
+          <div class="arrow">⌄</div>
+        </summary>
+        <div class="content">
+          <div class="content-inner">
+            <p>AI를 활용해 취업 준비 문서를 더 빠르고 실용적으로 작성할 수 있도록 돕는 프로그램입니다.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://www.syu.ac.kr/blog/2026%eb%85%84-%ec%a1%b8%ec%97%85%ec%83%9d%ed%8a%b9%ed%99%94%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8-%ec%b7%a8%ec%97%85%ec%97%90-%eb%b0%94%eb%a1%9c-%ec%93%b0%eb%8a%94-ai-%eb%ac%b8%ec%84%9c%ec%9e%91/?pageds=1&k=&t=&c=" target="_blank" rel="noopener">관련 공고 확인하기</a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="c2">
+        <summary>
+          <div class="num">02</div>
+          <div class="summary-text">
+            <span class="badge">2026 졸업생특화프로그램</span>
+            <h3>내 AI 역량 체크업 프로그램</h3>
+            <p>AI 활용 능력과 문제해결 역량 확인</p>
+          </div>
+          <div class="arrow">⌄</div>
+        </summary>
+        <div class="content">
+          <div class="content-inner">
+            <p>AI 활용 특강부터 직무역량검사, 개인별 결과리포트까지! 내 AI 활용 역량을 점검해볼 수 있는 프로그램입니다.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://www.syu.ac.kr/blog/2026%eb%85%84-%ec%a1%b8%ec%97%85%ec%83%9d%ed%8a%b9%ed%99%94%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8-%eb%82%b4-ai-%ec%97%ad%eb%9f%89-%ec%b2%b4%ed%81%ac%ec%97%85-%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8/?pageds=1&k=&t=&c=" target="_blank" rel="noopener">관련 공고 확인하기</a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="c3">
+        <summary>
+          <div class="num">03</div>
+          <div class="summary-text">
+            <span class="badge">2026 프로그램 안내</span>
+            <h3>알잘딱깔센 AI 활용법 3개 과정</h3>
+            <p>실무형 AI 활용 교육</p>
+          </div>
+          <div class="arrow">⌄</div>
+        </summary>
+        <div class="content">
+          <div class="content-inner">
+            <p>실제로 바로 써먹을 수 있는 AI 활용 역량을 키울 수 있도록 구성된 프로그램 안내입니다.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://www.syu.ac.kr/blog/2026%eb%85%84-%ec%95%8c%ec%9e%98%eb%94%b1%ea%b9%94%ec%84%bc-ai-%ed%99%9c%ec%9a%a9%eb%b2%953%ea%b0%9c%ea%b3%bc%ec%a0%95-%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8-%ec%95%88%eb%82%b4/?pageds=1&k=&t=&c=" target="_blank" rel="noopener">관련 공고 확인하기</a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="c4">
+        <summary>
+          <div class="num">04</div>
+          <div class="summary-text">
+            <span class="badge">2026 거점형특화</span>
+            <h3>대학생활과 실무를 잇는 노코드 AI</h3>
+            <p>노코드 기반 실무 연결형 프로그램</p>
+          </div>
+          <div class="arrow">⌄</div>
+        </summary>
+        <div class="content">
+          <div class="content-inner">
+            <p>대학생활에서 익힌 경험을 실무 역량으로 연결할 수 있도록 돕는 노코드 AI 기반 프로그램입니다.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://www.syu.ac.kr/blog/2026%eb%85%84-%ea%b1%b0%ec%a0%90%ed%98%95%ed%8a%b9%ed%99%94-%eb%8c%80%ed%95%99%ec%83%9d%ed%99%9c%ea%b3%bc-%ec%8b%a4%eb%ac%b4%eb%a5%bc-%ec%9e%87%eb%8a%94-%eb%85%b8%ec%bd%94%eb%93%9c-ai/?pageds=1&k=&t=&c=" target="_blank" rel="noopener">관련 공고 확인하기</a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="c5">
+        <summary>
+          <div class="num">05</div>
+          <div class="summary-text">
+            <span class="badge">2026 연합 온라인 행사</span>
+            <h3>언택트 Career Fiesta</h3>
+            <p>서울 4개 대학·고용노동부 연합 온라인 프로그램</p>
+          </div>
+          <div class="arrow">⌄</div>
+        </summary>
+        <div class="content">
+          <div class="content-inner">
+            <p>서울 4개 대학과 고용노동부가 함께하는 언택트 Career Fiesta 안내입니다.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://www.syu.ac.kr/blog/2026%eb%85%84-%e3%80%8c%ec%96%b8%ed%83%9d%ed%8a%b8-career-fiesta%ec%84%9c%ec%9a%b8-4%ea%b0%9c%eb%8c%80%ed%95%99%ea%b3%a0%ec%9a%a9%eb%85%b8%eb%8f%99%eb%b6%80-%ec%97%b0%ed%95%a9-%ec%98%a8%eb%9d%bc/?pageds=1&k=&t=&c=" target="_blank" rel="noopener">관련 공고 확인하기</a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="c6">
+        <summary>
+          <div class="num">06</div>
+          <div class="summary-text">
+            <span class="badge">2026 프로그램 안내</span>
+            <h3>NCS, 감 잡았어?</h3>
+            <p>공기업 취업·NCS 실전 감각 프로그램</p>
+          </div>
+          <div class="arrow">⌄</div>
+        </summary>
+        <div class="content">
+          <div class="content-inner">
+            <p>공기업 취업에 필요한 NCS 준비전략과 실전 문제풀이 역량을 강화하는 프로그램입니다.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://www.syu.ac.kr/blog/2026%eb%85%84-ncs-%ea%b0%90-%ec%9e%a1%ec%95%98%ec%96%b4-%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8-%ec%95%88%eb%82%b4/?pageds=1&k=&t=&c=" target="_blank" rel="noopener">관련 공고 확인하기</a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="c7">
+        <summary>
+          <div class="num">07</div>
+          <div class="summary-text">
+            <span class="badge">2026 졸업생특화프로그램</span>
+            <h3>저, 이 직무에 진심인데요?</h3>
+            <p>내 경험을 합격 자소서로 바꾸는 법</p>
+          </div>
+          <div class="arrow">⌄</div>
+        </summary>
+        <div class="content">
+          <div class="content-inner">
+            <p>직무와 개인의 경험을 효과적으로 연결해 기업별 맞춤형 자기소개서를 완성할 수 있도록 돕는 프로그램입니다.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://www.syu.ac.kr/blog/2026%eb%85%84-%ec%a1%b8%ec%97%85%ec%83%9d%ed%8a%b9%ed%99%94%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8-%ec%a0%80-%ec%9d%b4-%ec%a7%81%eb%ac%b4%ec%97%90-%ec%a7%84%ec%8b%ac%ec%9d%b8%eb%8d%b0%ec%9a%94/?pageds=1&k=&t=&c=" target="_blank" rel="noopener">관련 공고 확인하기</a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="c8">
+        <summary>
+          <div class="num">08</div>
+          <div class="summary-text">
+            <span class="badge">2026 졸특 프로그램</span>
+            <h3>Google AI Professional Certificate</h3>
+            <p>구글 청년 AI 역량강화 프로그램</p>
+          </div>
+          <div class="arrow">⌄</div>
+        </summary>
+        <div class="content">
+          <div class="content-inner">
+            <p>Google AI Professional Certificate 과정을 통해 AI 실무 역량을 키우고 공식 수료증까지 준비할 수 있는 프로그램입니다.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://www.syu.ac.kr/blog/%ec%a1%b8%ed%8a%b9-2026%eb%85%84-%e3%80%8c%ea%b5%ac%ea%b8%80-%ec%b2%ad%eb%85%84-ai-%ec%97%ad%eb%9f%89%ea%b0%95%ed%99%94-%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8google-ai-professional-certificate/?pageds=1&k=&t=&c=" target="_blank" rel="noopener">관련 공고 확인하기</a>
+            </div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <div class="footer">
+      삼육대학교 대학일자리본부 · 졸업생특화프로그램 · 졸특 PICK
+    </div>
+  </div>
+</body>
+</html>
