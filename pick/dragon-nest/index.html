@@ -12,10 +12,11 @@
 
   <meta
     name="description"
-    content="미래내일 일경험 프로젝트형. 아이덴티티게임즈 드래곤네스트 신규 게임 출시 프로젝트 참여자를 모집합니다."
+    content="미래내일 일경험 프로젝트형. 아이덴티티게임즈 드래곤네스트 신규 게임 출시 프로젝트 참여자 모집."
   >
 
-  <meta name="theme-color" content="#fff3ea">
+  <meta name="theme-color" content="#fff6ec">
+
 
   <!-- 카카오톡 / 채널톡 미리보기 -->
 
@@ -38,12 +39,12 @@
 
   <meta
     property="og:image"
-    content="https://36onepasslounge.github.io/pick/dragon-nest/dragon-nest-preview-v1.png"
+    content="https://36onepasslounge.github.io/pick/dragon-nest/dragon-nest-preview-v2.png"
   >
 
   <meta
     property="og:image:secure_url"
-    content="https://36onepasslounge.github.io/pick/dragon-nest/dragon-nest-preview-v1.png"
+    content="https://36onepasslounge.github.io/pick/dragon-nest/dragon-nest-preview-v2.png"
   >
 
   <meta property="og:image:type" content="image/png">
@@ -55,10 +56,12 @@
 
   <meta
     name="twitter:image"
-    content="https://36onepasslounge.github.io/pick/dragon-nest/dragon-nest-preview-v1.png"
+    content="https://36onepasslounge.github.io/pick/dragon-nest/dragon-nest-preview-v2.png"
   >
 
+
   <style>
+
     * {
       box-sizing: border-box;
     }
@@ -72,45 +75,50 @@
     body {
       min-height: 100vh;
 
+      background:
+        linear-gradient(
+          180deg,
+          #fff6ec 0%,
+          #fffdf9 100%
+        );
+
       font-family:
         "Apple SD Gothic Neo",
         "Malgun Gothic",
         Arial,
         sans-serif;
-
-      background:
-        linear-gradient(
-          180deg,
-          #fff7ee 0%,
-          #fffdf8 100%
-        );
-
-      color: #222;
     }
 
+
     .wrap {
-      width: min(100%, 720px);
+      width: min(100%, 900px);
 
       margin: 0 auto;
 
       padding:
         12px
         10px
-        34px;
+        30px;
     }
+
+
+    /* 포스터 */
 
     .poster-wrap {
       position: relative;
 
+      width: 100%;
+
       overflow: hidden;
 
-      border-radius: 24px;
+      border-radius: 22px;
 
       background: #ffffff;
 
       box-shadow:
-        0 14px 32px rgba(65, 45, 30, .16);
+        0 14px 32px rgba(60, 42, 26, .15);
     }
+
 
     .poster-wrap img {
       display: block;
@@ -119,108 +127,54 @@
       height: auto;
     }
 
+
     /*
-      포스터 안 신청영역 위에
-      투명 클릭 버튼 배치
+      포스터 속
+      '지금 바로 신청하기!' 버튼만 클릭 가능
     */
 
     .apply-hotspot {
       position: absolute;
 
-      right: 5.5%;
-      bottom: 8.5%;
+      left: 66%;
+      top: 59%;
 
-      width: 34%;
-      height: 13%;
+      width: 31%;
+      height: 18%;
 
-      border: 0;
+      display: block;
 
-      border-radius: 18px;
+      border-radius: 40px;
 
       background: transparent;
 
       cursor: pointer;
 
       -webkit-tap-highlight-color:
-        rgba(255,255,255,.15);
+        rgba(255,255,255,.16);
     }
+
 
     .apply-hotspot:active {
       background:
         rgba(255,255,255,.10);
     }
 
-    .guide {
-      margin-top: 12px;
-
-      padding: 13px 15px;
-
-      border-radius: 16px;
-
-      background: #fff1df;
-
-      text-align: center;
-
-      color: #795326;
-
-      font-size: 13px;
-      line-height: 1.6;
-
-      box-shadow:
-        0 7px 18px rgba(80, 55, 30, .07);
-    }
-
-    .guide strong {
-      color: #5d3511;
-    }
-
-    .bottom-btn {
-      margin-top: 12px;
-
-      display: block;
-
-      width: 100%;
-
-      min-height: 54px;
-
-      padding: 14px 16px;
-
-      border-radius: 16px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #ff5c68,
-          #ff8a3c
-        );
-
-      color: #ffffff;
-
-      text-decoration: none;
-
-      text-align: center;
-
-      font-size: 15px;
-
-      font-weight: 900;
-
-      box-shadow:
-        0 10px 20px rgba(255, 101, 84, .22);
-    }
 
     footer {
       padding:
-        18px
+        17px
         5px
-        2px;
+        0;
 
       text-align: center;
 
-      color: #8a7c6f;
+      color: #887a6d;
 
       font-size: 11px;
       line-height: 1.6;
     }
+
   </style>
 </head>
 
@@ -229,44 +183,37 @@
 
 <main class="wrap">
 
+
   <section class="poster-wrap">
 
+
     <img
-      src="./dragon-nest-main-v1.png"
+      src="./dragon-nest-preview-v2.png"
       alt="아이덴티티게임즈 드래곤네스트 신규 게임 출시 프로젝트"
     >
+
+
+    <!--
+      포스터 안의
+      '지금 바로 신청하기!' 위치만 클릭됨
+    -->
 
     <a
       class="apply-hotspot"
       href="https://yw.work24.go.kr/d/a/selectItrnPrjtEsgPrgmDtal.do"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="드래곤네스트 프로젝트 신청하러 가기"
+      aria-label="드래곤네스트 프로젝트 지금 바로 신청하기"
     ></a>
+
 
   </section>
 
 
-  <div class="guide">
-    포스터 안의 <strong>신청하러 가기</strong> 영역을 누르면<br>
-    Work24 신청 페이지로 바로 이동합니다.
-  </div>
-
-
-  <a
-    class="bottom-btn"
-    href="https://yw.work24.go.kr/d/a/selectItrnPrjtEsgPrgmDtal.do"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    🎮 드래곤네스트 프로젝트 신청하러 가기 →
-  </a>
-
-
   <footer>
-    삼육대학교 대학일자리본부<br>
-    졸업생특화프로그램 · 졸특 PICK
+    삼육대학교 대학일자리본부 · 졸특 PICK
   </footer>
+
 
 </main>
 
