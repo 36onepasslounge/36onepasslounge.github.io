@@ -3,7 +3,6 @@ on:
   push:
     paths:
       - 'automation/data.json'
-      - 'automation/template.html'
       - 'automation/render.mjs'
   workflow_dispatch:
 permissions:
