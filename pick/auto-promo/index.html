@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>졸특 PICK 자동 홍보</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif;background:#eef3fa;color:#19365e}
+.wrap{max-width:760px;margin:auto;padding:18px}
+.hero{background:linear-gradient(135deg,#f4efff,#fff4f8);border-radius:28px;padding:20px;box-shadow:0 10px 30px #294b7014}
+.brand{display:flex;align-items:center;justify-content:space-between;gap:14px}.brand img.logo{max-width:300px;height:auto}
+.pick{display:inline-flex;align-items:center;gap:8px;background:#15385f;color:white;font-weight:900;border-radius:18px;padding:10px 18px;font-size:28px;letter-spacing:-1px}
+.pick b{background:linear-gradient(90deg,#ff5b72,#ffb02e,#5bcf77,#4f8cff,#a966e8);-webkit-background-clip:text;color:transparent}
+.mascots{display:flex;justify-content:center;gap:28px;margin-top:8px}.mascots img{height:120px;width:auto}
+h1{text-align:center;font-size:32px;margin:10px 0 6px}.sub{text-align:center;color:#6f7f98;font-size:15px;line-height:1.5}
+.list{display:grid;gap:14px;margin-top:16px}.card{background:white;border-radius:22px;padding:18px;border:2px solid #e5eaf2;box-shadow:0 7px 18px #31557a0e}
+.card.purple{border-color:#d6c3f6}.card.pink{border-color:#f5bfd4}.badge{display:inline-block;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:800;background:#edf3ff}
+.card h2{font-size:23px;margin:8px 0 12px}.grid{display:grid;gap:8px}.row{background:#f8faff;border-radius:13px;padding:10px 12px;font-size:14px;line-height:1.5}
+.row b{display:inline-block;min-width:68px}.benefit{margin-top:10px;padding:11px 12px;border-radius:13px;font-size:13px;font-weight:700;background:#eef4ff}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.btn{display:block;text-align:center;text-decoration:none;border-radius:999px;padding:12px;font-weight:800}
+.info{background:#edf3ff;color:#315c93}.apply{background:#17365e;color:#fff}
+.footer{text-align:center;margin:16px 0 4px;color:#71839b;font-size:12px}
+#promo{width:1080px;padding:42px;background:linear-gradient(180deg,#f8f9ff,#fff);position:absolute;left:-99999px;top:0}
+#promo .inner,#og .inner{background:white;border-radius:34px;padding:34px}
+#promo h1,#og h1{font-size:44px}
+#promo .card{padding:28px} #promo .card h2{font-size:34px} #promo .row{font-size:21px;padding:15px 16px} #promo .benefit{font-size:20px}
+#promo .mascots img{height:170px}
+#og{width:1200px;height:630px;padding:25px;background:linear-gradient(135deg,#eef5ff,#fff0f6);position:absolute;left:-99999px;top:0;overflow:hidden}
+#og .inner{height:580px;padding:24px 32px}.ogtop{display:flex;justify-content:space-between;align-items:center}
+#og .mascots{position:absolute;right:55px;top:105px;gap:4px}.ogtop img{max-height:62px;max-width:320px}.ogtitle{text-align:center;margin-top:4px}
+#og .ogcards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}.ogcards .card{height:250px;padding:18px}.ogcards h2{font-size:26px}.ogcards .row{font-size:15px;padding:8px 10px}.ogcards .benefit{font-size:14px;padding:8px 10px}
+@media(max-width:520px){.actions{grid-template-columns:1fr}.brand{flex-direction:column}.brand img.logo{max-width:250px}}
+</style>
+<meta property="og:type" content="website"><meta property="og:title" content="12월 지금 신청할 프로그램 2개"><meta property="og:description" content="상세안내부터 신청까지 ONE-PASS"><meta property="og:url" content="https://36onepasslounge.github.io/pick/auto-promo/"><meta property="og:image" content="https://36onepasslounge.github.io/pick/auto-promo/og.jpg?v=1794805800012"></head>
+<body>
+<div class="wrap" id="app"></div>
+<div id="promo"></div>
+<div id="og"></div>
+<script>
+const DATA={"updated_at":"2026-11-16T13:20:00+09:00","title":"12월 지금 신청할 프로그램 2개","subtitle":"상세안내부터 신청까지 ONE-PASS","programs":[{"name":"컴활 FINAL RUN! 1급·2급","badge":"자격증","period":"2026.12.01(화) ~ 12.31(목)","target":"삼육대 재학생 · 졸업생 · 지역청년","method":"온라인 수강","content":"1급·2급 필기 / 실기 / 기출문제","benefit":"80% 이상 수료 시 과정별 MVP 100점 + 수료증","info_url":"https://36onepasslounge.github.io/pick/computer-final-run/","apply_url":"https://sujpf.syu.ac.kr","accent":"purple"},{"name":"구글 청년 AI 역량강화","badge":"AI 역량","period":"신청마감 2026.12.11(금) · 운영종료 12.18(금)","target":"대학생 · 졸업생 · 취업준비 청년","method":"Coursera 온라인","content":"AI 기초 · Gemini · NotebookLM · 데이터분석","benefit":"Google AI Professional Certificate · 수강권 소진 시 조기마감 가능","info_url":"https://36onepasslounge.github.io/pick/google-ai/","apply_url":"https://forms.gle/JXNjo2nQLPub1j6D6","accent":"pink"}]};
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+function card(p,compact=false){
+ return '<section class="card '+esc(p.accent)+'"><span class="badge">'+esc(p.badge)+'</span><h2>'+esc(p.name)+'</h2><div class="grid">'+
+ '<div class="row"><b>일정</b>'+esc(p.period)+'</div>'+
+ '<div class="row"><b>방식</b>'+esc(p.method)+'</div>'+
+ '<div class="row"><b>대상</b>'+esc(p.target)+'</div>'+
+ (!compact?'<div class="row"><b>내용</b>'+esc(p.content)+'</div>':'')+
+ '</div><div class="benefit">'+esc(p.benefit)+'</div>'+
+ (!compact?'<div class="actions"><a class="btn info" href="'+esc(p.info_url)+'">상세 안내</a><a class="btn apply" href="'+esc(p.apply_url)+'">바로 신청</a></div>':'')+
+ '</section>';
+}
+function header(large=false){
+ return '<div class="brand"><img class="logo" src="../../syu-logo.png"><div class="pick">졸<b>특</b> PICK</div></div>'+
+ '<div class="mascots"><img src="../../suya.png"><img src="../../suho.png"></div>'+
+ '<h1>'+esc(DATA.title)+'</h1><div class="sub">'+esc(DATA.subtitle)+'</div>';
+}
+document.getElementById('app').innerHTML='<div class="hero">'+header()+'</div><div class="list">'+DATA.programs.map(p=>card(p)).join('')+'</div><div class="footer">삼육대학교 대학일자리본부 · 졸업생특화프로그램</div>';
+document.getElementById('promo').innerHTML='<div class="inner">'+header(true)+'<div class="list">'+DATA.programs.map(p=>card(p)).join('')+'</div><div class="footer">ONE-PASS LOUNGE · 상세안내부터 신청까지</div></div>';
+document.getElementById('og').innerHTML='<div class="inner"><div class="ogtop"><img src="../../syu-logo.png"><div class="pick">졸<b>특</b> PICK</div></div><div class="ogtitle"><h1>'+esc(DATA.title)+'</h1><div class="sub">'+esc(DATA.subtitle)+'</div></div><div class="ogcards">'+DATA.programs.slice(0,2).map(p=>card(p,true)).join('')+'</div></div>';
+</script>
+</body></html>
