@@ -1,0 +1,31 @@
+{
+  "updated_at": "2026-11-16T13:20:00+09:00",
+  "title": "12월 지금 신청할 프로그램 2개",
+  "subtitle": "상세안내부터 신청까지 ONE-PASS",
+  "programs": [
+    {
+      "name": "컴활 FINAL RUN! 1급·2급",
+      "badge": "자격증",
+      "period": "2026.12.01(화) ~ 12.31(목)",
+      "target": "삼육대 재학생 · 졸업생 · 지역청년",
+      "method": "온라인 수강",
+      "content": "1급·2급 필기 / 실기 / 기출문제",
+      "benefit": "80% 이상 수료 시 과정별 MVP 100점 + 수료증",
+      "info_url": "https://36onepasslounge.github.io/pick/computer-final-run/",
+      "apply_url": "https://sujpf.syu.ac.kr",
+      "accent": "purple"
+    },
+    {
+      "name": "구글 청년 AI 역량강화",
+      "badge": "AI 역량",
+      "period": "신청마감 2026.12.11(금) · 운영종료 12.18(금)",
+      "target": "대학생 · 졸업생 · 취업준비 청년",
+      "method": "Coursera 온라인",
+      "content": "AI 기초 · Gemini · NotebookLM · 데이터분석",
+      "benefit": "Google AI Professional Certificate · 수강권 소진 시 조기마감 가능",
+      "info_url": "https://36onepasslounge.github.io/pick/google-ai/",
+      "apply_url": "https://forms.gle/JXNjo2nQLPub1j6D6",
+      "accent": "pink"
+    }
+  ]
+}
