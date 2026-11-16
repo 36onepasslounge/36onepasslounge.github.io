@@ -13,7 +13,7 @@ fs.writeFileSync(path.join(outDir,'index.html'),tpl);
 const browser=await chromium.launch({headless:true});
 const page=await browser.newPage({viewport:{width:1200,height:1600},deviceScaleFactor:1});
 await page.goto('file://'+path.join(outDir,'index.html'),{waitUntil:'networkidle'});
-await page.locator('#promo').screenshot({path:path.join(outDir,'promo.png')});
+await page.locator('#promo').screenshot({path:path.join(outDir,'promo.jpg'),type:'jpeg',quality:94});
 await page.locator('#og').screenshot({path:path.join(outDir,'og.jpg'),type:'jpeg',quality:94});
 await browser.close();
 
